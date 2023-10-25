@@ -1,0 +1,223 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    font-size: 16px;
+    overflow: none;
+}
+.s-screen {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.l-screen {
+    display: none;
+}
+.s-screen h1 > a {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.s-screen i {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: black;
+}
+.s-screen i:hover {
+    color: #8A9AC5;
+}
+.heroPage {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url(../images/a_fountain_pen_on_a_blue_notepad_shot_at_a_cinematic_angle\,_blue_aesthetics.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-inline: 16px;
+    /* padding-top: 100px; */
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    /* gap: 40px; */
+}
+.heroText {
+    /* padding-inline: 16px; */
+    /* padding-top: 100px; */
+    display: flex;
+    margin-bottom: auto;
+    margin-top: auto;
+    /* align-items: center; */
+    text-align: left;
+    flex-direction: column;
+    gap: 40px;
+}
+.heroImage {
+    display: none;
+}
+.heroText .mainText {
+    color: #FFF;
+    font-family: Roboto Slab;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 52.8px */
+}
+.heroText .subText {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+}
+.heroText button {
+    width: 131px;
+    display: inline-flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 32px;
+    background: #8A9AC5;
+    border: none;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 22.4px */
+}
+.heroText button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 720px) {
+    .l-screen {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        /* padding-inline: 125px; */
+        padding-block: 16px;
+    }
+    .s-screen {
+        display: none;
+    }
+    .l-screen h1 > a {
+        color: #FFF;
+        width: 106px;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-right: 109px;
+    }
+    .l-screen a {
+        color: #FFF;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .l-screen a:hover {
+        color: #8A9AC5;
+    }
+    .navlinks {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navlinks button {
+        display: inline-flex;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 32px;
+        background: #8A9AC5;
+        border: none;
+    }
+    .navlinks button:hover {
+        opacity: 0.8;
+        color: #FFF;
+    }
+    .navlinks button:hover > a {
+        color: #FFF;
+    }
+    .heroText {
+        gap: 35px;
+        text-align: left;
+        justify-content: left;
+        padding-inline: 63px;
+        /* align-items: center; */
+    }
+    .heroText .mainText {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 54px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+    }
+    .heroText .subText {
+        color: #FFF;
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 25.2px */
+    }
+    .heroText button {
+        width: 167px;
+        display: inline-flex;
+        padding: 16px 32px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 32px;
+        background: #8A9AC5;
+    }
+}
+@media screen and (min-width: 1024px){
+    .l-screen {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        padding-inline: 125px;
+        padding-block: 16px;
+    }
+    .l-screen h1 > a {
+        margin-right: 209px;
+    }
+}

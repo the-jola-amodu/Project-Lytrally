@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.signUpContainer {
+    width: 100%;
+    padding-inline: 33px;
+    padding-block: 59px;
+    background: #F3F6FC;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+#signup_form {
+    display: flex;
+    flex-direction: column;
+}
+.signUpContainer label {
+    display: block;
+    margin-left: 28px;
+    margin-bottom: 10px;
+    color: #000;
+    /* text-align: center; */
+    font-family: Roboto Slab;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 26.4px */
+}
+.signUpContainer input {
+    display: block;
+    margin-bottom: 30px;
+    padding-inline: 16px;
+    border-radius: 20px;
+    border: 3px solid #000;
+    background: #FFF;
+    font-size: 20px;
+    width: 80%;
+    height: 60px;
+    flex-shrink: 0;
+    transition: width 2s ease-in-out;
+}
+.signUpContainer input:focus {
+    width: 100%;
+    outline: none;
+}
+.signUpContainer button {
+    display: inline-flex;
+    width: 150px;
+    padding: 21px 37px;
+    text-align: right;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 30px;
+    background: #8A9AC5;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+.signUpContainer button:hover {
+    opacity: 0.8;
+}
+.signUpContainer a {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.signUpContainer a:hover {
+    color: #8A9AC5;
+}
+
+@media screen and (min-width: 720px) {
+    .signUpContainer {
+        padding-inline: 105px;
+    }
+    .signUpContainer button {
+        width: 208px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .signUpContainer {
+        padding-inline: 108px;
+        padding-block: 37px;
+    }
+    .signUpContainer label {
+        margin-left: 45px;
+        margin-bottom: 25px;
+        font-size: 32px;
+    }
+    .signUpContainer input {
+        margin-bottom: 29px;
+        width: 500px;
+        height: 70px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        border: 3px solid #000;
+        background: #FFF;
+        transition: width 2s ease-in-out;
+    }
+    .signUpContainer input:focus {
+        width: 560px;
+    }
+}
+
+@media screen and (min-width: 1444px) {
+    .signUpContainer {
+        padding-inline: 108px;
+        padding-block: 37px;
+    }
+    .signUpContainer label {
+        margin-left: 45px;
+        margin-bottom: 29px;
+        font-size: 32px;
+    }
+    .signUpContainer input {
+        margin-bottom: 29px;
+        width: 500px;
+        height: 91px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        border: 3px solid #000;
+        background: #FFF;
+        transition: width 2s ease-in-out;
+    }
+    .signUpContainer input:focus {
+        width: 560px;
+    }
+}
