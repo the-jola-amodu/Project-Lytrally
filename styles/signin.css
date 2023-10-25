@@ -141,7 +141,7 @@
         width: 560px;
         color: #000;
         font-family: Inter;
-        font-size: 36px;
+        font-size: 30px;
         font-style: normal;
         font-weight: 300;
         line-height: normal;
@@ -155,7 +155,8 @@
         width: 560px;
     }
     .signInContainer button {
-        width: 560px;
+        width: 208px;
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
     }
