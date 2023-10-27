@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lytrally</title>
-    <base href="/project-lytrally/">
-    <link rel="stylesheet" href="/style/signin.css">
-    <link rel="stylesheet" href="/style/fontawesome.min.css">
-    <link rel="stylesheet" href="/style/all.min.css">
-    <link rel="stylesheet" href="/style/solid.css">
-    <link rel="stylesheet" href="/style/solid.min.css">
+    <!-- <base href="/project-lytrally/"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/signin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.min.css') }}">
 </head>
 <body>
     <section class="container">
         <h4>Sign in into your Lytrally account</h4>
         <button>
-            <img src="../images/google.png" alt="Google Icon">
+            <img src="{{ url_for('static', filename='images/google.png') }}" alt="Google Icon">
             Continue with Google
         </button>
         <button>
-            <img src="../images/facebook.png" alt="Facebook Icon">
+            <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook Icon">
             Continue with Facebook
         </button>
         <div class="signInContainer">
@@ -28,11 +28,11 @@
                 <input type="email" name="email" id="email">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password">
-                <a href="./forgot.html">Forgoten Password</a>
+                <a href="{{ url_for('forgot_password') }}">Forgotten Password</a>
                 <button id="submit">Sign In</button>
             </form>
         </div>
-        <a href="./signup.html" class="noAccount">Do not have an account</a>
+        <a href="{{ url_for('signup') }}" class="noAccount">Do not have an account</a>
     </section>
 </body>
 </html>

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lytrally</title>
-    <base href="/project-lytrally/">
-    <link rel="stylesheet" href="/style/signup.css">
-    <link rel="stylesheet" href="/style/fontawesome.min.css">
-    <link rel="stylesheet" href="/style/all.min.css">
-    <link rel="stylesheet" href="/style/solid.css">
-    <link rel="stylesheet" href="/style/solid.min.css">
+    <!-- <base href="/project-lytrally/"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.min.css') }}">
 </head>
 <body>
     <nav>
@@ -23,9 +23,9 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" name="password" id="confirmPassword">
+                <input type="password" name="confirmPassword" id="confirmPassword">
                 <button id="submit">Sign Up</button>
-                <a href="./signin.html">Or Sign In</a>
+                <a href="{{ url_for('signin') }}">Or Sign In</a>
             </form>
         </div>
     </section>
