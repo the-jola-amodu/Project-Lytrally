@@ -28,8 +28,14 @@
                 <input type="email" name="email" id="email">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password">
-                <a href="{{ url_for('forgot_password') }}">Forgotten Password</a>
-                <button id="submit">Sign In</button>
+                <div class="check_forgot">
+                    <div class="checkRemember">
+                        <input type="checkbox" name="remeberMe" id="remeberMe">
+                        <label for="remeberMe">Remember Me</label>
+                    </div>
+                    <a href="{{ url_for('signin') }}">Forgotten Password</a>
+                </div>
+                <button type="submit" id="submit">Sign In</button>
             </form>
         </div>
         <a href="{{ url_for('signup') }}" class="noAccount">Do not have an account</a>

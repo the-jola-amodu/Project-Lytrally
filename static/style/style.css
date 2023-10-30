@@ -136,6 +136,12 @@ body {
 .heroText button:hover {
     opacity: 0.8;
 }
+.heroText button > a{
+    color: #fff;
+}
+a:active {
+    color: #8A9AC5;
+}
 
 @media screen and (min-width: 720px) {
     .l-screen {

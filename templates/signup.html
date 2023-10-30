@@ -24,8 +24,12 @@
                 <input type="password" name="password" id="password">
                 <label for="confirmPassword">Confirm Password</label>
                 <input type="password" name="confirmPassword" id="confirmPassword">
-                <button id="submit">Sign Up</button>
-                <a href="{{ url_for('signin') }}">Or Sign In</a>
+                <div class="privacyPolicy">
+                    <input type="checkbox" name="privacyPolicy" id="privacyPolicy">
+                    <label for="privacyPolicy">I Agree with <span><a href="">privacy</a></span> and <span><a href="">policy</a></span></label>
+                </div>
+                <button type="submit" id="submit">Sign Up</button>
+                <a class="signin" href="{{ url_for('signin') }}">Or Sign In</a>
             </form>
         </div>
     </section>

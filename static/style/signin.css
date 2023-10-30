@@ -82,6 +82,61 @@
     width: 100%;
     outline: none;
 }
+.check_forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 28px;
+}
+.checkRemember {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0;
+}
+.checkRemember > input[type="checkbox"]{
+    display: inline;
+    transition: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 1000px;
+    border: 1px solid #000;
+    background: #FFF;
+    margin: 0;
+    margin-right: 17px;
+}
+.checkRemember > input:focus {
+    display: inline;
+    transition: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 1000px;
+    border: 1px solid #000;
+    background: #FFF;
+    margin: 0;
+    margin-right: 18px;
+}
+.checkRemember > label {
+    display: inline;
+    color: #000;
+    font-family: Inria Serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+.check_forgot a {
+    display: inline;
+    color: #000;
+    font-family: Inria Serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
 .signInContainer button {
     display: inline-flex;
     width: 150px;
@@ -101,19 +156,6 @@
     margin-left: auto;
     margin-right: auto;
     /* margin-bottom: 20px; */
-}
-.signInContainer a {
-    display: block;
-    width: 183px;
-    text-align: right;
-    margin-bottom: 10px;
-    margin-left: auto;
-    color: #000;
-    font-family: Inria Serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 .noAccount {
     width: 214px;
@@ -135,10 +177,11 @@
 }
 @media screen and (min-width: 720px) {
     .container {
-        padding-inline: 105px;
+        padding-inline: 80px;
     }
     .container button {
         width: 560px;
+        height: 91px;
         color: #000;
         font-family: Inter;
         font-size: 30px;
@@ -154,6 +197,13 @@
     .signInContainer {
         width: 560px;
     }
+    .signInContainer label {
+        font-size: 32px;
+    }
+    .signInContainer input {
+        width: 500px;
+        height: 91px;
+    }
     .signInContainer button {
         width: 208px;
         align-items: center;
@@ -162,6 +212,13 @@
     }
     .signInContainer input:focus {
         width: 560px;
+    }
+    .checkRemember > input:focus {
+        transition: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        border: 1px solid #000;
     }
     .signInContainer a {
         color: #000;
@@ -178,15 +235,10 @@
         padding-inline: 108px;
         padding-block: 37px;
     }
-    .signInContainer label {
-        margin-left: 45px;
-        margin-bottom: 25px;
-        font-size: 32px;
-    }
     .signInContainer input {
         margin-bottom: 29px;
         width: 500px;
-        height: 70px;
+        height: 91px;
         flex-shrink: 0;
         border-radius: 20px;
         border: 3px solid #000;
@@ -195,6 +247,45 @@
     }
     .signInContainer input:focus {
         width: 560px;
+    }
+    .check_forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 28px;
+    }
+    .checkRemember > input[type="checkbox"]{
+        display: inline;
+        transition: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        border: 1px solid #000;
+        background: #FFF;
+        margin: 0;
+        margin-right: 17px;
+    }
+    .checkRemember > input:focus {
+        display: inline;
+        transition: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        border: 1px solid #000;
+        background: #FFF;
+        margin: 0;
+        margin-right: 18px;
+    }
+    .checkRemember > label {
+        display: inline;
+        color: #000;
+        font-family: Inria Serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
     }
 }
 
@@ -220,5 +311,30 @@
     }
     .signInContainer input:focus {
         width: 560px;
+    }
+    .checkRemember > input[type="checkbox"]{
+        display: inline;
+        transition: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        border: 1px solid #000;
+        margin: 0;
+        margin-right: 17px;
+    }
+    .checkRemember > input:focus {
+        width: 30px;
+        margin: 0;
+        margin-right: 18px;
+        transition: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        border: 1px solid #000;
+    }
+    .checkRemember > label {
+        display: inline;
+        font-size: 20px;
+        margin: 0;
     }
 }

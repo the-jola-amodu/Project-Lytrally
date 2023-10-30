@@ -10,8 +10,19 @@ let closeNavBar = () => {
     navDisplay.style.paddingBlock = "0px";
 }
 
-// This code allows the get started button to navigate to the signup page
-let getStarted = document.getElementById('getStarted');
-getStarted.addEventListener("click", () => {
-    window.location.href = "signup.html";
+// This code displays the features list
+let featuresDisplay = document.getElementById('featuresDisplay');
+let lists = document.getElementById('lists');
+let closeDisplay = document.getElementById('closeDisplay');
+let features = () => {
+    lists.style.height = "100%";
+}
+let closeFeatures = () => {
+    lists.style.height = "0"
+}
+
+const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+const screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+window.addEventListener("load", () => {
+    console.log
 })

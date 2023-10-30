@@ -14,5 +14,13 @@ def signup():
 def signin():
     return render_template('signin.html')
 
+@app.route('/features')
+def features():
+    return render_template('features.html')
+
+@app.route('/account')
+def account():
+    return render_template('account.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

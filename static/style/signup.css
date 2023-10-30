@@ -47,6 +47,54 @@
     width: 100%;
     outline: none;
 }
+.privacyPolicy {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0;
+    margin-bottom: 20px;
+}
+.privacyPolicy > input[type="checkbox"]{
+    display: inline;
+    transition: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 1000px;
+    border: 1px solid #000;
+    background: #FFF;
+    margin: 0;
+    margin-right: 18px;
+}
+.privacyPolicy > input:focus {
+    display: inline;
+    transition: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 1000px;
+    border: 1px solid #000;
+    background: #FFF;
+    margin: 0;
+    margin-right: 18px;
+}
+.privacyPolicy > label {
+    display: inline;
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+span > a{
+    display: inline;
+    color: #8A9AC5;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 .signUpContainer button {
     display: inline-flex;
     width: 150px;
@@ -69,7 +117,7 @@
 .signUpContainer button:hover {
     opacity: 0.8;
 }
-.signUpContainer a {
+.signUpContainer .signin {
     display: block;
     text-align: right;
     color: #000;
@@ -91,6 +139,13 @@
         width: 208px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .signUpContainer label {
+        font-size: 32px;
+    }
+    .signUpContainer input {
+        width: 500px;
+        height: 91px;
     }
 }
 
@@ -116,6 +171,40 @@
     }
     .signUpContainer input:focus {
         width: 560px;
+    }
+    .privacyPolicy {
+        margin-bottom: 0;
+    }
+    .privacyPolicy > input[type="checkbox"]{
+        display: inline;
+        transition: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        border: 1px solid #000;
+        margin: 0;
+        margin-right: 18px;
+    }
+    .privacyPolicy > input:focus {
+        display: inline;
+        transition: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        border: 1px solid #000;
+        background: #FFF;
+        margin: 0;
+        margin-right: 18px;
+    }
+    .privacyPolicy > label {
+        display: inline;
+        color: #000;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0;
     }
 }
 

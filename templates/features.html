@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lytrally</title>
+    <!-- <base href="/project-lytrally/"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/features.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.min.css') }}">
+</head>
+<body>
+    <header id="closeDisplay" onclick="closeFeatures()">
+        <a href="{{ url_for('account') }}">
+            <div class="profilePic"></div>
+        </a>
+    </header>
+    <section class="features">
+        <div class="featuresList">
+            <div id="featuresDisplay" class="currentFeature" onclick="features()">
+                <p>Ghostwriting A.I.</p>
+                <img src="../static/images/frame.svg" alt="">
+            </div>
+            <div id="lists" class="listDisplay">
+                <a href="#">Ghostwriting A.I.</a>
+                <a href="#">Readability Statistics</a>
+                <a href="#">Generate Content Ideas</a>
+                <a href="#">Keyword Analysis</a>
+                <a href="#">Research and analysis</a>
+                <a href="#">Summarization and Paraphrasing</a>
+                <a href="#">Collaboration</a>
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+</html>
