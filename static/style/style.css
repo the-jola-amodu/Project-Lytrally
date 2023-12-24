@@ -4,10 +4,22 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+
+:root {
+    --inter-font: inter;
+    --white-color: #F3F6FC;
+    --lilac-color: #8A9AC5;
+    --black-color: #000;
+    --roboto-font: Roboto Slab;
+    --Inria-font: Inria Serif;
+    --button-background-color: #6a7db1;
+    --grey-color: #8b8585;
+}
+
 body {
     width: 100%;
     font-size: 16px;
-    overflow: none;
+    overflow: hidden;
 }
 .s-screen {
     width: 100%;
@@ -27,8 +39,8 @@ body {
     padding: 16px;
 }
 .navBar h1 > a {
-    color: #FFF;
-    font-family: Inter;
+    color: var(--white-color);
+    font-family: var(--inter-font);
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
@@ -39,10 +51,10 @@ body {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    color: black;
+    color: var(--black-color);
 }
 .navBar i:hover {
-    color: #8A9AC5;
+    color: var(--lilac-color);
 }
 .navDisplay {
     display: flex;
@@ -57,20 +69,59 @@ body {
     width: 130px;
     height: 0;
     flex-shrink: 0;
-    background: #F3F6FC;
-    color: #000;
+    background: var(--white-color);
+    color: var(--black-color);
     overflow: hidden;
 }
 .navDisplay > a {
-    color: #000;
-    font-family: Inter;
+    color: var(--black-color);
+    font-family: var(--inter-font);
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 .navDisplay > a:hover {
-    color: #8A9AC5;
+    color: var(--lilac-color);
+    cursor: pointer;
+}
+
+.navDisplay .navA:hover{
+    animation: wobble 3s ease-in-out;
+    -webkit-animation: wobble 3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px var(--lilac-color);
+}
+
+@keyframes wobble{
+    0% {
+        transform: scale(1.025);
+        -webkit-transform: scale(1.025);
+        -moz-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+        -o-transform: scale(1.025);
+    }
+    25% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+    75% {
+        transform: scale(1.025);
+        -webkit-transform: scale(1.025);
+        -moz-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+        -o-transform: scale(1.025);
+    }
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
 }
 .heroPage {
     width: 100%;
@@ -101,16 +152,16 @@ body {
     display: none;
 }
 .heroText .mainText {
-    color: #FFF;
-    font-family: Roboto Slab;
+    color: var(--white-color);
+    font-family: var(--roboto-font);
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
     line-height: 110%; /* 52.8px */
 }
 .heroText .subText {
-    color: #FFF;
-    font-family: Roboto;
+    color: var(--white-color);
+    font-family: var(--roboto-font);
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -124,10 +175,10 @@ body {
     align-items: center;
     gap: 10px;
     border-radius: 32px;
-    background: #8A9AC5;
+    background: var(--lilac-color);
     border: none;
-    color: #FFF;
-    font-family: Roboto;
+    color: var(--white-color);
+    font-family: var(--roboto-font);
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -137,10 +188,234 @@ body {
     opacity: 0.8;
 }
 .heroText button > a{
-    color: #fff;
+    color: var(--white-color);
 }
 a:active {
-    color: #8A9AC5;
+    color: var(--lilac-color);
+}
+
+#signIn_signUp {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    display: none;
+    /* transform: translateX(100%);
+    transition: transform 2s ease-in-out; */
+}
+
+#signIn_signUp .overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--black-color);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.signIn_sighUp_container {
+    width: 100%;
+    overflow-y: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.signIn_signup_card
+{
+    margin-inline: 1rem;
+    margin-top: 3.5rem;
+    padding-inline: 20px;
+    padding-block: 15px;
+    background-color: var(--white-color);
+    border-radius: 15px;
+}
+
+.signIn_signup_card a
+{
+    color: var(--grey-color);
+}
+
+.signIn_signup_card a:hover
+{
+    color: var(--lilac-color);
+}
+
+.signIn_signup_card > h4 
+{
+    color: var(--black-color);
+    text-align: center;
+    font-family: var(--inter-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.signIn_signup_card button
+{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    border-radius: 15px;
+    border: 3px solid #000;
+    padding: 0px 10px;
+    background: var(--white-color);
+    color: var(--black-color);
+    font-family: var(--inter-font);
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.signIn_signup_card button:hover
+{
+    cursor: pointer;
+    background-color: var(--lilac-color);
+    opacity: 0.8;
+}
+.signIn_signup_card button > img 
+{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+#signin_form 
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.formContainer label 
+{
+    display: block;
+    /* margin-left: 28px; */
+    margin-bottom: 5px;
+    color: var(--black-color);
+    /* text-align: center; */
+    font-family: var(--roboto-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 26.4px */
+}
+
+.formContainer input 
+{
+    display: block;
+    margin-bottom: 10px;
+    padding-inline: 16px;
+    border-radius: 15px;
+    border: 3px solid var(--black-color);
+    background: var(--white-color);
+    font-size: 20px;
+    width: 80%;
+    height: 45px;
+    flex-shrink: 0;
+    transition: width 2s ease-in-out;
+}
+
+.formContainer input:focus
+{
+    width: 100%;
+    outline: none;
+}
+
+.checkRemember
+{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0;
+}
+
+.checkRemember > input[type="checkbox"]
+{
+    display: inline;
+    transition: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 1000px;
+    border: 1px solid var(--black-color);
+    background: var(--white-color);
+    /* margin: 0; */
+    margin-right: 5px;
+}
+
+.checkRemember > input:focus
+{
+    display: inline;
+    transition: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 1000px;
+    border: 1px solid var(--black-color);
+    background: var(--white-color);
+}
+
+.checkRemember > label
+{
+    display: inline;
+    color: var(--black-color);
+    font-family: var(--Inria-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    margin-bottom: auto;
+}
+
+.formContainer a 
+{
+    display: inline;
+    text-align: right;
+    font-family: var(--Inria-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+.formContainer button 
+{
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    padding: 15px 37px;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 15px;
+    background: var(--button-background-color);
+    color: var(--white-color);
+    font-family: var(--inter-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    margin-bottom: 0;
+}
+
+.formContainer button:hover
+{
+    background-color: var(--button-background-color);
+    opacity: 0.8;
+}
+
+.noAccount
+{
+    text-align: center;
 }
 
 @media screen and (min-width: 720px) {
@@ -162,9 +437,9 @@ a:active {
         display: none;
     }
     .l-screen h1 > a {
-        color: #FFF;
+        color: var(--white-color);
         width: 106px;
-        font-family: Inter;
+        font-family: var(--inter-font);
         font-size: 24px;
         font-style: normal;
         font-weight: 600;
@@ -172,15 +447,15 @@ a:active {
         margin-right: 109px;
     }
     .l-screen a {
-        color: #FFF;
-        font-family: Inter;
+        color: var(--white-color);
+        font-family: var(--inter-font);
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
     }
     .l-screen a:hover {
-        color: #8A9AC5;
+        color: var(--lilac-color);
     }
     .navlinks {
         width: 100%;
@@ -195,15 +470,15 @@ a:active {
         align-items: center;
         gap: 10px;
         border-radius: 32px;
-        background: #8A9AC5;
+        background: var(--lilac-color);
         border: none;
     }
     .navlinks button:hover {
         opacity: 0.8;
-        color: #FFF;
+        color: var(--white-color);
     }
     .navlinks button:hover > a {
-        color: #FFF;
+        color: var(--white-color);
     }
     .heroText {
         gap: 35px;
@@ -213,16 +488,16 @@ a:active {
         /* align-items: center; */
     }
     .heroText .mainText {
-        color: #FFF;
-        font-family: Roboto Slab;
+        color: var(--white-color);
+        font-family: var(--roboto-font);
         font-size: 54px;
         font-style: normal;
         font-weight: 400;
         line-height: 110%;
     }
     .heroText .subText {
-        color: #FFF;
-        font-family: Roboto;
+        color: var(--white-color);
+        font-family: var(--roboto-font);
         font-size: 18px;
         font-style: normal;
         font-weight: 700;
@@ -236,7 +511,7 @@ a:active {
         align-items: center;
         gap: 10px;
         border-radius: 32px;
-        background: #8A9AC5;
+        background: var(--lilac-color);
     }
 }
 @media screen and (min-width: 1024px){

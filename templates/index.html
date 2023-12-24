@@ -15,40 +15,75 @@
     <nav>
         <div class="s-screen">
             <div class="navBar">
-                <h1><a href="{{ url_for('index') }}">Lytrally</a></h1>
+                <h1><a href="../templates/index.html">Lytrally</a></h1>
                 <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars"></i>
             </div>
             <div class="navDisplay">
-                <a href="#">Home</a>
-                <a href="#">Service</a>
-                <a href="#">Contact Us</a>
-                <a href="#">About</a>
-                <a href="{{ url_for('signup') }}">Sign Up</a>
-                <a href="{{ url_for('signin') }}">Sign In</a>
+                <a class="navA" href="#">Home</a>
+                <a class="navA" href="#">Service</a>
+                <a class="navA" href="#">Contact Us</a>
+                <a class="navA" href="#">About</a>
+                <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+                <a id="signIn" class="navA" onclick="signIn_signUp()" >Sign In</a>
             </div>
         </div>
         <div class="l-screen">
-            <h1><a href="{{ url_for('index') }}">Lytrally</a></h1>
+            <h1><a href="../templates/index.html">Lytrally</a></h1>
             <div class="navlinks">
-                <a href="{{ url_for('index') }}">Home</a>
+                <a href="../templates/index.html">Home</a>
                 <a href="#">Service</a>
                 <a href="#">Contact Us</a>
-                <button><a href="{{ url_for('signup') }}">Sign Up</a></button>
-                <button><a href="{{ url_for('signin') }}">Sign In</a></button>
+                <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+                <button><a onclick="signIn_signUp()" >Sign In</a></button>
             </div>
         </div>
     </nav>
-    <section onclick="closeNavBar()" class="landingPage">
+    <section id="signIn_signUp">
+        <div class="overlay"></div>
+        <div class="signIn_sighUp_container">
+            <div class="signIn_signup_card">
+                <h4 id="signin_sigiup_header">Sign in into your Lytrally account</h4>
+                <button id="google_btn">
+                    <img src="../static/images/google.png" alt="Google Icon">
+                    Continue with Google
+                </button>
+                <button id="facebook_btn">
+                    <img src="../static/images/facebook.png" alt="Facebook Icon">
+                    Continue with Facebook
+                </button>
+                <div class="formContainer">
+                    <form action="#" id="signin_form" autocomplete="on" method="post">
+                        <label id="email" for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                        <label id="password" for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                        <div class="check_forgot">
+                            <div class="checkRemember">
+                                <input type="checkbox" name="remeberMe" id="remeberMe">
+                                <label for="remeberMe">Remember Me</label>
+                            </div>
+                        </div>
+                        <a id="forgotPassword" href="../templates/signin.html">Forgotten Password</a>
+                        <button type="submit" id="submit">Sign In</button>
+                    </form>
+                </div>
+                <div class="noAccount">
+                    <a href="./signin.html" class="noAccount">Do not have an account</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="landingPage">
         <div class="heroPage">
             <div class="heroImage"></div>
             <div class="heroText">
                 <p class="mainText">A new tool to help you express yourself</p>
                 <p class="subText">Built to take the work out of writing<br>
                     Perfect for copywriters, with built-in resources to boost productivity</p>
-                <button><a href="{{ url_for('signup') }}">Get Started</a></button>
+                <button id="signUp" onclick="signIn_signUp()"><a>Get Started</a></button>
             </div>
         </div>
     </section>
-    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+    <script src="../static/scripts/script.js"></script>
 </body>
 </html>
