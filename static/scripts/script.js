@@ -87,6 +87,21 @@ const screenHeight =
   window.innerHeight ||
   document.documentElement.clientHeight ||
   document.body.clientHeight;
+
+heroPage_sm = document.querySelector(".heroPage");
+nav_sm = document.querySelector(".navDisplay");
+body_sm = document.getElementsByTagName("body");
+
 window.addEventListener("load", () => {
-  console.log;
-});
+  console.log(screenHeight);
+  if (screenHeight < 380)
+  {
+    console.log(screenHeight)
+    heroPage_sm.style.overflow = "auto";
+    nav_sm.style.overflow = "auto";
+    heroPage_sm.style.paddingTop = "3rem";
+    heroPage_sm.style.paddingBottom = "2rem";
+    // body_sm.style.overflow = "auto";
+    
+  }
+})

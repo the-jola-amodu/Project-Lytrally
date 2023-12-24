@@ -21,6 +21,7 @@ body {
     font-size: 16px;
     overflow: hidden;
 }
+
 .s-screen {
     width: 100%;
     position: absolute;
@@ -416,6 +417,12 @@ a:active {
 .noAccount
 {
     text-align: center;
+}
+
+@media screen and (min-width: 300px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
 }
 
 @media screen and (min-width: 720px) {
