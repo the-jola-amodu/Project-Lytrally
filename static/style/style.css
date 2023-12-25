@@ -481,7 +481,7 @@ a:active {
     opacity: 0.8;
 }
 
-.noAccount
+.noAccount_signIn
 {
     text-align: center;
 }
@@ -739,12 +739,18 @@ a:active {
     .heroImage
     {
         display: flex;
-        width: 100%;
+        width: 50%;
         height: 100%;
+    }
+
+    .heroText
+    {
+        width: 50%;
     }
 
     .heroImage img
     {
+        width: 100%;
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -753,7 +759,7 @@ a:active {
         gap: 35px;
         text-align: left;
         justify-content: left;
-        padding-inline: 63px;
+        padding-inline: 30px;
         /* align-items: center; */
     }
     .heroText .mainText {
