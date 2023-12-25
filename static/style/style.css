@@ -20,6 +20,15 @@ body {
     width: 100%;
     font-size: 16px;
     overflow: hidden;
+    background: url(../images/a_fountain_pen_on_a_blue_notepad_shot_at_a_cinematic_angle\,_blue_aesthetics.png), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body::-webkit-scrollbar
+{
+    /* display: none; */
+    width: 5px;
+    background: var(--button-background-color);
 }
 .s-screen {
     width: 100%;
@@ -73,6 +82,7 @@ body {
     color: var(--black-color);
     overflow: hidden;
 }
+
 .navDisplay > a {
     color: var(--black-color);
     font-family: var(--inter-font);
@@ -137,6 +147,12 @@ body {
     flex-direction: row;
     /* gap: 40px; */
 }
+.heroPage::-webkit-scrollbar
+{
+    /* display: none; */
+    width: 5px;
+    background: var(--button-background-color);
+}
 .heroText {
     /* padding-inline: 16px; */
     /* padding-top: 100px; */
@@ -186,6 +202,7 @@ body {
 }
 .heroText button:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 .heroText button > a{
     color: var(--white-color);
@@ -194,7 +211,8 @@ a:active {
     color: var(--lilac-color);
 }
 
-#signIn_signUp {
+#signIn_signUp 
+{
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -216,9 +234,18 @@ a:active {
 
 .signIn_sighUp_container {
     width: 100%;
+    height: 100%;
     overflow-y: auto;
     margin-top: auto;
-    margin-bottom: 1rem;
+    margin-bottom: auto;
+    padding-bottom: 1rem;
+}
+
+.signIn_sighUp_container::-webkit-scrollbar
+{
+    /* display: none; */
+    width: 5px;
+    background: var(--button-background-color);
 }
 
 .signIn_signup_card
@@ -239,7 +266,27 @@ a:active {
 .signIn_signup_card a:hover
 {
     color: var(--lilac-color);
+    cursor: pointer;
 }
+
+.close_signin_signup
+{
+    text-align: right;
+}
+
+.close_signin_signup i
+{
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--black-color);
+}
+
+.close_signin_signup i:hover
+{
+    color: var(--lilac-color);
+}   
 
 .signIn_signup_card > h4 
 {
@@ -349,7 +396,28 @@ a:active {
     margin-right: 5px;
 }
 
-.checkRemember > input:focus
+.privacyPolicy
+{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0;
+}
+
+.privacyPolicy > input[type="checkbox"]
+{
+    display: inline;
+    transition: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 1000px;
+    border: 1px solid var(--black-color);
+    background: var(--white-color);
+    /* margin: 0; */
+    margin-right: 5px;
+}
+
+.privacyPolicy > input:focus
 {
     display: inline;
     transition: none;
@@ -360,14 +428,14 @@ a:active {
     background: var(--white-color);
 }
 
-.checkRemember > label
+.privacyPolicy > label, .checkRemember > label
 {
     display: inline;
     color: var(--black-color);
     font-family: var(--Inria-font);
     font-size: 16px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: normal;
     margin: 0;
     margin-bottom: auto;
@@ -416,6 +484,113 @@ a:active {
 .noAccount
 {
     text-align: center;
+}
+
+#confirmPassword, #confirmPasswordLabel, .privacyPolicy
+{
+    display: none;
+}
+
+@media screen and (max-height: 1500px)
+{
+    .heroPage
+    {
+        overflow: auto;
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+    }
+    .navDisplay
+    {
+        overflow-y: auto;
+    }
+    body
+    {
+        overflow-y: auto;
+    }
+}
+
+@media screen and (min-width: 665px)
+{
+    .signIn_signup_card
+    {
+        margin-inline: 20vw;
+        padding-inline: 40px;
+        padding-block: 30px;
+        border-radius: 25px;
+    }
+
+    .signIn_signup_card h4
+    {
+        font-size: 30px;
+    }
+
+    .signIn_signup_card button
+    {
+        height: 70px;
+        font-size: 22px;
+        border-radius: 25px;
+    }
+
+    .signIn_signup_card button > img
+    {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .formContainer
+    {
+        margin-top: 1rem;
+    }
+
+    .formContainer label
+    {
+        font-size: 32px;
+    }
+
+    .formContainer input
+    {
+        height: 70px;
+        width: 80%;
+        border-radius: 25px;
+        font-size: 22px;
+    }
+
+    .formContainer input:focus
+    {
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .checkRemember > input:focus
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .checkRemember > label
+    {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 22px;
+    }
+
+    .privacyPolicy > input:focus
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .privacyPolicy > label
+    {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 22px;
+    }
+
+    .signIn_signup_card a
+    {
+        font-size: 22px;
+    }
 }
 
 @media screen and (min-width: 720px) {
@@ -480,6 +655,100 @@ a:active {
     .navlinks button:hover > a {
         color: var(--white-color);
     }
+    
+    .signIn_signup_card
+    {
+        margin-inline: 20vw;
+        padding-inline: 40px;
+        padding-block: 30px;
+        border-radius: 25px;
+    }
+
+    .signIn_signup_card h4
+    {
+        font-size: 30px;
+    }
+
+    .signIn_signup_card button
+    {
+        height: 70px;
+        font-size: 22px;
+        border-radius: 25px;
+    }
+
+    .signIn_signup_card button > img
+    {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .formContainer
+    {
+        margin-top: 1rem;
+    }
+
+    .formContainer label
+    {
+        font-size: 32px;
+    }
+
+    .formContainer input
+    {
+        height: 70px;
+        width: 80%;
+        border-radius: 25px;
+        font-size: 22px;
+    }
+
+    .formContainer input:focus
+    {
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .checkRemember > input:focus
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .checkRemember > label
+    {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 22px;
+    }
+    .privacyPolicy > input:focus
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .privacyPolicy > label
+    {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 22px;
+    }
+
+    .signIn_signup_card a
+    {
+        font-size: 22px;
+    }
+
+    .heroImage
+    {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .heroImage img
+    {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
     .heroText {
         gap: 35px;
         text-align: left;
@@ -531,5 +800,9 @@ a:active {
     }
     .l-screen h1 > a {
         margin-right: 209px;
+    }
+    .signIn_signup_card
+    {
+        margin-inline: 30vw;
     }
 }

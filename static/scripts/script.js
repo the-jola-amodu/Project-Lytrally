@@ -10,7 +10,6 @@ overlay.style.display = "none";
 overlay.style.opacity = "0.9";
 overlay.style.backdropFilter = "blur(3px)";
 overlay.style.zIndex = "1";
-overlay.style.top = "0";
 overlay.style.left = "0";
 overlay.style.right = "0";
 overlay.style.bottom = "0";
@@ -38,34 +37,69 @@ let openNavBar = () => {
 //     navDisplay.style.paddingBlock = "0px";
 // }
 
+
 // The code below control how the display of the signin and signup card
 let signInLink = document.getElementById("signIn");
-let signUpLink = document.getElementById("signUp")
+let signUpLink = document.getElementById("signUp");
+let cardOverlay = document.querySelector(".overlay");
 let signinSignupContainer = document.getElementById("signIn_signUp");
 let signinSigiupHeader = document.getElementById("signin_sigiup_header");
 let googleBtn = document.getElementById("google_btn");
 let facebookBtn = document.getElementById("facebook_btn");
 let emailInput = document.getElementById("email");
+let emailInputLabel = document.getElementById("emailLabel");
 let passwordInput = document.getElementById("password");
+let passwordInputLabel = document.getElementById("passwordLabel");
 let rememberMe = document.querySelector(".check_forgot");
 let forgotPassword = document.getElementById("forgotPassword");
 let submitBtn = document.getElementById("submit");
-let noAccount = document.querySelector(".noAccount")
+let noAccount = document.querySelector(".noAccount");
+let confirmPassword = document.getElementById("confirmPassword");
+let confirmPasswordLabel = document.getElementById("confirmPasswordLabel");
+let privacyPolicy = document.querySelector(".privacyPolicy");
+let signUpsignIn = document.querySelector(".signUpsignIn");
 
-let signIn_signUp = () =>
+let signIn = () =>
 {
   navDisplay.style.display = "none";
   overlay.style.display = "none";
   navDisplay.style.height = "0px";
   navDisplay.style.paddingBlock = "0px";
-  if (signinSignupContainer.style.display === "none")
-  {
-    signinSignupContainer.style.display = "block";
-  }
-  else
-  {
-    signinSignupContainer.style.display = "none";
-  }
+  signinSignupContainer.style.display = "block";
+  signinSigiupHeader.innerHTML = "Sign in into your Lytrally account";
+  submitBtn.innerHTML = "Sign In";
+  confirmPassword.style.display = "none";
+  confirmPasswordLabel.style.display = "none"
+  privacyPolicy.style.display = "none";
+  signUpsignIn.style.display = "none";
+  rememberMe.style.display = "block";
+  noAccount.style.display = "block";
+}
+
+let signUp = () =>
+{
+  navDisplay.style.display = "none";
+  overlay.style.display = "none";
+  navDisplay.style.height = "0px";
+  navDisplay.style.paddingBlock = "0px";
+  signinSignupContainer.style.display = "block";
+  signinSigiupHeader.innerHTML = "Create your lytrally account";
+  submitBtn.innerHTML = "Sign Up";
+  confirmPasswordLabel.style.display = "block";
+  confirmPassword.style.display = "block";
+  privacyPolicy.style.display = "block";
+  signUpsignIn.style.display = "block";
+  rememberMe.style.display = "none";
+  noAccount.style.display = "none";
+}
+
+let close_signIn_signUp_card = () =>
+{
+  navDisplay.style.display = "none";
+  overlay.style.display = "none";
+  navDisplay.style.height = "0px";
+  navDisplay.style.paddingBlock = "0px";
+  signinSignupContainer.style.display = "none";
 }
 
 // This code displays the features list
