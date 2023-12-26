@@ -46,14 +46,6 @@
                     <i onclick="close_signIn_signUp_card()" class="fa-solid fa-x"></i>
                 </div>
                 <h4 id="signin_sigiup_header">Sign in into your Lytrally account</h4>
-                <button id="google_btn">
-                    <img src="../static/images/google.png" alt="Google Icon">
-                    Continue with Google
-                </button>
-                <button id="facebook_btn">
-                    <img src="../static/images/facebook.png" alt="Facebook Icon">
-                    Continue with Facebook
-                </button>
                 <div class="formContainer">
                     <form action="#" id="signin_form" autocomplete="on" method="post">
                         <label id="emailLabel" for="email">Email</label>
@@ -80,6 +72,14 @@
                     <a onclick="signUp()" class="noAccount">Do not have an account</a>
                     <a onclick="signIn()" class="signUpsignIn">Or Sign In</a>
                 </div>
+                <button id="google_btn">
+                    <img src="../static/images/google.png" alt="Google Icon">
+                    <p class="googleBtnText">Continue with Google</p>
+                </button>
+                <button id="facebook_btn">
+                    <img src="../static/images/facebook.png" alt="Facebook Icon">
+                    <p class="facebookBtnText">Continue with Facebook</p>
+                </button>
             </div>
         </div>
     </section>

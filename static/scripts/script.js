@@ -1,3 +1,12 @@
+const screenWidth =
+  window.innerWidth ||
+  document.documentElement.clientWidth ||
+  document.body.clientWidth;
+const screenHeight =
+  window.innerHeight ||
+  document.documentElement.clientHeight ||
+  document.body.clientHeight;
+
 // This code opens and closes the dropdown
 let hambuger = document.getElementById("openNav");
 let navDisplay = document.querySelector(".navDisplay");
@@ -45,7 +54,9 @@ let cardOverlay = document.querySelector(".overlay");
 let signinSignupContainer = document.getElementById("signIn_signUp");
 let signinSigiupHeader = document.getElementById("signin_sigiup_header");
 let googleBtn = document.getElementById("google_btn");
+let googleBtnText = document.querySelector(".googleBtnText");
 let facebookBtn = document.getElementById("facebook_btn");
+let facebookBtnText = document.querySelector(".facebookBtnText");
 let emailInput = document.getElementById("email");
 let emailInputLabel = document.getElementById("emailLabel");
 let passwordInput = document.getElementById("password");
@@ -73,6 +84,7 @@ let signIn = () =>
   privacyPolicy.style.display = "none";
   signUpsignIn.style.display = "none";
   rememberMe.style.display = "block";
+  forgotPassword.style.display = "block";
   noAccount.style.display = "block";
 }
 
@@ -90,6 +102,7 @@ let signUp = () =>
   privacyPolicy.style.display = "block";
   signUpsignIn.style.display = "block";
   rememberMe.style.display = "none";
+  forgotPassword.style.display = "none";
   noAccount.style.display = "none";
 }
 
@@ -102,6 +115,42 @@ let close_signIn_signUp_card = () =>
   signinSignupContainer.style.display = "none";
 }
 
+window.addEventListener('load', () => {
+  if (screenWidth < 1500)
+  {
+    googleBtnText.innerHTML = "Google";
+    facebookBtnText.innerHTML = "Facebook";
+  }
+  else
+  {
+    googleBtn.style.width = "100%";
+    googleBtn.stylefloat = "none";
+    googleBtn.style.marginRight = 0;
+    facebookBtn.style.width = "100%";
+  }
+})
+
+// function googleBtnHoverIn() {
+//   // Change styles when mouse enters
+//   googleBtn.style.width = "80%";
+//   googleBtnText.innerHTML = "Continue with Google";
+//   googleBtn.style.marginRight = "5%";
+//   facebookBtn.style.width = "15%";
+//   facebookBtnText.innerHTML = "";
+// }
+
+// function googleBtnHoverOut() {
+//   // Revert styles when mouse leaves
+//   googleBtn.style.width = "47.5%";
+//   googleBtnText.innerHTML = "Google";
+//   googleBtn.style.marginRight = "5%";
+//   facebookBtn.style.width = "47.5%";
+//   facebookBtnText.innerHTML = "Facebook";
+// }
+
+// googleBtn.addEventListener("mouseenter", googleBtnHoverIn);
+// googleBtn.addEventListener("mouseleave", googleBtnHoverOut);
+
 // This code displays the features list
 let featuresDisplay = document.getElementById("featuresDisplay");
 let lists = document.getElementById("lists");
@@ -112,15 +161,6 @@ let features = () => {
 let closeFeatures = () => {
   lists.style.height = "0";
 };
-
-const screenWidth =
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
-  document.body.clientWidth;
-const screenHeight =
-  window.innerHeight ||
-  document.documentElement.clientHeight ||
-  document.body.clientHeight;
 
 heroPage_sm = document.querySelector(".heroPage");
 nav_sm = document.querySelector(".navDisplay");
