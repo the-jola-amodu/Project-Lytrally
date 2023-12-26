@@ -116,18 +116,18 @@ let close_signIn_signUp_card = () =>
 }
 
 window.addEventListener('load', () => {
-  if (screenWidth < 1500)
+  if (screenWidth < 1024)
   {
     googleBtnText.innerHTML = "Google";
     facebookBtnText.innerHTML = "Facebook";
   }
-  else
-  {
-    googleBtn.style.width = "100%";
-    googleBtn.stylefloat = "none";
-    googleBtn.style.marginRight = 0;
-    facebookBtn.style.width = "100%";
-  }
+  // else
+  // {
+  //   googleBtn.style.width = "100%";
+  //   googleBtn.stylefloat = "none";
+  //   googleBtn.style.marginRight = 0;
+  //   facebookBtn.style.width = "100%";
+  // }
 })
 
 // function googleBtnHoverIn() {
