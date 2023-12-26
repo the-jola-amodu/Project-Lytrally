@@ -582,8 +582,8 @@ a:active {
 
     .checkRemember > input:focus
     {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
     }
     .checkRemember > label
     {
@@ -594,8 +594,8 @@ a:active {
 
     .privacyPolicy > input:focus
     {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
     }
     .privacyPolicy > label
     {
@@ -721,14 +721,15 @@ a:active {
     .formContainer input:focus
     {
         width: 100%;
+        
         /* margin-top: auto;
         margin-bottom: auto; */
     }
 
     .checkRemember > input:focus
     {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
     }
     .checkRemember > label
     {
@@ -738,8 +739,8 @@ a:active {
     }
     .privacyPolicy > input:focus
     {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
     }
     .privacyPolicy > label
     {
