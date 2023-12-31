@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lytrally</title>
     <!-- <base href="/project-lytrally/"> -->
-    <link rel="stylesheet" href="../static/style/style.css">
-    <link rel="stylesheet" href="../static/style/fontawesome.min.css">
-    <link rel="stylesheet" href="../static/style/all.min.css">
-    <link rel="stylesheet" href="../static/style/solid.css">
-    <link rel="stylesheet" href="../static/style/solid.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../static/style/style.css" />
+    <link rel="stylesheet" href="../static/style/fontawesome.min.css" />
+    <link rel="stylesheet" href="../static/style/all.min.css" />
+    <link rel="stylesheet" href="../static/style/solid.css" />
+    <link rel="stylesheet" href="../static/style/solid.min.css" />
+  </head>
+  <body>
     <nav>
         <div class="s-screen">
             <div class="navBar">
@@ -19,8 +19,8 @@
                 <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars"></i>
             </div>
             <div class="navDisplay">
-                <a class="navA" href="../templates/index.html">Home</a>
-                <a class="navA" href="../templates/features.html">Service</a>
+                <a class="navA" href="#">Home</a>
+                <a class="navA" href="#">Service</a>
                 <a class="navA" href="#">Contact Us</a>
                 <a class="navA" href="#">About</a>
                 <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
@@ -39,62 +39,111 @@
         </div>
     </nav>
     <section id="signIn_signUp">
-        <div class="overlay"></div>
-        <div class="signIn_sighUp_container">
-            <div class="signIn_signup_card">
-                <div class="close_signin_signup">
-                    <i onclick="close_signIn_signUp_card()" class="fa-solid fa-x"></i>
+      <div class="overlay"></div>
+      <div class="signIn_sighUp_container">
+        <div class="signIn_signup_card">
+          <div class="close_signin_signup">
+            <i onclick="close_signIn_signUp_card()" class="fa-solid fa-x"></i>
+          </div>
+          <h4 id="signin_sigiup_header">Sign in into your Lytrally account</h4>
+          <div class="formContainer">
+            <form action="#" id="signin_form" autocomplete="on" method="post">
+              <div class="form-group">
+                {{ form.email.label(class="form-control-label") }} {% if
+                form.email.errors %} {{ form.email(class="form-control
+                form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                  {% for error in form.email.errors %}
+                  <span>{{ error }}</span>
+                  {% endfor %}
                 </div>
-                <h4 id="signin_sigiup_header">Sign in into your Lytrally account</h4>
-                <div class="formContainer">
-                    <form action="#" id="signin_form" autocomplete="on" method="post">
-                        <label id="emailLabel" for="email">Email</label>
-                        <input type="email" name="email" id="email">
-                        <label id="passwordLabel" for="password">Password</label>
-                        <input type="password" name="password" id="password">
-                        <label id="confirmPasswordLabel" for="confirmPassword">Confirm Password</label>
-                        <input type="password" name="confirmPassword" id="confirmPassword">
-                        <div class="privacyPolicy">
-                            <input type="checkbox" name="privacyPolicy" id="privacyPolicy">
-                            <label for="privacyPolicy">I Agree with <span><a href="">privacy</a></span> and <span><a href="">policy</a></span></label>
-                        </div>
-                        <div class="check_forgot">
-                            <div class="checkRemember">
-                                <input type="checkbox" name="remeberMe" id="remeberMe">
-                                <label for="remeberMe">Remember Me</label>
-                            </div>
-                        </div>
-                        <a id="forgotPassword" href="../templates/signin.html">Forgotten Password</a>
-                        <button type="submit" id="submit">Sign In</button>
-                    </form>
+                {% else %} {{ form.email(class="form-control form-control-lg")
+                }} {% endif %}
+              </div>
+
+              <div class="form-group">
+                {{ form.password.label(class="form-control-label") }} {% if
+                form.password.errors %} {{ form.password(class="form-control
+                form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                  {% for error in form.password.errors %}
+                  <span>{{ error }}</span>
+                  {% endfor %}
                 </div>
-                <div class="noAccount_signIn">
-                    <a onclick="signUp()" class="noAccount">Do not have an account</a>
-                    <a onclick="signIn()" class="signUpsignIn">Or Sign In</a>
+                {% else %} {{ form.password(class="form-control
+                form-control-lg") }} {% endif %}
+              </div>
+
+              <div class="form-group">
+                {{ form.confirm_password.label(class="form-control-label") }} {%
+                if form.confirm_password.errors %} {{
+                form.confirm_password(class="form-control form-control-lg
+                is-invalid") }}
+                <div class="invalid-feedback">
+                  {% for error in form.confirm_password.errors %}
+                  <span>{{ error }}</span>
+                  {% endfor %}
                 </div>
-                <button id="google_btn">
-                    <img src="../static/images/google.png" alt="Google Icon">
-                    <p class="googleBtnText">Continue with Google</p>
-                </button>
-                <button id="facebook_btn">
-                    <img src="../static/images/facebook.png" alt="Facebook Icon">
-                    <p class="facebookBtnText">Continue with Facebook</p>
-                </button>
-            </div>
+                {% else %} {{ form.confirm_password(class="form-control
+                form-control-lg") }} {% endif %}
+              </div>
+
+              <div class="form-check">
+                {{ form.policy_agreement(class="form-check-input") }} {{
+                form.policy_agreement.label(class="form-check-label") }}
+              </div>
+
+              <div class="check_forgot">
+                <div class="form-check">
+                  {{ form.remember_me(class="form-check-input") }} {{
+                  form.remember_me.label(class="form-check-label") }}
+                </div>
+              </div>
+
+              <a id="forgotPassword" href="../templates/signin.html"
+                >Forgotten Password</a
+              >
+              <button type="submit" id="submit">Sign In</button>
+            </form>
+          </div>
+          <div class="noAccount_signIn">
+            <a onclick="signUp()" class="noAccount">Do not have an account</a>
+            <a onclick="signIn()" class="signUpsignIn">Or Sign In</a>
+          </div>
+          <button id="google_btn">
+            <img src="../static/images/google.png" alt="Google Icon" />
+            <p class="googleBtnText">Continue with Google</p>
+          </button>
+          <button id="facebook_btn">
+            <img src="../static/images/facebook.png" alt="Facebook Icon" />
+            <p class="facebookBtnText">Continue with Facebook</p>
+          </button>
         </div>
+      </div>
     </section>
     <section class="landingPage">
-        <div class="heroPage">
-            <div class="heroImage"><img src="../static/images/Laptop-image-lytrally.png" alt="Laptop-image-lytrally"></div>
-            <div class="heroText">
-                <p class="mainText">A new tool to help you express yourself</p>
-                <p class="subText">Built to take the work out of writing<br>
-                    Perfect for copywriters, with built-in resources to boost productivity</p>
-                <button id="signUp" onclick="signUp()"><a>Get Started</a></button>
-            </div>
+      <div class="heroPage">
+        <div class="heroImage">
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+          messages %} {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %} {% endif %} {% endwith %}
+          <img
+            src="../static/images/Laptop-image-lytrally.png"
+            alt="Laptop-image-lytrally"
+          />
         </div>
+        <div class="heroText">
+          <p class="mainText">A new tool to help you express yourself</p>
+          <p class="subText">
+            Built to take the work out of writing<br />
+            Perfect for copywriters, with built-in resources to boost
+            productivity
+          </p>
+          <button id="signUp" onclick="signUp()"><a>Get Started</a></button>
+        </div>
+      </div>
     </section>
     <script src="../static/scripts/script.js"></script>
-    <script src="../static/scripts/login.js"></script>
 </body>
 </html>
