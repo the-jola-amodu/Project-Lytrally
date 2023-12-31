@@ -13,30 +13,30 @@
   </head>
   <body>
     <nav>
-      <div class="s-screen">
-        <div class="navBar">
-          <h1><a href="../templates/index.html">Lytrally</a></h1>
-          <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars"></i>
+        <div class="s-screen">
+            <div class="navBar">
+                <h1><a href="../templates/index.html">Lytrally</a></h1>
+                <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars"></i>
+            </div>
+            <div class="navDisplay">
+                <a class="navA" href="#">Home</a>
+                <a class="navA" href="#">Service</a>
+                <a class="navA" href="#">Contact Us</a>
+                <a class="navA" href="#">About</a>
+                <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+                <a id="signIn" class="navA" onclick="signIn()" >Sign In</a>
+            </div>
         </div>
-        <div class="navDisplay">
-          <a class="navA" href="#">Home</a>
-          <a class="navA" href="#">Service</a>
-          <a class="navA" href="#">Contact Us</a>
-          <a class="navA" href="#">About</a>
-          <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
-          <a id="signIn" class="navA" onclick="signIn()">Sign In</a>
+        <div class="l-screen">
+            <h1><a href="../templates/index.html">Lytrally</a></h1>
+            <div class="navlinks">
+                <a href="../templates/index.html">Home</a>
+                <a href="#">Service</a>
+                <a href="#">Contact Us</a>
+                <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+                <button onclick="signIn()" ><a >Sign In</a></button>
+            </div>
         </div>
-      </div>
-      <div class="l-screen">
-        <h1><a href="../templates/index.html">Lytrally</a></h1>
-        <div class="navlinks">
-          <a href="../templates/index.html">Home</a>
-          <a href="#">Service</a>
-          <a href="#">Contact Us</a>
-          <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
-          <button onclick="signIn()"><a>Sign In</a></button>
-        </div>
-      </div>
     </nav>
     <section id="signIn_signUp">
       <div class="overlay"></div>
@@ -193,5 +193,5 @@
       </div>
     </section>
     <script src="../static/scripts/script.js"></script>
-  </body>
+</body>
 </html>
