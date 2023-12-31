@@ -8,6 +8,7 @@ app.config['SECRET_KEY'] = "09b8049e0722d8956b107b38fa2eface"
 
 @app.route('/')
 def index():
+    form = RegistrationForm()
     return render_template('index.html', form=form)
 
 
