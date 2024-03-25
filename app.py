@@ -17,7 +17,7 @@ def signup():
     if form.validate_on_submit():
         flash(f"Welcome, {form.username.data}!", 'success')
         return redirect(url_for('home'))
-    return render_template('signup.html', form=form)
+    return render_template('signup.html', form=form, title='Get Started!')
 
 
 @app.route('/signin', methods=['GET', 'POST'])

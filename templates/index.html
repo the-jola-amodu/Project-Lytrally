@@ -1,71 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lytrally</title>
-    <!-- <base href="/project-lytrally/"> -->
-    <link rel="stylesheet" href="../static/style/style.css" />
-    <link rel="stylesheet" href="../static/style/fontawesome.min.css" />
-    <link rel="stylesheet" href="../static/style/all.min.css" />
-    <link rel="stylesheet" href="../static/style/solid.css" />
-    <link rel="stylesheet" href="../static/style/solid.min.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="s-screen">
-        <div class="navBar">
-          <h1><a href="../templates/index.html">Lytrally</a></h1>
-          <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars"></i>
-        </div>
-        <div class="navDisplay">
-          <a class="navA" href="#">Home</a>
-          <a class="navA" href="#">Service</a>
-          <a class="navA" href="#">Contact Us</a>
-          <a class="navA" href="#">About</a>
-          <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
-          <a id="signIn" class="navA" href="/signin">Sign In</a>
-        </div>
-      </div>
-      <div class="l-screen">
-        <h1><a href="../templates/index.html">Lytrally</a></h1>
-        <div class="navlinks">
-          <a href="../templates/index.html">Home</a>
-          <a href="#">Service</a>
-          <a href="#">Contact Us</a>
-          <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
-          <button><a href="/signin">Sign In</a></button>
-        </div>
-      </div>
-    </nav>
-    <section id="signIn_signUp">
-      <div class="overlay"></div>
-    </section>
-    <section class="landingPage">
-      <div class="heroPage">
-        <div class="heroImage">
-          {% with messages = get_flashed_messages(with_categories=true) %} {% if
-          messages %} {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">{{ message }}</div>
-          {% endfor %} {% endif %} {% endwith %}
-          <img
-            src="../static/images/Laptop-image-lytrally.png"
-            alt="Laptop-image-lytrally"
-          />
-        </div>
-        <div class="heroText">
-          <p class="mainText">A new tool to help you express yourself</p>
-          <p class="subText">
-            Built to take the work out of writing<br />
-            Perfect for copywriters, with built-in resources to boost
-            productivity
-          </p>
-          <button id="signUp">
-            <a href="/signup">Get Started </a>
-          </button>
-        </div>
-      </div>
-    </section>
-    <script src="../static/scripts/script.js"></script>
-  </body>
-</html>
+{% extends "layout.html" %} {% block head %}
+<link rel="stylesheet" href="../static/style/style.css" />
+{% endblock head %} {% block body %}
+<section id="signIn_signUp">
+  <div class="overlay"></div>
+</section>
+<section class="landingPage">
+  <div class="heroPage">
+    <div class="heroImage">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+      <img
+        src="../static/images/Laptop-image-lytrally.png"
+        alt="Laptop-image-lytrally"
+      />
+    </div>
+    <div class="heroText">
+      <p class="mainText">A new tool to help you express yourself</p>
+      <p class="subText">
+        Built to take the work out of writing<br />
+        Perfect for copywriters, with built-in resources to boost productivity
+      </p>
+      <button id="signUp">
+        <a href="/signup">Get Started </a>
+      </button>
+    </div>
+  </div>
+</section>
+<script src="../static/scripts/script.js"></script>
+{% endblock body %}
