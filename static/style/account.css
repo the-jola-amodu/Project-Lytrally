@@ -1,21 +1,28 @@
-* {
+* 
+{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
-body {
+
+body 
+{
     background: #F3F6FC;
     display: flex;
     flex-direction: column;
 }
-header, .account {
+
+header, .account 
+{
     padding-inline: 36px;
 }
-header {
+
+header 
+{
     display: flex;
     align-items: center;
-    margin-top: 56px;
+    margin-top: 20px;
     color: #000;
     font-family: Inter;
     font-size: 24px;
@@ -24,12 +31,22 @@ header {
     line-height: normal;
     margin-bottom: 29px;
 }
-header > img {
+
+header > img 
+{
     width: 25.581px;
     height: 20px;
     margin-right: 72.42px;
 }
-.profile {
+
+
+header > img:hover
+{
+    cursor: pointer;
+}
+
+.profile 
+{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -37,7 +54,9 @@ header > img {
     /* align-items: center; */
     margin-bottom: 13px;
 }
-.profileImg {
+
+.profileImg 
+{
     width: 200px;
     height: 200px;
     flex-shrink: 0;
@@ -57,10 +76,14 @@ header > img {
     padding: 0;
     margin-bottom: 33px;
 }
-.profileImg:hover {
+
+.profileImg:hover 
+{
     background-color: #8A9AC5;
 }
-.profile p {
+
+.profile p 
+{
     text-align: right;
     color: #000;
     font-family: Inter;
@@ -70,15 +93,21 @@ header > img {
     line-height: normal;
     margin-right: 33px;
 }
-.profile p:hover {
+
+.profile p:hover 
+{
     color: #8A9AC5;
 }
-#account_form {
+
+#account_form 
+{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
 }
-.account label {
+
+.account label 
+{
     display: block;
     margin-left: 28px;
     margin-bottom: 10px;
@@ -90,7 +119,9 @@ header > img {
     font-weight: 400;
     line-height: 110%; /* 26.4px */
 }
-.account input {
+
+.account input 
+{
     display: block;
     margin-bottom: 10px;
     padding-inline: 16px;
@@ -99,17 +130,21 @@ header > img {
     background: #FFF;
     font-size: 20px;
     width: 80%;
-    height: 60px;
+    height: 50px;
     flex-shrink: 0;
     transition: width 2s ease-in-out;
 }
-.account input:focus {
+
+.account input:focus 
+{
     width: 100%;
     outline: none;
 }
-.account button {
+
+.account button 
+{
     width: 150px;
-    height: 66px;
+    height: 60px;
     flex-shrink: 0;
     border-radius: 30px;
     border: 3px solid #000;
@@ -124,15 +159,21 @@ header > img {
     margin-left: auto;
     /* margin-right: auto; */
 }
-.account button:hover {
+
+.account button:hover 
+{
     opacity: 0.8;
 }
 
-@media screen and (min-width: 720px) {
-    .account {
+@media screen and (min-width: 720px) 
+{
+    .account 
+    {
         padding-inline: 95px;
     }
-    .profileImg {
+    
+    .profileImg 
+    {
         width: 300px;
         height: 300px;
         flex-shrink: 0;
@@ -140,13 +181,19 @@ header > img {
         border-radius: 200px;
         margin-bottom: 33px;
     }
-    .profile p {
+    
+    .profile p 
+    {
         font-size: 32px;
     }
-    .account label {
+    
+    .account label 
+    {
         font-size: 32px;
     }
-    .account input {
+    
+    .account input 
+    {
         width: 500px;
         height: 91px;
     }

@@ -1,11 +1,13 @@
-* {
+* 
+{
     padding: 0;
     margin: 0;
     text-decoration: none;
     box-sizing: border-box;
 }
 
-:root {
+:root 
+{
     --inter-font: inter;
     --white-color: #F3F6FC;
     --lilac-color: #8A9AC5;
@@ -16,7 +18,8 @@
     --grey-color: #8b8585;
 }
 
-body {
+body 
+{
     width: 100%;
     font-size: 16px;
     overflow: hidden;
@@ -25,13 +28,16 @@ body {
     background-size: cover;
     background-color: var(--lilac-color);
 }
+
 body::-webkit-scrollbar
 {
     /* display: none; */
     width: 5px;
     background: var(--button-background-color);
 }
-.s-screen {
+
+.s-screen
+{
     width: 100%;
     position: absolute;
     top: 0;
@@ -39,16 +45,22 @@ body::-webkit-scrollbar
     right: 0;
     z-index: 1;
 }
-.l-screen {
+
+.l-screen
+{
     display: none;
 }
-.navBar {
+
+.navBar
+{
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 16px;
 }
-.navBar h1 > a {
+
+.navBar h1 > a
+{
     color: var(--white-color);
     font-family: var(--inter-font);
     font-size: 24px;
@@ -56,17 +68,23 @@ body::-webkit-scrollbar
     font-weight: 600;
     line-height: normal;
 }
-.navBar i {
+
+.navBar i
+{
     font-size: 24px;
     width: 24px;
     height: 24px;
     flex-shrink: 0;
     color: var(--black-color);
 }
-.navBar i:hover {
+
+.navBar i:hover
+{
     color: var(--lilac-color);
 }
-.navDisplay {
+
+.navDisplay
+{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -84,7 +102,8 @@ body::-webkit-scrollbar
     overflow: hidden;
 }
 
-.navDisplay > a {
+.navDisplay > a
+{
     color: var(--black-color);
     font-family: var(--inter-font);
     font-size: 18px;
@@ -92,41 +111,52 @@ body::-webkit-scrollbar
     font-weight: 500;
     line-height: normal;
 }
-.navDisplay > a:hover {
+
+.navDisplay > a:hover
+{
     color: var(--lilac-color);
     cursor: pointer;
 }
 
-.navDisplay .navA:hover{
+.navDisplay .navA:hove
+{
     animation: wobble 3s ease-in-out;
     -webkit-animation: wobble 3s ease-in-out;
     border-radius: 10px;
     box-shadow: 2px 2px 2px var(--lilac-color);
 }
 
-@keyframes wobble{
-    0% {
+@keyframes wobbl
+{
+    0% 
+    {
         transform: scale(1.025);
         -webkit-transform: scale(1.025);
         -moz-transform: scale(1.025);
         -ms-transform: scale(1.025);
         -o-transform: scale(1.025);
     }
-    25% {
+
+    25% 
+    {
         transform: scale(1);
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
     }
-    75% {
+
+    75% 
+    {
         transform: scale(1.025);
         -webkit-transform: scale(1.025);
         -moz-transform: scale(1.025);
         -ms-transform: scale(1.025);
         -o-transform: scale(1.025);
     }
-    100% {
+
+    100% 
+    {
         transform: scale(1);
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
@@ -134,7 +164,9 @@ body::-webkit-scrollbar
         -o-transform: scale(1);
     }
 }
-.heroPage {
+
+.heroPage
+{
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -148,13 +180,16 @@ body::-webkit-scrollbar
     flex-direction: row;
     /* gap: 40px; */
 }
+
 .heroPage::-webkit-scrollbar
 {
     /* display: none; */
     width: 5px;
     background: var(--button-background-color);
 }
-.heroText {
+
+.heroText
+{
     /* padding-inline: 16px; */
     /* padding-top: 100px; */
     display: flex;
@@ -165,10 +200,14 @@ body::-webkit-scrollbar
     flex-direction: column;
     gap: 40px;
 }
-.heroImage {
+
+.heroImage 
+{
     display: none;
 }
-.heroText .mainText {
+
+.heroText .mainText 
+{
     color: var(--white-color);
     font-family: var(--roboto-font);
     font-size: 48px;
@@ -176,7 +215,9 @@ body::-webkit-scrollbar
     font-weight: 400;
     line-height: 110%; /* 52.8px */
 }
-.heroText .subText {
+
+.heroText .subText 
+{
     color: var(--white-color);
     font-family: var(--roboto-font);
     font-size: 18px;
@@ -184,7 +225,9 @@ body::-webkit-scrollbar
     font-weight: 600;
     line-height: 24px; /* 133.333% */
 }
-.heroText button {
+
+.heroText button 
+{
     width: 131px;
     display: inline-flex;
     padding: 16px 24px;
@@ -201,18 +244,25 @@ body::-webkit-scrollbar
     font-weight: 700;
     line-height: 140%; /* 22.4px */
 }
-.heroText button:hover {
+
+.heroText button:hover 
+{
     opacity: 0.8;
     cursor: pointer;
 }
-.heroText button > a{
+
+.heroText button > a
+{
     color: var(--white-color);
 }
-a:active {
+
+a:active 
+{
     color: var(--lilac-color);
 }
 
 #signIn_signUp 
+
 {
     width: 100%;
     height: 100vh;
@@ -224,7 +274,8 @@ a:active {
     transition: transform 2s ease-in-out; */
 }
 
-#signIn_signUp .overlay {
+#signIn_signUp .overlay 
+{
     height: 100%;
     width: 100%;
     position: absolute;
@@ -233,7 +284,8 @@ a:active {
     z-index: -1;
 }
 
-.signIn_sighUp_container {
+.signIn_sighUp_container 
+{
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -517,10 +569,12 @@ a:active {
         padding-top: 3rem;
         padding-bottom: 1rem;
     }
+
     .navDisplay
     {
         overflow-y: auto;
     }
+
     body
     {
         overflow-y: auto;
@@ -612,7 +666,8 @@ a:active {
 }
 
 @media screen and (min-width: 720px) {
-    .l-screen {
+    .l-screen 
+    {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -626,10 +681,14 @@ a:active {
         /* padding-inline: 125px; */
         padding-block: 16px;
     }
-    .s-screen {
+    
+    .s-screen 
+    {
         display: none;
     }
-    .l-screen h1 > a {
+    
+    .l-screen h1 > a 
+    {
         color: var(--white-color);
         width: 106px;
         font-family: var(--inter-font);
@@ -639,7 +698,9 @@ a:active {
         line-height: normal;
         margin-right: 109px;
     }
-    .l-screen a {
+    
+    .l-screen a 
+    {
         color: var(--white-color);
         font-family: var(--inter-font);
         font-size: 18px;
@@ -647,16 +708,22 @@ a:active {
         font-weight: 500;
         line-height: normal;
     }
-    .l-screen a:hover {
+    
+    .l-screen a:hover 
+    {
         color: var(--lilac-color);
     }
-    .navlinks {
+    
+    .navlinks 
+    {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .navlinks button {
+    
+    .navlinks button 
+    {
         display: inline-flex;
         padding: 10px 20px;
         justify-content: center;
@@ -666,11 +733,15 @@ a:active {
         background: var(--lilac-color);
         border: none;
     }
-    .navlinks button:hover {
+    
+    .navlinks button:hover 
+    {
         opacity: 0.8;
         color: var(--white-color);
     }
-    .navlinks button:hover > a {
+    
+    .navlinks button:hover > a 
+    {
         color: var(--white-color);
     }
     
@@ -774,14 +845,17 @@ a:active {
         margin-bottom: auto;
     }
 
-    .heroText {
+    .heroText 
+    {
         gap: 35px;
         text-align: left;
         justify-content: left;
         padding-inline: 30px;
         /* align-items: center; */
     }
-    .heroText .mainText {
+    
+    .heroText .mainText 
+    {
         color: var(--white-color);
         font-family: var(--roboto-font);
         font-size: 54px;
@@ -789,7 +863,9 @@ a:active {
         font-weight: 400;
         line-height: 110%;
     }
-    .heroText .subText {
+    
+    .heroText .subText 
+    {
         color: var(--white-color);
         font-family: var(--roboto-font);
         font-size: 18px;
@@ -797,7 +873,9 @@ a:active {
         font-weight: 700;
         line-height: 140%; /* 25.2px */
     }
-    .heroText button {
+    
+    .heroText button 
+    {
         width: 167px;
         display: inline-flex;
         padding: 16px 32px;
@@ -808,8 +886,10 @@ a:active {
         background: var(--lilac-color);
     }
 }
-@media screen and (min-width: 1024px){
-    .l-screen {
+@media screen and (min-width: 1024px)
+{
+    .l-screen 
+    {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -823,9 +903,12 @@ a:active {
         padding-inline: 125px;
         padding-block: 16px;
     }
-    .l-screen h1 > a {
+
+    .l-screen h1 > a 
+    {
         margin-right: 209px;
     }
+    
     .signIn_signup_card
     {
         margin-inline: 30vw;
