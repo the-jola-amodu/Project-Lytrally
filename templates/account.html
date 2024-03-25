@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lytrally</title>
     <!-- <base href="/project-lytrally/"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/account.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/all.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/solid.min.css') }}">
+    <link rel="stylesheet" href="../static/style/account.css">
+    <link rel="stylesheet" href="../static/style/fontawesome.min.css">
+    <link rel="stylesheet" href="../static/style/all.min.css">
+    <link rel="stylesheet" href="../static/style/solid.css">
+    <link rel="stylesheet" href="../static/style/solid.min.css">
 </head>
 <body>
     <header>
-        <img src="../static/images/backArrow.svg" alt="Back Arrow Icon">
+        <img id="backArrow" onclick="prevPage()" src="../static/images/backArrow.svg" alt="Back Arrow Icon">
         <h4>My Account</h4>
     </header>
-    <div class="profile">
-        <div class="profileImg">Add profile picture</div>
-        <p>Change profile picture</p>
-    </div>
+    <form action="#">
+        <label for="image">
+            <div class="profile">
+                <div class="profileImg">Add profile picture</div>
+                <p>Change profile picture</p>
+            </div>
+        </label>
+        <input type="image" src="" alt="">
+    </form>
     <section class="account">
         <form id="account_form" action="#" autocomplete="on" method="post">
             <label for="firstName">First Name</label>
@@ -33,6 +38,6 @@
             <button type="submit">Log Out</button>
         </form>
     </section>
-    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+    <script src="../static/scripts/account.js"></script>
 </body>
 </html>
