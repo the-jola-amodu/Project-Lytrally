@@ -10,6 +10,9 @@
       <form action="" id="signup_form" autocomplete="on" method="POST">
         {{ form.hidden_tag() }}
         <fieldset>
+          <legend>
+            Ready to unleash your creativity to the fullest? Sign up!
+          </legend>
           <div class="form-group">
             {{ form.email.label(class="form-control-label") }} {% if
             form.email.errors %} {{ form.email(class="form-control
