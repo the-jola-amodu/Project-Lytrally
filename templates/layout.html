@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Flash messages for notifications -->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
     <!-- Between the code-blocks below, all unique code (for the head block) for each webpage will be inserted -->
     {% block head %}{% endblock head %}
     <meta charset="UTF-8" />

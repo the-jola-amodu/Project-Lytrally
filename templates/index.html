@@ -7,10 +7,6 @@
 <section class="landingPage">
   <div class="heroPage">
     <div class="heroImage">
-      {% with messages = get_flashed_messages(with_categories=true) %} {% if
-      messages %} {% for category, message in messages %}
-      <div class="alert alert-{{ category }}">{{ message }}</div>
-      {% endfor %} {% endif %} {% endwith %}
       <img
         src="../static/images/Laptop-image-lytrally.png"
         alt="Laptop-image-lytrally"
