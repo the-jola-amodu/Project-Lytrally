@@ -64,27 +64,16 @@ class Document(db.Model):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    login_form = LoginForm()
-    registration_form = RegistrationForm()
-    if request.method == 'POST':
-
-        if login_form.submit1.data and login_form.validate():
-            flash(f"Welcome, new user!", 'success')
-            return redirect(url_for('index'))
-
-        if registration_form.submit2.data and registration_form.validate():
-            flash(f"Welcome, new user!", 'success')
-            return redirect(url_for('index'))
-    return render_template('index.html', form1=login_form, form2=registration_form)
+    return render_template('index.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = RegistrationForm()
     if form.validate_on_submit():
-        flash(f"Welcome, {form.username.data}!", 'success')
-        return redirect(url_for('home'))
-    return render_template('signup.html', form=form)
+        flash(f"Welcome to Lytrally!", 'success')
+        return redirect(url_for('index'))
+    return render_template('signup.html', form=form, title='Get Started!')
 
 
 @app.route('/signin', methods=['GET', 'POST'])

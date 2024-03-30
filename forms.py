@@ -12,7 +12,7 @@ class RegistrationForm(FlaskForm):
                                      DataRequired(), EqualTo("password")])
     policy_agreement = BooleanField(
         "I Agree with privacy and policy", validators=[DataRequired()])
-    submit2 = SubmitField("Register!")
+    submit_to_register = SubmitField("Register!")
 
 
 class LoginForm(FlaskForm):
@@ -20,4 +20,4 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[
                              DataRequired(), Length(min=5)])
     remember_me = BooleanField("Remember Me", validators=[DataRequired()])
-    submit1 = SubmitField("Sign in")
+    submit_to_login = SubmitField("Sign in")
