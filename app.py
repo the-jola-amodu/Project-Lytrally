@@ -15,8 +15,8 @@ def index():
 def signup():
     form = RegistrationForm()
     if form.validate_on_submit():
-        flash(f"Welcome, {form.username.data}!", 'success')
-        return redirect(url_for('home'))
+        flash(f"Welcome to Lytrally!", 'success')
+        return redirect(url_for('index'))
     return render_template('signup.html', form=form, title='Get Started!')
 
 
