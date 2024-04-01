@@ -1,0 +1,116 @@
+{% extends "layout.html" %} {% block head %}
+<link rel="stylesheet" href="../static/style/features.css" />
+{% endblock head %}{% block body %}
+<header id="header" onclick="closeFeatures()">
+  <h1><a href="../templates/index.html">Lytrally</a></h1>
+  <div class="logoHeader">
+    <img src="../static/images/icons/bell.svg" alt="" />
+    <div class="profilePic"></div>
+  </div>
+</header>
+<section>
+  <div class="featuresList">
+    <div id="featuresDisplay" class="currentFeature" onclick="features()">
+      <p id="visibleFeature">Ghostwriting A.I.</p>
+      <img src="../static/images/frame.svg" alt="" />
+    </div>
+    <div class="listDisplay">
+      <a id="ghostWriting" class="featuresLink" href="#">Ghostwriting A.I.</a>
+      <a id="readabilityStats" class="featuresLink" href="#"
+        >Readability Statistics</a
+      >
+      <a id="generateContent" class="featuresLink" href="#"
+        >Generate Content Ideas</a
+      >
+      <a id="keywordAnalysis" class="featuresLink" href="#">Keyword Analysis</a>
+      <a id="reasearch_analysis" class="featuresLink" href="#"
+        >Research and analysis</a
+      >
+      <a id="summarization_paraphrasing" class="featuresLink" href="#"
+        >Summarization and Paraphrasing</a
+      >
+      <a id="collaboration" class="featuresLink" href="#">Collaboration</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="features">
+    <div class="ghostWrittingFeature">
+      <div class="ghostWrittingTools">
+        <div class="toolsContainer">
+          <div class="language">
+            <div class="languageDisplay">
+              <p class="langDisplay">English</p>
+              <img src="../static/images/icons/downArrow.svg" alt="" />
+            </div>
+            <div class="languages">
+              <p class="lang">English</p>
+              <p class="lang">French</p>
+              <p class="lang">Portugese</p>
+            </div>
+          </div>
+          <div class="tools">
+            <a href="#">
+              <img src="../static/images/icons/italic.svg" alt="Italic Icon" />
+              <p>Italic</p>
+            </a>
+            <a href="#">
+              <img
+                src="../static/images/icons/fontStyle.svg"
+                alt="Font Style Icon"
+              />
+              <p>Font Style</p>
+            </a>
+            <a href="#">
+              <img
+                src="../static/images/icons/fontColor.svg"
+                alt="Font Color Icon"
+              />
+              <p>Font Color</p>
+            </a>
+            <a href="#">
+              <img
+                src="../static/images/icons/fontSize.svg"
+                alt="Font Size Icon"
+              />
+              <p>Font Size</p>
+            </a>
+            <a href="#">
+              <img src="../static/images/icons/bold.svg" alt="Bold Icon" />
+              <p>Bold</p>
+            </a>
+            <a href="#">
+              <img
+                src="../static/images/icons/underline.svg"
+                alt="Underline Icon"
+              />
+              <p>Underline</p>
+            </a>
+            <a href="#">
+              <img
+                src="../static/images/icons/highlight.svg"
+                alt="Highlight Color Icon"
+              />
+              <p>Highlight Color</p>
+            </a>
+            <a href="#">
+              <img
+                src="../static/images/icons/orientation.svg"
+                alt="Orientation Icon"
+              />
+              <p>Orientation</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="readabilityStatsFeature"></div>
+    <div class="generateContentFeature"></div>
+    <div class="keywordAnalysisFeature"></div>
+    <div class="reasearchAnalysisFeature"></div>
+    <div class="summarizationParaphrasingFeature"></div>
+    <div class="collaborationFeature"></div>
+  </div>
+</section>
+<script src="../static/scripts/features.js"></script>
+{% endblock body %}

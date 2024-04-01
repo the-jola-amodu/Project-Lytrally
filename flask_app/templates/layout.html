@@ -1,0 +1,84 @@
+<!-- This is the base template every other webpage inherits from to avoid repetitive code -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Flash messages for notifications -->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+    <!-- Between the code-blocks below, all unique code (for the head block) for each webpage will be inserted -->
+    {% block head %}{% endblock head %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- The block below allows changing each page's title easily from app.py -->
+    {% if title %}
+    <title>Lytrally - {{ title }}</title>
+    {% else %}
+    <title>Lytrally</title>
+    {% endif %}
+    <!-- <base href="/project-lytrally/"> -->
+    <link rel="stylesheet" href="../static/style/style.css" />
+    <link rel="stylesheet" href="../static/style/fontawesome.min.css" />
+    <link rel="stylesheet" href="../static/style/all.min.css" />
+    <link rel="stylesheet" href="../static/style/solid.css" />
+    <link rel="stylesheet" href="../static/style/solid.min.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="s-screen">
+        <div class="navBar">
+          <h1><a href="../templates/index.html">Lytrally</a></h1>
+          <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars"></i>
+        </div>
+        <div class="navDisplay">
+          <a class="navA" href="#">Home</a>
+          <a class="navA" href="#">Service</a>
+          <a class="navA" href="#">Contact Us</a>
+          <a class="navA" href="#">About</a>
+          <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+          <a id="signIn" class="navA" href="/signin">Sign In</a>
+        </div>
+      </div>
+      <div class="l-screen">
+        <h1><a href="../templates/index.html">Lytrally</a></h1>
+        <div class="navlinks">
+          <a href="../templates/index.html">Home</a>
+          <a href="#">Service</a>
+          <a href="#">Contact Us</a>
+          <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+          <button><a href="/signin">Sign In</a></button>
+        </div>
+      </div>
+    </nav>
+    <!-- Between the code-blocks below, all unique code (for the body block) for each webpage will be inserted -->
+    {% block body %}{% endblock body %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

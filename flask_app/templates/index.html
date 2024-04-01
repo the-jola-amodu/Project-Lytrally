@@ -1,0 +1,28 @@
+{% extends "layout.html" %} {% block head %}
+<link rel="stylesheet" href="../static/style/style.css" />
+{% endblock head %} {% block body %}
+<section id="signIn_signUp">
+  <div class="overlay"></div>
+</section>
+<section class="landingPage">
+  <div class="heroPage">
+    <div class="heroImage">
+      <img
+        src="../static/images/Laptop-image-lytrally.png"
+        alt="Laptop-image-lytrally"
+      />
+    </div>
+    <div class="heroText">
+      <p class="mainText">A new tool to help you express yourself</p>
+      <p class="subText">
+        Built to take the work out of writing<br />
+        Perfect for copywriters, with built-in resources to boost productivity
+      </p>
+      <button id="signUp">
+        <a href="/signup">Get Started </a>
+      </button>
+    </div>
+  </div>
+</section>
+<script src="../static/scripts/script.js"></script>
+{% endblock body %}
