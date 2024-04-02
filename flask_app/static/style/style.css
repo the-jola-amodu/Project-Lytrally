@@ -16,6 +16,7 @@
     --Inria-font: Inria Serif;
     --button-background-color: #6a7db1;
     --grey-color: #8b8585;
+    --link-hover-color: #FFD700;
 }
 
 body 
@@ -59,6 +60,10 @@ body::-webkit-scrollbar
     padding: 16px;
 }
 
+.navBar-bg {
+    background-color: var(--lilac-color);
+}
+
 .navBar h1 > a
 {
     color: var(--white-color);
@@ -76,6 +81,10 @@ body::-webkit-scrollbar
     height: 24px;
     flex-shrink: 0;
     color: var(--black-color);
+}
+
+.navBarChange:hover {
+    color: var(--link-hover-color) !important;
 }
 
 .navBar i:hover
@@ -115,10 +124,11 @@ body::-webkit-scrollbar
 .navDisplay > a:hover
 {
     color: var(--lilac-color);
+    text-decoration: none;
     cursor: pointer;
 }
 
-.navDisplay .navA:hove
+.navDisplay .navA:hover
 {
     animation: wobble 3s ease-in-out;
     -webkit-animation: wobble 3s ease-in-out;
@@ -711,7 +721,8 @@ a:active
     
     .l-screen a:hover 
     {
-        color: var(--lilac-color);
+        color: var(--link-hover-color);
+        text-decoration: none;
     }
     
     .navlinks 
@@ -737,12 +748,13 @@ a:active
     .navlinks button:hover 
     {
         opacity: 0.8;
-        color: var(--white-color);
+        color: var(--lilac-color);
+        background-color: var(--link-hover-color);
     }
     
     .navlinks button:hover > a 
     {
-        color: var(--white-color);
+        color: var(--lilac-color);
     }
     
     .signIn_signup_card

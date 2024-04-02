@@ -6,7 +6,7 @@ from flask_app.models import User, Document
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', page='Home')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -15,7 +15,7 @@ def signup():
     if form.validate_on_submit():
         flash(f"Welcome to Lytrally!", 'success')
         return redirect(url_for('index'))
-    return render_template('signup.html', form=form, title='Get Started!')
+    return render_template('signup.html', form=form, title='Get Started!', page='signup')
 
 
 @app.route('/signin', methods=['GET', 'POST'])
@@ -24,17 +24,17 @@ def signin():
     if form.validate_on_submit():
         flash(f"Welcome, {form.username.data}!", 'success')
         return redirect(url_for('home'))
-    return render_template('signin.html', form=form)
+    return render_template('signin.html', form=form, page='signin')
 
 
 @app.route('/features')
 def features():
-    return render_template('features.html')
+    return render_template('features.html', page='features')
 
 
 @app.route('/account')
 def account():
-    return render_template('account.html')
+    return render_template('account.html', page='account')
 
 # Creates tables in the database
 # db.create_all()
