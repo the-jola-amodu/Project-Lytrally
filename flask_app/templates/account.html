@@ -29,7 +29,9 @@
     <input type="text" />
     <label for="changePassword">Change Password</label>
     <input type="text" />
-    <button type="submit">Log Out</button>
+    <button type="submit">
+      <a href="{{ url_for('signout') }}">Log Out</a>
+    </button>
   </form>
 </section>
 <script src="../static/scripts/account.js"></script>

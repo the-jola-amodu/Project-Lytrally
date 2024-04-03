@@ -45,8 +45,11 @@
           <a class="navA" href="#">Service</a>
           <a class="navA" href="#">Contact Us</a>
           <a class="navA" href="#">About</a>
-          <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+          {% if current_user.is_authenticated %}
+          <!-- We need to add an "accounts" button here that will have a dropdown menu with options e.g. logout -->
+          {% else %}
           <a id="signIn" class="navA" href="/signin">Sign In</a>
+          {% endif %}
         </div>
       </div>
       <div class="l-screen">
@@ -55,8 +58,11 @@
           <a href="../templates/index.html">Home</a>
           <a href="#">Service</a>
           <a href="#">Contact Us</a>
-          <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+          {% if current_user.is_authenticated %}
+          <!-- We need to add an "accounts" button here that will have a dropdown menu with options e.g. logout -->
+          {% else %}
           <button><a href="/signin">Sign In</a></button>
+          {% endif %}
         </div>
       </div>
     </nav>

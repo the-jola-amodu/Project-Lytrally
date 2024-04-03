@@ -19,6 +19,10 @@
   </button>
   <div class="signInContainer">
     <form action="#" id="signin_form" autocomplete="on" method="post">
+      {{ form.hidden_tag() }}
+      <legend>
+        Sign in to get back to jump back into your creative process!
+      </legend>
       <div class="form-group">
         {{ form.email.label(class="form-control-label") }} {% if
         form.email.errors %} {{ form.email(class="form-control form-control-lg
