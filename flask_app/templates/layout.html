@@ -34,6 +34,34 @@
     <link rel="stylesheet" href="../static/style/solid.min.css" />
   </head>
   <body>
+    {% if page != "Home" %}
+    <nav>
+      <div class="s-screen navBar-bg">
+        <div class="navBar">
+          <h1><a href="../templates/index.html">Lytrally</a></h1>
+          <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars navBarChange"></i>
+        </div>
+        <div class="navDisplay">
+          <a class="navA" href="#">Home</a>
+          <a class="navA" href="#">Service</a>
+          <a class="navA" href="#">Contact Us</a>
+          <a class="navA" href="#">About</a>
+          <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+          <a id="signIn" class="navA" href="/signin">Sign In</a>
+        </div>
+      </div>
+      <div class="l-screen navBar-bg">
+        <h1><a href="../templates/index.html">Lytrally</a></h1>
+        <div class="navlinks">
+          <a href="../templates/index.html">Home</a>
+          <a href="#">Service</a>
+          <a href="#">Contact Us</a>
+          <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+          <button><a href="/signin">Sign In</a></button>
+        </div>
+      </div>
+    </nav>
+    {% else %}
     <nav>
       <div class="s-screen">
         <div class="navBar">
@@ -66,6 +94,7 @@
         </div>
       </div>
     </nav>
+    {% endif %}
     <!-- Between the code-blocks below, all unique code (for the body block) for each webpage will be inserted -->
     {% block body %}{% endblock body %}
 
