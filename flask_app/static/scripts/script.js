@@ -24,22 +24,20 @@ overlay.style.right = "0";
 overlay.style.bottom = "0";
 overlay.style.position = "fixed";
 overlay.style.background = 'rgba(0,0,0,0.5)';
-landingPage.appendChild(overlay);
-let openNavBar = () => {
-  if (navDisplay.style.display === "none") {
-    navDisplay.style.height = "400px";
-    navDisplay.style.paddingBlock = "32px";
-    overlay.style.display = "block";
-    navDisplay.style.borderRadius = "10px";
-    navDisplay.style.display = "flex";
-    signinSignupContainer.style.display = "none";
-  } else {
-    navDisplay.style.display = "none";
-    overlay.style.display = "none";
-    navDisplay.style.height = "0px";
-    navDisplay.style.paddingBlock = "0px";
-  }
-};
+// landingPage.appendChild(overlay);
+hambuger.addEventListener("click", () => {if (navDisplay.style.display === "none") {
+  navDisplay.style.height = "400px";
+  navDisplay.style.paddingBlock = "32px";
+  overlay.style.display = "block";
+  navDisplay.style.borderRadius = "10px";
+  navDisplay.style.display = "flex";
+  // signinSignupContainer.style.display = "none";
+} else {
+  navDisplay.style.display = "none";
+  overlay.style.display = "none";
+  navDisplay.style.height = "0px";
+  navDisplay.style.paddingBlock = "0px";
+}})
 // let closeNavBar = () => {
 //     navDisplay.style.display = "none";
 //     navDisplay.style.height = "0px";
@@ -52,7 +50,6 @@ nav_sm = document.querySelector(".navDisplay");
 body_sm = document.getElementsByTagName("body");
 
 window.addEventListener("load", () => {
-  console.log(screenHeight);
   if (screenHeight < 380)
   {
     console.log(screenHeight)
