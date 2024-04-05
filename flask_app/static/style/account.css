@@ -76,7 +76,7 @@ header {
   gap: 5px;
   font-family: "Courier New", Courier, monospace;
   position: absolute;
-  right: 0;
+  right: 15px;
 }
 
 .gearDropdown .gearRow {
