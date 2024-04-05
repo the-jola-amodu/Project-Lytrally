@@ -4,57 +4,128 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-.signUpContainer {
+
+:root 
+{
+    --font-size-sm: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 24px;
+    --font-size-xl: 26px;
+    --font-size-xxl: 30px;
+    --font-title: 40px;
+    --inter-font: inter;
+    --white-color: #F3F6FC;
+    --lilac-color: #8A9AC5;
+    --black-color: #000;
+    --dull-black: #252222;
+    --roboto-font: Roboto Slab;
+    --Inria-font: Inria Serif;
+    --button-background-color: #6a7db1;
+    --grey-color: #8b8585;
+    --link-hover-color: #FFD700;
+}
+
+body {
     width: 100%;
-    padding-inline: 33px;
-    padding-block: 59px;
-    background: #F3F6FC;
+    height: auto;
+    background: url(../images/compressed_a_fountain_pen_on_a_blue_notepad_shot_at_a_cinematic_angle\,_blue_aesthetics-min.png), var(--lilac-color) 50% / cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+}
+
+.container {
+    width: 100%;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: calc(15px + 1vmax);
+    padding-top: calc(250px + 1vmax);
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+    /* background: #F3F6FC; */
     overflow: auto;
 }
-#signup_form {
+
+.container .signUpForm {
+    width: auto;
+    height: auto;
+    background-color: var(--white-color);
+    margin-top: calc(50px + 1vmax);
+    border-radius: 25px;
+    padding-inline: calc(5% + 1vmin);
+    padding-block: calc(20px + 1vmin);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.signUpContainer label {
+
+.signUpForm fieldset {
+    margin: 0;
+    border: none;
+}
+
+.signUpForm legend {
+    font-weight: bold;
+    font-size: var(--font-size-xl);
+    text-align: center;
+    color: var(--dull-black);
+    margin-bottom: 2rem;
+}
+
+.container label {
     display: block;
     margin-left: 28px;
     margin-bottom: 10px;
-    color: #000;
+    color: var(--dull-black);
     /* text-align: center; */
     font-family: Roboto Slab;
-    font-size: 24px;
+    font-size: var(--font-size-l);
     font-style: normal;
     font-weight: 400;
     line-height: 110%; /* 26.4px */
 }
-.signUpContainer input {
+.container input {
     display: block;
     margin-bottom: 30px;
     padding-inline: 16px;
     border-radius: 20px;
-    border: 3px solid #000;
-    background: #FFF;
-    font-size: 20px;
+    border: 3px solid var(--dull-black);
+    background: var(--white-color);
+    font-size: var(--font-size-m);
     width: 80%;
     height: 60px;
     flex-shrink: 0;
     transition: width 2s ease-in-out;
 }
-.signUpContainer input:focus {
+.container input:focus {
     width: 100%;
     outline: none;
 }
-.privacyPolicy {
+
+.form-check {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: left;
-    gap: 0;
-    margin-bottom: 20px;
+    text-align: left;
+    color: var(--dull-black);
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 20px;
 }
-.privacyPolicy > input[type="checkbox"]{
+
+.form-check > input[type="checkbox"]{
+    display: inline;
+    transition: none;
+    width: 30px;
+    height: 30px;
+    background: #FFF;
+    margin: 0;
+}
+
+.form-check > input:focus {
     display: inline;
     transition: none;
     width: 30px;
@@ -63,20 +134,8 @@
     border: 1px solid #000;
     background: #FFF;
     margin: 0;
-    margin-right: 18px;
 }
-.privacyPolicy > input:focus {
-    display: inline;
-    transition: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 1000px;
-    border: 1px solid #000;
-    background: #FFF;
-    margin: 0;
-    margin-right: 18px;
-}
-.privacyPolicy > label {
+.form-check > label {
     display: inline;
     color: #000;
     font-family: Inter;
@@ -86,40 +145,50 @@
     line-height: normal;
     margin: 0;
 }
+
+span {
+    font-size: var(--font-size-m);
+    color: var(--dull-black);
+}
+
 span > a{
     display: inline;
-    color: #8A9AC5;
+    color: var(--lilac-color);
     font-family: Inter;
-    font-size: 24px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
-.signUpContainer button {
-    display: inline-flex;
-    width: 150px;
-    padding: 21px 37px;
-    text-align: right;
-    justify-content: center;
-    align-items: flex-end;
-    border-radius: 30px;
-    background: #8A9AC5;
-    color: #000;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    border: none;
-    margin-left: auto;
-    margin-bottom: 20px;
+
+.submitForm {
+    display: flex !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 15px 10px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 20px !important;
+    background: #8A9AC5 !important;
+    color: var(--white-color) !important;
+    font-family: Inter !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: normal !important;
+    border: none !important;
+    margin-block: 20px !important;
 }
-.signUpContainer button:hover {
-    opacity: 0.8;
+
+.submitForm:hover {
+    opacity: 0.8 !important;
+    background-color: rebeccapurple !important;
 }
-.signUpContainer .signin {
+
+.container .signin {
     display: block;
+    max-width: 100px;
     text-align: right;
+    float: right;
     color: #000;
     font-family: Inter;
     font-size: 20px;
@@ -127,108 +196,54 @@ span > a{
     font-weight: 500;
     line-height: normal;
 }
-.signUpContainer a:hover {
-    color: #8A9AC5;
+.container a:hover {
+    color: var(--lilac-color);
 }
 
-@media screen and (min-width: 720px) {
-    .signUpContainer {
-        padding-inline: 105px;
+
+/* Tablet Screen */
+@media screen and (min-width: 768px) {
+    .container label {
+        font-size: var(--font-size-l);
     }
-    .signUpContainer button {
-        width: 208px;
-        margin-left: auto;
-        margin-right: auto;
+    .container input {
+        font-size: var(--font-size-l);
     }
-    .signUpContainer label {
-        font-size: 32px;
+    span {
+        font-size: var(--font-size-l);
     }
-    .signUpContainer input {
-        width: 500px;
-        height: 91px;
+    .submitForm {
+        font-size: var(--font-size-l) !important;
     }
 }
 
+/* Laptop Screen */
 @media screen and (min-width: 1024px) {
-    .signUpContainer {
-        padding-inline: 108px;
-        padding-block: 37px;
+    .container .signUpForm {
+        width: 550px;
+        padding-inline: calc(2% + 1vmin);
     }
-    .signUpContainer label {
-        margin-left: 45px;
-        margin-bottom: 25px;
-        font-size: 32px;
+
+    .container label {
+        font-size: var(--font-size-xl);
     }
-    .signUpContainer input {
-        margin-bottom: 29px;
-        width: 500px;
-        height: 70px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        border: 3px solid #000;
-        background: #FFF;
-        transition: width 2s ease-in-out;
+    .container input {
+        font-size: var(--font-size-xl);
     }
-    .signUpContainer input:focus {
-        width: 560px;
-    }
-    .privacyPolicy {
-        margin-bottom: 0;
-    }
-    .privacyPolicy > input[type="checkbox"]{
-        display: inline;
-        transition: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 1000px;
-        border: 1px solid #000;
-        margin: 0;
-        margin-right: 18px;
-    }
-    .privacyPolicy > input:focus {
-        display: inline;
-        transition: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 1000px;
-        border: 1px solid #000;
-        background: #FFF;
-        margin: 0;
-        margin-right: 18px;
-    }
-    .privacyPolicy > label {
-        display: inline;
-        color: #000;
-        font-family: Inter;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        margin: 0;
+    span {
+        font-size: var(--font-size-xl);
     }
 }
 
+/* Large screen */
 @media screen and (min-width: 1444px) {
-    .signUpContainer {
-        padding-inline: 108px;
-        padding-block: 37px;
+    .container label {
+        font-size: var(--font-size-xxl);
     }
-    .signUpContainer label {
-        margin-left: 45px;
-        margin-bottom: 29px;
-        font-size: 32px;
+    .container input {
+        font-size: var(--font-size-xxl);
     }
-    .signUpContainer input {
-        margin-bottom: 29px;
-        width: 500px;
-        height: 91px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        border: 3px solid #000;
-        background: #FFF;
-        transition: width 2s ease-in-out;
-    }
-    .signUpContainer input:focus {
-        width: 560px;
+    span {
+        font-size: var(--font-size-xxl);
     }
 }

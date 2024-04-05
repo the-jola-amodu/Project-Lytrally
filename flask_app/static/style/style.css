@@ -24,10 +24,8 @@ body
     width: 100%;
     font-size: 16px;
     overflow: hidden;
-    background: url(../images/compressed_a_fountain_pen_on_a_blue_notepad_shot_at_a_cinematic_angle\,_blue_aesthetics-min.png), var(--lilac-color) 50% / cover no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--lilac-color);
 }
 
 body::-webkit-scrollbar
@@ -44,7 +42,7 @@ body::-webkit-scrollbar
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .l-screen
@@ -80,7 +78,11 @@ body::-webkit-scrollbar
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    color: var(--black-color);
+    color: var(--white-color);
+}
+
+.navBarChange {
+    color: var(--white-color) !important;
 }
 
 .navBarChange:hover {
@@ -102,7 +104,7 @@ body::-webkit-scrollbar
     padding-block: 0;
     position: absolute;
     right: 0;
-    z-index: 0;
+    z-index: 3;
     width: 130px;
     height: 0;
     flex-shrink: 0;
@@ -271,306 +273,6 @@ a:active
     color: var(--lilac-color);
 }
 
-#signIn_signUp 
-
-{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    z-index: 10;
-    overflow: auto;
-    display: none;
-    /* transform: translateX(100%);
-    transition: transform 2s ease-in-out; */
-}
-
-#signIn_signUp .overlay 
-{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: var(--black-color);
-    opacity: 0.5;
-    z-index: -1;
-}
-
-.signIn_sighUp_container 
-{
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-bottom: 1rem;
-}
-
-.signIn_sighUp_container::-webkit-scrollbar
-{
-    /* display: none; */
-    width: 5px;
-    background: var(--button-background-color);
-}
-
-.signIn_signup_card
-{
-    margin-inline: 1rem;
-    margin-top: 3.5rem;
-    padding-inline: 20px;
-    padding-block: 15px;
-    background-color: var(--white-color);
-    border-radius: 15px;
-}
-
-.signIn_signup_card a
-{
-    color: var(--grey-color);
-}
-
-.signIn_signup_card a:hover
-{
-    color: var(--lilac-color);
-    cursor: pointer;
-}
-
-.close_signin_signup
-{
-    text-align: right;
-}
-
-.close_signin_signup i
-{
-    font-size: 24px;
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    color: var(--black-color);
-}
-
-.close_signin_signup i:hover
-{
-    color: var(--lilac-color);
-}   
-
-.signIn_signup_card > h4 
-{
-    color: var(--black-color);
-    text-align: center;
-    font-family: var(--inter-font);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 15px;
-}
-
-.signIn_signup_card button
-{
-    width: 100%;
-    height: 55px;
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    border-radius: 15px;
-    border: 3px solid #000;
-    padding: 0px 10px;
-    background: var(--white-color);
-    color: var(--black-color);
-    font-family: var(--inter-font);
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    margin-bottom: 10px;
-}
-
-#google_btn
-{
-    width: 47.5%;
-    float: left;
-    margin-right: 5%;
-}
-
-#facebook_btn
-{
-    width: 47.5%;
-    /* float: right; */
-    transition: width 0.05s ease-in-out;
-}
-
-.signIn_signup_card button:hover
-{
-    cursor: pointer;
-    background-color: var(--lilac-color);
-    opacity: 0.8;
-}
-.signIn_signup_card button > img 
-{
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-}
-
-#signin_form 
-{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
-
-.formContainer label 
-{
-    display: block;
-    /* margin-left: 28px; */
-    margin-bottom: 5px;
-    color: var(--black-color);
-    /* text-align: center; */
-    font-family: var(--roboto-font);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 110%; /* 26.4px */
-}
-
-.formContainer input 
-{
-    display: block;
-    margin-bottom: 10px;
-    padding-inline: 16px;
-    border-radius: 15px;
-    border: 3px solid var(--black-color);
-    background: var(--white-color);
-    font-size: 20px;
-    width: 80%;
-    height: 45px;
-    flex-shrink: 0;
-    transition: width 2s ease-in-out;
-}
-
-.formContainer input:focus
-{
-    width: 100%;
-    outline: none;
-}
-
-.checkRemember
-{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 0;
-}
-
-.checkRemember > input[type="checkbox"]
-{
-    display: inline;
-    transition: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 1000px;
-    border: 1px solid var(--black-color);
-    background: var(--white-color);
-    /* margin: 0; */
-    margin-right: 5px;
-}
-
-.privacyPolicy
-{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 0;
-    margin-bottom: 1rem;
-}
-
-.privacyPolicy > input[type="checkbox"]
-{
-    display: inline;
-    transition: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 1000px;
-    border: 1px solid var(--black-color);
-    background: var(--white-color);
-    /* margin: 0; */
-    margin-right: 5px;
-}
-
-.privacyPolicy > input:focus
-{
-    display: inline;
-    transition: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 1000px;
-    border: 1px solid var(--black-color);
-    background: var(--white-color);
-}
-
-.privacyPolicy > label, .checkRemember > label
-{
-    display: inline;
-    color: var(--black-color);
-    font-family: var(--Inria-font);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
-    margin-bottom: auto;
-}
-
-.formContainer a 
-{
-    display: inline;
-    text-align: right;
-    font-family: var(--Inria-font);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-
-.formContainer button 
-{
-    display: inline-flex;
-    width: 100%;
-    height: 100%;
-    padding: 15px 37px;
-    justify-content: center;
-    align-items: flex-end;
-    border-radius: 15px;
-    background: var(--button-background-color);
-    color: var(--white-color);
-    font-family: var(--inter-font);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    border: none;
-    margin-bottom: 0;
-}
-
-.formContainer button:hover
-{
-    background-color: var(--button-background-color);
-    opacity: 0.8;
-}
-
-.noAccount_signIn
-{
-    text-align: center;
-    margin: 0;
-    margin-bottom: 1rem;
-}
-
-#confirmPassword, #confirmPasswordLabel, .privacyPolicy
-{
-    display: none;
-}
-
 @media screen and (max-height: 1500px)
 {
     .heroPage
@@ -588,90 +290,6 @@ a:active
     body
     {
         overflow-y: auto;
-    }
-}
-
-@media screen and (min-width: 665px)
-{
-    .signIn_signup_card
-    {
-        margin-inline: 20vw;
-        padding-inline: 40px;
-        padding-block: 30px;
-        border-radius: 15px;
-    }
-
-    .signIn_signup_card h4
-    {
-        font-size: 30px;
-    }
-
-    .signIn_signup_card button
-    {
-        height: 50px;
-        font-size: 20px;
-        border-radius: 15px;
-    }
-
-    .signIn_signup_card button > img
-    {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-    .formContainer
-    {
-        margin-top: 1rem;
-    }
-
-    .formContainer label
-    {
-        font-size: 25px;
-    }
-
-    .formContainer input
-    {
-        height: 50px;
-        width: 80%;
-        border-radius: 15px;
-        font-size: 20px;
-    }
-
-    .formContainer input:focus
-    {
-        width: 100%;
-        /* margin-top: auto;
-        margin-bottom: auto; */
-    }
-
-    .checkRemember > input:focus
-    {
-        width: 20px;
-        height: 20px;
-    }
-    .checkRemember > label
-    {
-        margin-top: auto;
-        margin-bottom: auto;
-        font-size: 22px;
-    }
-
-    .privacyPolicy > input:focus
-    {
-        width: 20px;
-        height: 20px;
-    }
-    .privacyPolicy > label
-    {
-        margin-top: auto;
-        margin-bottom: auto;
-        font-size: 22px;
-    }
-
-    .signIn_signup_card a
-    {
-        font-size: 22px;
     }
 }
 
@@ -756,87 +374,6 @@ a:active
     {
         color: var(--lilac-color);
     }
-    
-    .signIn_signup_card
-    {
-        margin-inline: 20vw;
-        padding-inline: 40px;
-        padding-block: 30px;
-        border-radius: 15px;
-    }
-
-    .signIn_signup_card h4
-    {
-        font-size: 30px;
-    }
-
-    .signIn_signup_card button
-    {
-        height: 55px;
-        font-size: 20px;
-        border-radius: 15px;
-    }
-
-    .signIn_signup_card button > img
-    {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-    .formContainer
-    {
-        margin-top: 1rem;
-    }
-
-    .formContainer label
-    {
-        font-size: 25px;
-    }
-
-    .formContainer input
-    {
-        height: 55px;
-        width: 80%;
-        border-radius: 15px;
-        font-size: 20px;
-    }
-
-    .formContainer input:focus
-    {
-        width: 100%;
-        
-        /* margin-top: auto;
-        margin-bottom: auto; */
-    }
-
-    .checkRemember > input:focus
-    {
-        width: 20px;
-        height: 20px;
-    }
-    .checkRemember > label
-    {
-        margin-top: auto;
-        margin-bottom: auto;
-        font-size: 22px;
-    }
-    .privacyPolicy > input:focus
-    {
-        width: 20px;
-        height: 20px;
-    }
-    .privacyPolicy > label
-    {
-        margin-top: auto;
-        margin-bottom: auto;
-        font-size: 22px;
-    }
-
-    .signIn_signup_card a
-    {
-        font-size: 22px;
-    }
 
     .heroImage
     {
@@ -911,7 +448,7 @@ a:active
         top: 0;
         left: 0;
         right: 0;
-        z-index: 1;
+        z-index: 3;
         padding-inline: 125px;
         padding-block: 16px;
     }
@@ -920,10 +457,47 @@ a:active
     {
         margin-right: 209px;
     }
-    
-    .signIn_signup_card
-    {
-        margin-inline: 30vw;
-        margin-top: 1rem;
+}
+
+/* The styles below apply to other pages that inherit from the layout page */
+/* Container content styling as a result of navbar position for Normal phone screen */
+@media screen and (max-height: 700px) {
+    .container {
+        /* padding-top: calc(300px + 1vmin); */
+        padding-top: 300px;
     }
+}
+
+@media (min-height: 740px) and (max-height: 800px) {
+    .container {
+        padding-top: calc(250px + 1vmin);
+    }
+}
+
+/* Container content styling as a result of navbar position for  Longer Phone screens */
+@media (min-height: 800px) and (max-height: 1200px) {
+    .container {
+        padding-top: 90px;
+    }
+}
+
+/* Container content styling as a result of navbar position for  laptop and bigger screen query */
+@media (min-width: 1024px) and (min-height: 600px) {
+    .container {
+        padding-top: calc(300px + 1vmin);
+    }
+}
+
+/* Container content styling as a result of navbar position for  ipad screen query */
+@media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
+    .container {
+        padding-top: 100px;
+    }
+}
+
+/* Container content styling as a result of navbar position for  Next Hub screen query */
+@media (width: 1024px) and (height: 600px) {
+    .container {
+        padding-top: 400px;
+    } 
 }

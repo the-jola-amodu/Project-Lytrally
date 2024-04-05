@@ -4,28 +4,70 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+
+:root 
+{
+    --font-size-sm: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 24px;
+    --font-size-xl: 26px;
+    --font-size-xxl: 30px;
+    --font-title: 40px;
+    --inter-font: inter;
+    --white-color: #F3F6FC;
+    --lilac-color: #8A9AC5;
+    --black-color: #000;
+    --dull-black: #252222;
+    --roboto-font: Roboto Slab;
+    --Inria-font: Inria Serif;
+    --button-background-color: #6a7db1;
+    --grey-color: #8b8585;
+    --link-hover-color: #FFD700;
+}
+
+body {
+    width: 100%;
+    background: url(../images/compressed_a_fountain_pen_on_a_blue_notepad_shot_at_a_cinematic_angle\,_blue_aesthetics-min.png), var(--lilac-color) 50% / cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
     width: 100%;
-    padding-inline: 33px;
-    padding-block: 59px;
-    background: #F3F6FC;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: calc(15px + 1vmax);
+    padding-top: calc(250px + 1vmax);
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
+    /* background: #F3F6FC; */
     overflow: auto;
-    padding-bottom: 0;
 }
-.container > h4 {
-    color: #000;
+
+.container .mainContainer {
+    width: auto;
+    height: auto;
+    background-color: var(--white-color);
+    margin-top: calc(50px + 1vmax);
+    border-radius: 25px;
+    padding-inline: calc(5% + 1vmin);
+    padding-block: calc(20px + 1vmin);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer h4 {
+    font-weight: bold;
+    font-size: var(--font-size-xl);
     text-align: center;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 38px;
+    color: var(--dull-black);
+    margin-bottom: 2rem;
 }
-.container button {
+.mainContainer button {
     width: 100%;
     height: 70px;
     display: flex;
@@ -43,59 +85,78 @@
     line-height: normal;
     margin-bottom: 23px;
 }
-.container button > img {
+
+.mainContainer button:hover {
+    background-color: var(--lilac-color);
+    color: var(--white-color);
+}
+
+.mainContainer button > img {
     width: 25px;
     height: 25px;
     margin-right: 24.55px;
 }
+
+.signInContainer {
+    width: 100%;
+}
+
 #signin_form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
 }
 .signInContainer label {
     display: block;
     margin-left: 28px;
     margin-bottom: 10px;
-    color: #000;
+    color: var(--dull-black);
     /* text-align: center; */
     font-family: Roboto Slab;
-    font-size: 24px;
+    font-size: var(--font-size-l);
     font-style: normal;
     font-weight: 400;
     line-height: 110%; /* 26.4px */
 }
+
 .signInContainer input {
     display: block;
     margin-bottom: 30px;
     padding-inline: 16px;
     border-radius: 20px;
-    border: 3px solid #000;
-    background: #FFF;
-    font-size: 20px;
+    border: 3px solid var(--dull-black);
+    background: var(--white-color);
+    font-size: var(--font-size-m);
     width: 80%;
     height: 60px;
     flex-shrink: 0;
     transition: width 2s ease-in-out;
 }
+
 .signInContainer input:focus {
     width: 100%;
     outline: none;
 }
-.check_forgot {
+.form-check {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    text-align: left;
+    color: var(--dull-black);
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 20px;
+}
+
+.form-check > input[type="checkbox"]{
+    display: inline;
+    transition: none;
+    width: 30px;
+    height: 30px;
+    background: #FFF;
     margin: 0;
-    margin-bottom: 28px;
 }
-.checkRemember {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 0;
-}
-.checkRemember > input[type="checkbox"]{
+
+.form-check > input:focus {
     display: inline;
     transition: none;
     width: 30px;
@@ -104,59 +165,59 @@
     border: 1px solid #000;
     background: #FFF;
     margin: 0;
-    margin-right: 17px;
+    /* margin-right: 18px; */
 }
-.checkRemember > input:focus {
+.form-check > label {
     display: inline;
-    transition: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 1000px;
-    border: 1px solid #000;
-    background: #FFF;
-    margin: 0;
-    margin-right: 18px;
-}
-.checkRemember > label {
-    display: inline;
-    color: #000;
-    font-family: Inria Serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin: 0;
-}
-.check_forgot a {
-    display: inline;
-    color: #000;
-    font-family: Inria Serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-}
-.signInContainer button {
-    display: inline-flex;
-    width: 150px;
-    padding: 21px 37px;
-    text-align: right;
-    justify-content: center;
-    align-items: flex-end;
-    border-radius: 30px;
-    background: #8A9AC5;
     color: #000;
     font-family: Inter;
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: normal;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-    /* margin-bottom: 20px; */
+    margin: 0;
 }
+
+.forgotPassword {
+    display: flex;
+    justify-content: right;
+    color: var(--dull-black);
+    font-family: Inter;
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 10px;
+}
+
+.forgotPassword a:hover {
+    color: var(--lilac-color);
+}
+
+.submitForm {
+    display: flex !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 15px 10px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 20px !important;
+    background: #8A9AC5 !important;
+    color: var(--white-color) !important;
+    font-family: Inter !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: normal !important;
+    border: none !important;
+    margin-block: 20px !important;
+}
+
+.submitForm:hover {
+    opacity: 0.8 !important;
+    background-color: rebeccapurple !important;
+}
+
 .noAccount {
     width: 214px;
     text-align: right;
@@ -172,169 +233,49 @@
 .container a:hover {
     color: #8A9AC5;
 }
+
 .container button:hover {
     opacity: 0.8;
 }
-@media screen and (min-width: 720px) {
-    .container {
-        padding-inline: 80px;
+
+/* Tablet Screen */
+@media screen and (min-width: 768px) {
+    .container label {
+        font-size: var(--font-size-l);
     }
-    .container button {
-        width: 560px;
-        height: 91px;
-        color: #000;
-        font-family: Inter;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
+    .container input {
+        font-size: var(--font-size-l);
     }
-    .container button > img {
-        width: 48px;
-        height: 48px;
-        margin-right: 24.55px;
+    span {
+        font-size: var(--font-size-l);
     }
-    .signInContainer {
-        width: 560px;
-    }
-    .signInContainer label {
-        font-size: 32px;
-    }
-    .signInContainer input {
-        width: 500px;
-        height: 91px;
-    }
-    .signInContainer button {
-        width: 208px;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .signInContainer input:focus {
-        width: 560px;
-    }
-    .checkRemember > input:focus {
-        transition: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 1000px;
-        border: 1px solid #000;
-    }
-    .signInContainer a {
-        color: #000;
-        font-family: Inria Serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    .submitForm {
+        font-size: var(--font-size-l) !important;
     }
 }
 
+/* Laptop Screen */
 @media screen and (min-width: 1024px) {
-    .container {
-        padding-inline: 108px;
-        padding-block: 37px;
+    .container label {
+        font-size: var(--font-size-xl);
     }
-    .signInContainer input {
-        margin-bottom: 29px;
-        width: 500px;
-        height: 91px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        border: 3px solid #000;
-        background: #FFF;
-        transition: width 2s ease-in-out;
+    .container input {
+        font-size: var(--font-size-xl);
     }
-    .signInContainer input:focus {
-        width: 560px;
-    }
-    .check_forgot {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0;
-        margin-bottom: 28px;
-    }
-    .checkRemember > input[type="checkbox"]{
-        display: inline;
-        transition: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 1000px;
-        border: 1px solid #000;
-        background: #FFF;
-        margin: 0;
-        margin-right: 17px;
-    }
-    .checkRemember > input:focus {
-        display: inline;
-        transition: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 1000px;
-        border: 1px solid #000;
-        background: #FFF;
-        margin: 0;
-        margin-right: 18px;
-    }
-    .checkRemember > label {
-        display: inline;
-        color: #000;
-        font-family: Inria Serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin: 0;
+    span {
+        font-size: var(--font-size-xl);
     }
 }
 
+/* Large screen */
 @media screen and (min-width: 1444px) {
-    .signInContainer {
-        padding-inline: 108px;
-        padding-block: 37px;
+    .container label {
+        font-size: var(--font-size-xxl);
     }
-    .signInContainer label {
-        margin-left: 45px;
-        margin-bottom: 29px;
-        font-size: 32px;
+    .container input {
+        font-size: var(--font-size-xxl);
     }
-    .signInContainer input {
-        margin-bottom: 29px;
-        width: 500px;
-        height: 91px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        border: 3px solid #000;
-        background: #FFF;
-        transition: width 2s ease-in-out;
-    }
-    .signInContainer input:focus {
-        width: 560px;
-    }
-    .checkRemember > input[type="checkbox"]{
-        display: inline;
-        transition: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 1000px;
-        border: 1px solid #000;
-        margin: 0;
-        margin-right: 17px;
-    }
-    .checkRemember > input:focus {
-        width: 30px;
-        margin: 0;
-        margin-right: 18px;
-        transition: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 1000px;
-        border: 1px solid #000;
-    }
-    .checkRemember > label {
-        display: inline;
-        font-size: 20px;
-        margin: 0;
+    span {
+        font-size: var(--font-size-xxl);
     }
 }
