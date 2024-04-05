@@ -1,5 +1,12 @@
 from datetime import datetime
-from flask_app import db
+from flask_app import db, login_manager
+from flask_login import UserMixin
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
 
 document_user_association = db.Table('document_user_association',
                                      db.Column('user_id', db.Integer,
@@ -7,20 +14,21 @@ document_user_association = db.Table('document_user_association',
                                      db.Column('document_id', db.Integer, db.ForeignKey('document.id')))
 
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
+    first_name = db.Column(db.String(), nullable=False)
+    last_name = db.Column(db.String(), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False,
                            default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
 
     # Define many-to-many relationship with User through association table
-    posts = db.relationship(
-        'Document', secondary=document_user_association, backref='authors', lazy='dynamic')
+    documents = db.relationship(
+        'Document', secondary=document_user_association, backref='users', lazy='dynamic')
 
     def __repr__(self):
-        return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+        return f"User('{self.first_name}', '{self.last_name}', '{self.email}', '{self.image_file}')"
 
 
 class Document(db.Model):
@@ -29,26 +37,6 @@ class Document(db.Model):
     date_created = db.Column(
         db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text)
-
-   # Column to store user IDs associated with the document
-    user_ids = db.Column(db.String(255), nullable=True)
-
-    # Define many-to-many relationship with User through association table
-    authors = db.relationship('User', secondary=document_user_association,
-                              backref=db.backref('documents', lazy='dynamic'),
-                              lazy='dynamic')
-
-    def add_user(self, user):
-        # Add a user to the list of associated users
-        if user not in self.authors:
-            self.authors.append(user)
-            db.session.commit()
-
-    def remove_user(self, user):
-        # Remove a user from the list of associated users
-        if user in self.authors:
-            self.authors.remove(user)
-            db.session.commit()
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_created}')"
