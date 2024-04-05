@@ -1,36 +1,92 @@
 {% extends "layout.html" %} {% block head %}
 <link rel="stylesheet" href="../static/style/account.css" />
 {% endblock head %}{% block body %}
-<header>
-  <img
-    id="backArrow"
-    onclick="prevPage()"
-    src="../static/images/backArrow.svg"
-    alt="Back Arrow Icon"
-  />
-  <h4>My Account</h4>
-</header>
-<form action="#">
-  <label for="image">
-    <div class="profile">
-      <div class="profileImg">Add profile picture</div>
-      <p>Change profile picture</p>
+<div class="container">
+  <header>
+    <div class="header">
+      <img
+        id="backArrow"
+        onclick="prevPage()"
+        src="../static/images/backArrow.svg"
+        alt="Back Arrow Icon"
+      />
+      <h2>My Account</h2>
+      <img class="gear" src="../static/images/icons/gear.svg" alt="A svg gear icon" />
     </div>
-  </label>
-  <input type="image" src="" alt="" />
-</form>
-<section class="account">
-  <form id="account_form" action="#" autocomplete="on" method="post">
-    <label for="firstName">First Name</label>
-    <input type="text" />
-    <label for="OtherNames">Other Names</label>
-    <input type="text" />
-    <label for="displayName">Display Name</label>
-    <input type="text" />
-    <label for="changePassword">Change Password</label>
-    <input type="text" />
-    <button type="submit">Log Out</button>
-  </form>
-</section>
+    <div class="gearDropdown">
+      <div class="gearRow">
+        <img
+          src="../static/images/icons/notification.svg"
+          alt="A svg icon of a bell, a notification icon"
+        />
+        <p>Notification</p>
+        <div class="notificationToggle toogleContainerOn">
+          <div class="toggle toggleOn"></div>
+        </div>
+      </div>
+      <div class="gearRow">
+        <img
+          src="../static/images/icons/Reminder.svg"
+          alt="A svg icon of a hand, a reminder icon"
+        />
+        <p>Reminder</p>
+      </div>
+      <div class="reminderDetails">
+        <span>Default</span>
+        <div class="reminderDays">
+          <div class="daysRow">
+            <div class="daysSet"><p>Set Reminder</p></div>
+            <div class="days">
+              <p>1 day</p>
+              <p>1 week</p>
+              <p>2 weeks</p>
+              <p>1 month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="profilePic">
+    <div class="profilePicContainer">
+      <form action="#">
+        <label for="image">
+          <div class="profile">
+            <div class="profileImg">Add profile picture</div>
+            <p>Change profile picture</p>
+          </div>
+        </label>
+        <input type="image" src="" alt="" />
+      </form>
+    </div>
+  </section>
+  <section class="profileDetails">
+    <form id="profileForm" action="#" autocomplete="on" method="post">
+      <div class="profileContainer">
+        <div class="row">
+          <div class="col"><label for="firstName">First Name</label></div>
+          <div class="col"><input type="text" /></div>
+        </div>
+        <div class="row">
+          <div class="col"><label for="OtherNames">Other Names</label></div>
+          <div class="col"><input type="text" /></div>
+        </div>
+        <div class="row">
+          <div class="col"><label for="displayName">Display Name</label></div>
+          <div class="col"><input type="text" /></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="changePassword">Change Password</label>
+          </div>
+          <div class="col"><input type="text" /></div>
+        </div>
+      </div>
+      <button type="submit">Log Out</button>
+    </form>
+  </section>
+</div>
+
+<script src="../static/scripts/script.js"></script>
 <script src="../static/scripts/account.js"></script>
 {% endblock body %}

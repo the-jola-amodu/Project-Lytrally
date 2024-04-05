@@ -27,6 +27,11 @@
     <title>Lytrally</title>
     {% endif %}
     <!-- <base href="/project-lytrally/"> -->
+    <link
+      rel="shortcut icon"
+      href="../static/images/lytrally-logo.jpeg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../static/style/style.css" />
     <link rel="stylesheet" href="../static/style/fontawesome.min.css" />
     <link rel="stylesheet" href="../static/style/all.min.css" />
@@ -38,26 +43,34 @@
     <nav>
       <div class="s-screen navBar-bg">
         <div class="navBar">
-          <h1><a href="../templates/index.html">Lytrally</a></h1>
-          <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars navBarChange"></i>
+          <h1><a href="/">Lytrally</a></h1>
+          <i id="openNav" class="fa-solid fa-bars navBarChange"></i>
         </div>
         <div class="navDisplay">
-          <a class="navA" href="#">Home</a>
+          <a class="navA" href="/">Home</a>
           <a class="navA" href="#">Service</a>
           <a class="navA" href="#">Contact Us</a>
           <a class="navA" href="#">About</a>
           <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+          {% if page == "signin" %}
+          <a id="signUp" class="navA" href="/signup">Sign Up</a>
+          {% else %}
           <a id="signIn" class="navA" href="/signin">Sign In</a>
+          {% endif %}
         </div>
       </div>
       <div class="l-screen navBar-bg">
-        <h1><a href="../templates/index.html">Lytrally</a></h1>
+        <h1><a href="/">Lytrally</a></h1>
         <div class="navlinks">
-          <a href="../templates/index.html">Home</a>
+          <a href="/">Home</a>
           <a href="#">Service</a>
           <a href="#">Contact Us</a>
           <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+          {% if page == "signin" %}
+          <button><a href="/signup">Sign Up</a></button>
+          {% else %}
           <button><a href="/signin">Sign In</a></button>
+          {% endif %}
         </div>
       </div>
     </nav>
@@ -65,8 +78,8 @@
     <nav>
       <div class="s-screen">
         <div class="navBar">
-          <h1><a href="../templates/index.html">Lytrally</a></h1>
-          <i id="openNav" onclick="openNavBar()" class="fa-solid fa-bars"></i>
+          <h1><a href="/">Lytrally</a></h1>
+          <i id="openNav" class="fa-solid fa-bars"></i>
         </div>
         <div class="navDisplay">
           <a class="navA" href="#">Home</a>
@@ -74,17 +87,25 @@
           <a class="navA" href="#">Contact Us</a>
           <a class="navA" href="#">About</a>
           <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+          {% if page == "signin" %}
+          <a id="signUp" class="navA" href="/signup">Sign Up</a>
+          {% else %}
           <a id="signIn" class="navA" href="/signin">Sign In</a>
+          {% endif %}
         </div>
       </div>
       <div class="l-screen">
-        <h1><a href="../templates/index.html">Lytrally</a></h1>
+        <h1><a href="/">Lytrally</a></h1>
         <div class="navlinks">
-          <a href="../templates/index.html">Home</a>
+          <a href="/">Home</a>
           <a href="#">Service</a>
           <a href="#">Contact Us</a>
           <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+          {% if page == "signin" %}
+          <button><a href="/signup">Sign Up</a></button>
+          {% else %}
           <button><a href="/signin">Sign In</a></button>
+          {% endif %}
         </div>
       </div>
     </nav>
@@ -109,5 +130,8 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <!-- The script below includes script for the navbar -->
+    <script src="../static/scripts/script.js"></script>
   </body>
 </html>
