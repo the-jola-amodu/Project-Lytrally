@@ -293,7 +293,9 @@ a:active
     }
 }
 
-@media screen and (min-width: 720px) {
+
+/* Tablet Screen */
+@media screen and (min-width: 768px) {
     .l-screen 
     {
         width: 100%;
