@@ -24,17 +24,17 @@ def signin():
     if form.validate_on_submit():
         flash(f"Welcome, {form.username.data}!", 'success')
         return redirect(url_for('home'))
-    return render_template('signin.html', form=form, page='signin')
+    return render_template('signin.html', form=form, title='Login', page='signin')
 
 
 @app.route('/features')
 def features():
-    return render_template('features.html', page='features')
+    return render_template('features.html', title='Getting some work done!', page='features')
 
 
 @app.route('/account')
 def account():
-    return render_template('account.html', page='account')
+    return render_template('account.html', title='Profile', page='account')
 
 # Creates tables in the database
 # db.create_all()
