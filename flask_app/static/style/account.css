@@ -1,199 +1,391 @@
-* 
-{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-body 
-{
-    background: #F3F6FC;
-    display: flex;
-    flex-direction: column;
+:root {
+  --font-size-sm: 16px;
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-xl: 26px;
+  --font-size-xxl: 30px;
+  --font-title: 40px;
+  --inter-font: inter;
+  --off-white-color: #f3f6fc;
+  --lilac-color: #8a9ac5;
+  --black-color: #000;
+  --dull-black: #252222;
+  --roboto-font: Roboto Slab;
+  --Inria-font: Inria Serif;
+  --button-background-color: #6a7db1;
+  --grey-color: #8b8585;
+  --link-hover-color: #ffd700;
+  --active-feature-background: #8a9ac5;
+  --less-black: #1e1e1e;
+  --dropdown-bg: #dbd7d7;
+  --toggle-bg: #d9d9d9;
 }
 
-header, .account 
-{
-    padding-inline: 36px;
+body {
+  background: var(--off-white-color);
 }
 
-header 
-{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    color: #000;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 29px;
+.container {
+  /* padding-top: 0 !important; */
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
-header > img 
-{
-    width: 25.581px;
-    height: 20px;
-    margin-right: 72.42px;
+.header,
+.profileDetails {
+  padding-inline: 36px;
 }
 
-
-header > img:hover
-{
-    cursor: pointer;
+header {
+  margin-bottom: 29px;
 }
 
-.profile 
-{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    margin-bottom: 13px;
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 20px; */
+  color: #000;
+  font-family: Inter;
+  /* font-size: 24px; */
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 10px;
 }
 
-.profileImg 
-{
-    width: 125px;
-    height: 125px;
+.header > img:hover {
+  cursor: pointer;
+}
+
+.gearDropdown {
+  width: 260px;
+  padding: 10px;
+  background-color: white;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Courier New", Courier, monospace;
+  position: absolute;
+  right: 15px;
+}
+
+.gearDropdown .gearRow {
+  display: flex;
+  align-items: center;
+}
+
+.gearRow img,
+p {
+  margin-right: 10px;
+}
+
+.gearRow .notificationToggle {
+  width: 50px;
+  height: 25px;
+  background-color: var(--toggle-bg);
+  border-radius: 15px;
+  display: flex;
+  /* justify-content: flex-start; */
+  padding: 5px;
+}
+
+.notificationToggle .toggle {
+  width: 50%;
+  height: 100%;
+  border-radius: 100px;
+  /* background-color: var(--lilac-color); */
+}
+
+.toggleOn {
+  background-color: var(--lilac-color);
+}
+
+.toggleContainerOn {
+  justify-content: flex-start;
+}
+
+.toggleOff {
+  background-color: white;
+}
+
+.toggleContainerOff {
+  justify-content: flex-end;
+}
+
+.reminderDetails {
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reminderDetails span {
+  font-size: small;
+}
+
+.reminderDays .daysRow {
+  display: flex;
+  gap: 3px;
+}
+
+.profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  margin-bottom: 13px;
+}
+
+.profileImg {
+  width: 125px;
+  height: 125px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border: 1px solid var(--lilac-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  margin-bottom: 33px;
+}
+
+.profileImg:hover {
+  background-color: #8a9ac5;
+  color: var(--off-white-color);
+}
+
+.profile p {
+  text-align: right;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 33px;
+}
+
+.profile p:hover {
+  color: #8a9ac5;
+}
+
+#profileForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileContainer .row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.col label {
+  display: block;
+  margin-left: 28px;
+  color: var(--dull-black);
+  /* text-align: center; */
+  font-family: Roboto Slab;
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 26.4px */
+}
+
+.col input {
+  display: block;
+  padding-inline: 16px;
+  border-radius: 20px;
+  border: 3px solid var(--dull-black);
+  background: var(--off-white-color);
+  font-size: var(--font-size-m);
+  width: 80%;
+  height: 60px;
+  flex-shrink: 0;
+  transition: width 2s ease-in-out;
+}
+
+.col input:focus {
+  width: 100%;
+  outline: none;
+  border-color: var(--active-feature-background);
+}
+
+.profileDetails button {
+  width: 150px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 3px solid #000;
+  background: #8a9ac5;
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 41px;
+  margin-left: auto;
+  /* margin-right: auto; */
+}
+
+.profileDetails button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  .profileDetails {
+    padding-inline: 95px;
+  }
+
+  .profileImg {
+    width: 300px;
+    height: 300px;
     flex-shrink: 0;
-    background-color: #FFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: auto;
-    margin-right: 20px;
-    padding: 0;
-    margin-bottom: 16px;
-}
+    font-size: 32px;
+    border-radius: 200px;
+    margin-bottom: 33px;
+  }
 
-.profileImg:hover 
-{
-    background-color: #8A9AC5;
-}
+  .profile p {
+    font-size: 32px;
+  }
 
-.profile p 
-{
-    text-align: right;
-    color: #000;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-right: 33px;
-}
+  .header {
+    font-size: var(--font-size-xxl);
+  }
 
-.profile p:hover 
-{
-    color: #8A9AC5;
-}
+  .header img {
+    width: 40px;
+  }
 
-#account_form 
-{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
+  .gearDropdown {
+    font-size: var(--font-size-m);
+    width: 320px;
+  }
 
-.account label 
-{
-    display: block;
-    margin-left: 28px;
-    margin-bottom: 10px;
-    color: #000;
-    /* text-align: center; */
-    font-family: Roboto Slab;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 110%; /* 26.4px */
-}
+  .gearRow .notificationToggle {
+    width: 60px;
+    height: 30px;
+  }
 
-.account input 
-{
-    display: block;
-    margin-bottom: 10px;
-    padding-inline: 16px;
-    border-radius: 20px;
-    border: 3px solid #000;
-    background: #FFF;
-    font-size: 20px;
+  .profileDetails label {
+    font-size: var(--font-size-l);
+  }
+
+  .profileDetails input {
     width: 80%;
-    height: 50px;
-    flex-shrink: 0;
-    transition: width 2s ease-in-out;
+    font-size: var(--font-size-l);
+    padding-block: 30px;
+  }
 }
 
-.account input:focus 
-{
+@media (min-width: 1024px) {
+  .profileContainer {
+    gap: 70px;
+    margin-top: 20px;
+    padding-inline: 40px;
+  }
+
+  .profilePicContainer {
+    padding-inline: 60px;
+  }
+
+  .profileContainer .row {
     width: 100%;
-    outline: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .row div:first-child {
+    width: 300px;
+  }
+
+  .row div:last-child {
+    flex-grow: 2;
+  }
+
+  .profileDetails button {
+    width: auto;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: var(--font-size-xl);
+  }
 }
 
-.account button 
-{
-    width: 150px;
-    height: 60px;
-    flex-shrink: 0;
-    border-radius: 30px;
-    border: 3px solid #000;
-    background: #8A9AC5;
-    color: #000;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 41px;
-    margin-left: auto;
-    /* margin-right: auto; */
+/* Container content styling as a result of navbar position for Normal phone screen */
+@media screen and (max-height: 700px) {
+  .container {
+    /* padding-top: calc(300px + 1vmin); */
+    padding-top: 70px !important;
+  }
 }
 
-.account button:hover 
-{
-    opacity: 0.8;
+@media (min-height: 740px) and (max-height: 800px) {
+  .container {
+    padding-top: calc(70px + 1vmin) !important;
+  }
 }
 
-@media screen and (min-width: 720px) 
-{
-    .account 
-    {
-        padding-inline: 95px;
-    }
-    
-    .profileImg 
-    {
-        width: 300px;
-        height: 300px;
-        flex-shrink: 0;
-        font-size: 32px;
-        border-radius: 200px;
-        margin-bottom: 33px;
-    }
-    
-    .profile p 
-    {
-        font-size: 32px;
-    }
-    
-    .account label 
-    {
-        font-size: 32px;
-    }
-    
-    .account input 
-    {
-        width: 500px;
-        height: 91px;
-    }
+/* Container content styling as a result of navbar position for  Longer Phone screens */
+@media (min-height: 800px) and (max-height: 1200px) {
+  .container {
+    padding-top: 80px !important;
+  }
+}
+
+/* Container content styling as a result of navbar position for  laptop and bigger screen query */
+@media (min-width: 1024px) and (min-height: 600px) {
+  .container {
+    padding-top: calc(70px + 1vmin) !important;
+  }
+}
+
+/* Container content styling as a result of navbar position for  ipad screen query */
+@media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
+  .container {
+    padding-top: 100px !important;
+  }
+}
+
+/* Container content styling as a result of navbar position for  Next Hub screen query */
+@media (width: 1024px) and (height: 600px) {
+  .container {
+    padding-top: 80px !important;
+  }
+}
+
+@media (max-width: 540px) and (min-height: 720px) {
+  .container {
+    padding-top: 70px;
+  }
 }

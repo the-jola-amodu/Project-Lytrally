@@ -1,116 +1,441 @@
 {% extends "layout.html" %} {% block head %}
 <link rel="stylesheet" href="../static/style/features.css" />
 {% endblock head %}{% block body %}
-<header id="header" onclick="closeFeatures()">
-  <h1><a href="../templates/index.html">Lytrally</a></h1>
-  <div class="logoHeader">
-    <img src="../static/images/icons/bell.svg" alt="" />
-    <div class="profilePic"></div>
-  </div>
-</header>
-<section>
-  <div class="featuresList">
-    <div id="featuresDisplay" class="currentFeature" onclick="features()">
-      <p id="visibleFeature">Ghostwriting A.I.</p>
-      <img src="../static/images/frame.svg" alt="" />
+<div class="container">
+  <header id="header" onclick="closeFeatures()">
+    <div class="logoHeader">
+      <img src="../static/images/icons/bell.svg" alt="" />
+
+      <div class="profilePic"></div>
     </div>
-    <div class="listDisplay">
-      <a id="ghostWriting" class="featuresLink" href="#">Ghostwriting A.I.</a>
-      <a id="readabilityStats" class="featuresLink" href="#"
-        >Readability Statistics</a
-      >
-      <a id="generateContent" class="featuresLink" href="#"
-        >Generate Content Ideas</a
-      >
-      <a id="keywordAnalysis" class="featuresLink" href="#">Keyword Analysis</a>
-      <a id="reasearch_analysis" class="featuresLink" href="#"
-        >Research and analysis</a
-      >
-      <a id="summarization_paraphrasing" class="featuresLink" href="#"
-        >Summarization and Paraphrasing</a
-      >
-      <a id="collaboration" class="featuresLink" href="#">Collaboration</a>
+  </header>
+  <section>
+    <div class="featuresContainer">
+      <div class="featuresList">
+        <div id="featuresDisplay" class="currentFeature">
+          <p id="visibleFeature">Ghostwriting A.I.</p>
+          <img src="../static/images/frame.svg" alt="" />
+        </div>
+        <div class="listDisplay">
+          <ul>
+            <li id="ghostWriting" class="feature" href="#">
+              Ghostwriting A.I.
+            </li>
+            <li id="readabilityStats" class="feature" href="#">
+              Readability Statistics
+            </li>
+            <li id="generateContent" class="feature" href="#">
+              Generate Content Ideas
+            </li>
+            <li id="keywordAnalysis" class="feature" href="#">
+              Keyword Analysis
+            </li>
+            <li id="reasearch_analysis" class="feature" href="#">
+              Research and analysis
+            </li>
+            <li id="summarization_paraphrasing" class="feature" href="#">
+              Summarization and Paraphrasing
+            </li>
+            <li id="collaboration" class="feature" href="#">Collaboration</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="features">
-    <div class="ghostWrittingFeature">
-      <div class="ghostWrittingTools">
-        <div class="toolsContainer">
-          <div class="language">
-            <div class="languageDisplay">
-              <p class="langDisplay">English</p>
-              <img src="../static/images/icons/downArrow.svg" alt="" />
+  </section>
+  <section>
+    <div class="features">
+      <div class="ghostWrittingFeature featureSection">
+        <div class="ghostWritting">
+          <div class="ghostWrittingToolsContainer">
+            <div class="language">
+              <div id="gwLanguageDisplay" class="languageDisplay">
+                <p id="gwLangDisplay" class="langDisplay">English</p>
+                <img src="../static/images/icons/downArrow.svg" alt="" />
+              </div>
+              <div id="gwLanguages" class="languages">
+                <p class="lang gwLang">English</p>
+                <p class="lang gwLang">French</p>
+                <p class="lang gwLang">Portugese</p>
+              </div>
             </div>
-            <div class="languages">
-              <p class="lang">English</p>
-              <p class="lang">French</p>
-              <p class="lang">Portugese</p>
+            <div class="ghostWrittingtools">
+              <ul>
+                <li href="#">
+                  <img
+                    src="../static/images/icons/italic.svg"
+                    alt="Italic Icon"
+                  />
+                  <p>Italic</p>
+                </li>
+                <li href="#">
+                  <img
+                    src="../static/images/icons/fontStyle.svg"
+                    alt="Font Style Icon"
+                  />
+                  <p>Font Style</p>
+                </li>
+                <li href="#">
+                  <img
+                    src="../static/images/icons/fontColor.svg"
+                    alt="Font Color Icon"
+                  />
+                  <p>Font Color</p>
+                </li>
+                <li href="#">
+                  <img
+                    src="../static/images/icons/fontSize.svg"
+                    alt="Font Size Icon"
+                  />
+                  <p>Font Size</p>
+                </li>
+                <li href="#">
+                  <img src="../static/images/icons/bold.svg" alt="Bold Icon" />
+                  <p>Bold</p>
+                </li>
+                <li href="#">
+                  <img
+                    src="../static/images/icons/underline.svg"
+                    alt="Underline Icon"
+                  />
+                  <p>Underline</p>
+                </li>
+                <li href="#">
+                  <img
+                    src="../static/images/icons/highlight.svg"
+                    alt="Highlight Color Icon"
+                  />
+                  <p>Highlight Color</p>
+                </li>
+                <li href="#">
+                  <img
+                    src="../static/images/icons/orientation.svg"
+                    alt="Orientation Icon"
+                  />
+                  <p>Orientation</p>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="tools">
-            <a href="#">
-              <img src="../static/images/icons/italic.svg" alt="Italic Icon" />
-              <p>Italic</p>
-            </a>
-            <a href="#">
-              <img
-                src="../static/images/icons/fontStyle.svg"
-                alt="Font Style Icon"
+          <div class="workSpace">
+            <div class="userInput">
+              <div class="upload">
+                <form action="">
+                  <label for="upload">
+                    <img src="../static/images/icons/upload.svg" alt="" />
+                    <p>Upload Your Articles</p>
+                  </label>
+                  <input type="file" />
+                </form>
+              </div>
+              <div class="textInput">
+                <form action="" class="textInputForm">
+                  <textarea
+                    name="ghostWriting"
+                    id="ghostWritingInput"
+                    class="ghostWritingInput"
+                    cols="30"
+                    rows="1"
+                    placeholder="Transmit message"
+                  ></textarea>
+                </form>
+              </div>
+            </div>
+            <div class="userOutput"></div>
+          </div>
+        </div>
+      </div>
+      <div class="readabilityStatsFeature featureSection">
+        <div class="statsContainer">
+          <div class="stats">
+            <div class="correctionStats">
+              <div class="row">
+                <div class="col col-heading">Corrections</div>
+                <div class="col col-hr"><hr /></div>
+              </div>
+              <div class="row">
+                <div class="col">Grammar</div>
+                <div class="col eye-col">
+                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">Spelling</div>
+                <div class="col eye-col">
+                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">Puntuations</div>
+                <div class="col eye-col">
+                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">Repititions</div>
+                <div class="col eye-col">
+                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">Word Count</div>
+                <div class="col eye-col">
+                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
+                </div>
+              </div>
+            </div>
+            <div class="readability">
+              <div class="row">
+                <div class="col col-heading">Readability</div>
+                <div class="col col-hr"><hr /></div>
+              </div>
+              <div class="row">
+                <div class="col">Flesch-Kincaid grade level</div>
+                <div class="col eye-col">
+                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">Flesh Reading Ease</div>
+                <div class="col eye-col">
+                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
+                </div>
+              </div>
+            </div>
+            <div class="keywordAnalysis">
+              <div class="row">
+                <div class="col col-heading">Keyword Analysis</div>
+                <div class="col col-hr"><hr /></div>
+              </div>
+              <div class="row keywordRow">
+                <div class="col">
+                  <div class="keywords">
+                    <form action="">
+                      <textarea
+                        name="keywords"
+                        id="keywords"
+                        cols="30"
+                        rows="1"
+                        placeholder="Enter Keywords"
+                      ></textarea>
+                      <button type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="keywordLanguages">
+                    <p>Laguages</p>
+                    <img
+                      src="../static/images/icons/downArrow.svg"
+                      alt="Down Arrow svg icon"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="keywordTable">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Keyword</th>
+                      <th>
+                        <span class="tableSearch"
+                          >Searches
+                          <img
+                            src="../static/images/icons/downArrow.svg"
+                            alt="Down Arrow svg icon"
+                        /></span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="generateContentFeature featureSection">
+        <div class="language">
+          <div id="gcLanguageDisplay" class="languageDisplay">
+            <p id="gcLangDisplay" class="langDisplay">English</p>
+            <img src="../static/images/icons/downArrow.svg" alt="" />
+          </div>
+          <div id="gcLanguages" class="languages">
+            <p class="lang gcLang">English</p>
+            <p class="lang gcLang">French</p>
+            <p class="lang gcLang">Portugese</p>
+          </div>
+        </div>
+        <div class="generateContent">
+          <p>Type the content you want to distinguish or make unique</p>
+          <div class="prompt">
+            <div class="messageDisplay"></div>
+            <div class="ideaPrompt">
+              <form action="">
+                <input
+                  type="text"
+                  name="ideaPrompt"
+                  id="ideaPrompt"
+                  placeholder="Send message to create content"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="keywordAnalysisFeature featureSection"></div>
+      <div class="reasearchAnalysisFeature featureSection">
+        <h1>Interact with any document</h1>
+        <p>
+          Join the millions of students, researchers, and professionals who are
+          using AI to comprehend research and provide rapid answers to queries.
+        </p>
+        <div class="reasearchAnalysisContainer">
+          <div class="language">
+            <div id="raLanguageDisplay" class="languageDisplay">
+              <p id="raLangDisplay" class="langDisplay">English</p>
+              <img rac="../static/images/icons/downArrow.svg" alt="" />
+            </div>
+            <div id="raLanguages" class="languages">
+              <p class="lang raLang">English</p>
+              <p class="lang raLang">French</p>
+              <p class="lang raLang">Portugese</p>
+            </div>
+          </div>
+          <div class="reaserchAnalysis">
+            <form action="">
+              <label for="reasearchAnalysisFeature"
+                ><img
+                  src="../static/images/icons/upload.svg"
+                  alt="A svg upload icon"
+                />Click here to upload document</label
+              >
+              <input
+                type="file"
+                name="reasearchAnalysisFeature"
+                id="ReasearchAnalysis"
               />
-              <p>Font Style</p>
-            </a>
-            <a href="#">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="summarizationParaphrasingFeature featureSection">
+        <div class="lang_summary_paraphrase_toggle">
+          <div class="language">
+            <div id="srLanguageDisplay" class="languageDisplay">
+              <p id="srLangDisplay" class="langDisplay">English</p>
+              <img src="../static/images/icons/downArrow.svg" alt="" />
+            </div>
+            <div id="srLanguages" class="languages">
+              <p class="lang srLang">English</p>
+              <p class="lang srLang">French</p>
+              <p class="lang srLang">Portugese</p>
+            </div>
+          </div>
+          <div class="paraphrase_summary_toggle">
+            <div class="paraphraseToogle">Paraphrasing</div>
+            <div class="summaryToggle">Summarizing</div>
+            <div class="psUpload">
               <img
-                src="../static/images/icons/fontColor.svg"
-                alt="Font Color Icon"
+                src="../static/images/icons/upload.svg"
+                alt="A svg upload icon"
               />
-              <p>Font Color</p>
-            </a>
-            <a href="#">
-              <img
-                src="../static/images/icons/fontSize.svg"
-                alt="Font Size Icon"
-              />
-              <p>Font Size</p>
-            </a>
-            <a href="#">
-              <img src="../static/images/icons/bold.svg" alt="Bold Icon" />
-              <p>Bold</p>
-            </a>
-            <a href="#">
-              <img
-                src="../static/images/icons/underline.svg"
-                alt="Underline Icon"
-              />
-              <p>Underline</p>
-            </a>
-            <a href="#">
-              <img
-                src="../static/images/icons/highlight.svg"
-                alt="Highlight Color Icon"
-              />
-              <p>Highlight Color</p>
-            </a>
-            <a href="#">
-              <img
-                src="../static/images/icons/orientation.svg"
-                alt="Orientation Icon"
-              />
-              <p>Orientation</p>
-            </a>
+            </div>
+          </div>
+        </div>
+        <div class="summaryParaphraseContainer">
+          <div class="srUserInput">
+            <form action="" id="paraphraseForm">
+              <textarea
+                name="Paraphrase"
+                id="Paraphrase"
+                cols="30"
+                rows="3"
+                placeholder="Type or paste the test and click on Paraphrase"
+              ></textarea>
+              <input type="submit" value="Paraphrase" />
+            </form>
+            <form action="" id="summarizeForm">
+              <textarea
+                name="Summarize"
+                id="Summarize"
+                cols="30"
+                rows="3"
+                placeholder="Type or paste the test and click on Summarize"
+              ></textarea>
+              <input type="submit" value="Summarize" />
+            </form>
+          </div>
+          <div class="srOutputContainer">
+            <div class="srOutput"></div>
+            <div class="srOutputTools">
+              <span
+                ><img
+                  src="../static/images/icons/download.svg"
+                  alt="A svg download icon"
+              /></span>
+              <span
+                ><img
+                  src="../static/images/icons/copy.svg"
+                  alt="A svg copy icon"
+              /></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collaborationFeature featureSection">
+        <div>
+          <div class="share">
+            <div class="invite">
+              <form action="">
+                <input
+                  type="email"
+                  name="invite"
+                  id="invite"
+                  placeholder="Type Email"
+                />
+                <input type="submit" value="Invite" />
+              </form>
+            </div>
+            <div class="shareOptions">
+              <ul>
+                <li>Copy Link</li>
+                <li>Invite via Email</li>
+                <li>Publish</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="readabilityStatsFeature"></div>
-    <div class="generateContentFeature"></div>
-    <div class="keywordAnalysisFeature"></div>
-    <div class="reasearchAnalysisFeature"></div>
-    <div class="summarizationParaphrasingFeature"></div>
-    <div class="collaborationFeature"></div>
-  </div>
-</section>
+  </section>
+</div>
 <script src="../static/scripts/features.js"></script>
+<script src="../static/scripts/script.js"></script>
 {% endblock body %}

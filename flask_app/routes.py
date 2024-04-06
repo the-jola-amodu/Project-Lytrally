@@ -43,7 +43,7 @@ def signin():
             return redirect(next_page) if next_page else redirect(url_for('index'))
         else:
             flash(f"Login Unsuccessful. Please check login details", 'danger')
-    return render_template('signin.html', form=form)
+    return render_template('signin.html', form=form, title='Login', page='signin')
 
 
 @app.route('/features')
@@ -51,7 +51,7 @@ def signin():
 def features():
     image_file = url_for(
         'static', filename='profile_pics/' + current_user.image_file)
-    return render_template('features.html', page='features', image_file=image_file)
+    return render_template('features.html', page='features', image_file=image_file, title='Getting some work done!')
 
 
 @app.route('/account')

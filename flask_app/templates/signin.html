@@ -1,66 +1,73 @@
 {% extends "layout.html" %} {% block head %}
 <link rel="stylesheet" href="../static/style/signin.css" />
 {% endblock head %}{% block body %}
-<section class="container">
-  <h4>Sign in into your Lytrally account</h4>
-  <button>
-    <img
-      src="{{ url_for('static', filename='images/google.png') }}"
-      alt="Google Icon"
-    />
-    Continue with Google
-  </button>
-  <button>
-    <img
-      src="{{ url_for('static', filename='images/facebook.png') }}"
-      alt="Facebook Icon"
-    />
-    Continue with Facebook
-  </button>
-  <div class="signInContainer">
-    <form action="#" id="signin_form" autocomplete="on" method="post">
-      {{ form.hidden_tag() }}
-      <legend>
-        Sign in to get back to jump back into your creative process!
-      </legend>
-      <div class="form-group">
-        {{ form.email.label(class="form-control-label") }} {% if
-        form.email.errors %} {{ form.email(class="form-control form-control-lg
-        is-invalid") }}
-        <div class="invalid-feedback">
-          {% for error in form.email.errors %}
-          <span>{{ error }}</span>
-          {% endfor %}
-        </div>
-        {% else %} {{ form.email(class="form-control form-control-lg") }} {%
-        endif %}
-      </div>
+<section>
+  <div class="container">
+    <div class="mainContainer">
+      <h4>Sign in into your Lytrally account</h4>
+      <button>
+        <img
+          src="{{ url_for('static', filename='images/google.png') }}"
+          alt="Google Icon"
+        />
+        Continue with Google
+      </button>
+      <button>
+        <img
+          src="{{ url_for('static', filename='images/facebook.png') }}"
+          alt="Facebook Icon"
+        />
+        Continue with Facebook
+      </button>
+      <div class="signInContainer">
+        <form action="#" id="signin_form" autocomplete="on" method="post">
+          <div class="form-group">
+            {{ form.email.label(class="form-control-label") }} {% if
+            form.email.errors %} {{ form.email(class="form-control
+            form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.email.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %} {{ form.email(class="form-control form-control-lg") }} {%
+            endif %}
+          </div>
 
-      <div class="form-group">
-        {{ form.password.label(class="form-control-label") }} {% if
-        form.password.errors %} {{ form.password(class="form-control
-        form-control-lg is-invalid") }}
-        <div class="invalid-feedback">
-          {% for error in form.password.errors %}
-          <span>{{ error }}</span>
-          {% endfor %}
-        </div>
-        {% else %} {{ form.password(class="form-control form-control-lg") }} {%
-        endif %}
-      </div>
+          <div class="form-group">
+            {{ form.password.label(class="form-control-label") }} {% if
+            form.password.errors %} {{ form.password(class="form-control
+            form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.password.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %} {{ form.password(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
 
-      <div class="check_forgot">
-        <div class="form-check">
-          {{ form.remember_me(class="form-check-input") }} {{
-          form.remember_me.label(class="form-check-label") }}
-        </div>
-        <a href="{{ url_for('signin') }}">Forgotten Password</a>
+          <div class="check_remember">
+            <div class="form-check">
+              {{ form.remember_me(class="form-check-input") }} {{
+              form.remember_me.label(class="form-check-label") }}
+            </div>
+          </div>
+          <div class="forgotPassword">
+            <a class="forgotPassword" href="{{ url_for('signin') }}"
+              >Forgotten Password</a
+            >
+          </div>
+
+          <div class="form-group">
+            {{ form.submit_to_login(class="btn btn-outline-info submitForm") }}
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        {{ form.submit_to_login(class="btn btn-outline-info") }}
-      </div>
-    </form>
+      <a href="{{ url_for('signup') }}" class="noAccount"
+        >Do not have an account</a
+      >
+    </div>
   </div>
-  <a href="{{ url_for('signup') }}" class="noAccount">Do not have an account</a>
 </section>
 {% endblock body %}
