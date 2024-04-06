@@ -7,7 +7,9 @@ from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', page='Home')
+    image_file = url_for(
+        'static', filename='profile_pics/' + current_user.image_file)
+    return render_template('index.html', page='Home', image_file=image_file)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -47,10 +49,20 @@ def signin():
 @app.route('/features')
 @login_required
 def features():
-    return render_template('features.html', page='features')
+    image_file = url_for(
+        'static', filename='profile_pics/' + current_user.image_file)
+    return render_template('features.html', page='features', image_file=image_file)
 
 
 @app.route('/account')
 @login_required
 def account():
-    return render_template('account.html', page='account', title='Account')
+    image_file = url_for(
+        'static', filename='profile_pics/' + current_user.image_file)
+    return render_template('account.html', page='account', title='Account', image_file=image_file)
+
+
+@app.route("/signout")
+def signout():
+    logout_user()
+    return redirect(url_for('home'))

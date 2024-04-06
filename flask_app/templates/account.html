@@ -10,15 +10,19 @@
   />
   <h4>My Account</h4>
 </header>
-<form action="#">
-  <label for="image">
-    <div class="profile">
-      <div class="profileImg">Add profile picture</div>
-      <p>Change profile picture</p>
+<div>
+  <div class="media">
+    <img
+      class="rounded-circle profileImg"
+      src="{{ image_file }}"
+      alt="your profile picture"
+    />
+    <div class="media-body">
+      <h2>Name: {{ current_user.first_name }} {{ current_user.last_name }}</h2>
+      <p class="text-secondary">Email: {{ current_user.email }}</p>
     </div>
-  </label>
-  <input type="image" src="" alt="" />
-</form>
+  </div>
+</div>
 <section class="account">
   <form id="account_form" action="#" autocomplete="on" method="post">
     <label for="firstName">First Name</label>

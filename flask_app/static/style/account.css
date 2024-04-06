@@ -57,11 +57,10 @@ header > img:hover
 
 .profileImg 
 {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
     flex-shrink: 0;
     background-color: #FFF;
-    border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,9 +71,9 @@ header > img:hover
     font-weight: 400;
     line-height: normal;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 20px;
     padding: 0;
-    margin-bottom: 33px;
+    margin-bottom: 16px;
 }
 
 .profileImg:hover 
