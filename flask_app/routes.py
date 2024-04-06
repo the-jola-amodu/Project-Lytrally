@@ -7,7 +7,12 @@ from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', page='Home')
+    if current_user.is_authenticated:
+        image_file = url_for(
+            'static', filename='profile_pics/' + current_user.image_file)
+        return render_template('index.html', page='Home', image_file=image_file)
+    else:
+        return render_template('index.html', page='Home')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -47,13 +52,26 @@ def signin():
 @app.route('/features')
 @login_required
 def features():
-    return render_template('features.html', title='Getting some work done!', page='features')
+    if current_user.is_authenticated:
+        image_file = url_for(
+            'static', filename='profile_pics/' + current_user.image_file)
+        return render_template('features.html', page='features', image_file=image_file, title='Getting some work done!')
+    else:
+        return render_template('features.html', page='features', title='Getting some work done!')
 
 
 @app.route('/account')
 @login_required
 def account():
-    return render_template('account.html', title='Profile', page='account')
+    if current_user.is_authenticated:
+        image_file = url_for(
+            'static', filename='profile_pics/' + current_user.image_file)
+        return render_template('account.html', page='account', title='Account', image_file=image_file)
+    else:
+        return render_template('account.html', page='account', title='Account')
 
-# Creates tables in the database
-# db.create_all()
+
+@app.route("/signout")
+def signout():
+    logout_user()
+    return redirect(url_for('home'))

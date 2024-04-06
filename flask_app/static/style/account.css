@@ -148,12 +148,11 @@ p {
 }
 
 .profileImg {
-  width: 200px;
-  height: 200px;
+  width: 125px;
+  height: 125px;
   flex-shrink: 0;
   background-color: #fff;
   border: 1px solid var(--lilac-color);
-  border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

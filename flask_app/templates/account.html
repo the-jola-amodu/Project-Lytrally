@@ -11,7 +11,11 @@
         alt="Back Arrow Icon"
       />
       <h2>My Account</h2>
-      <img class="gear" src="../static/images/icons/gear.svg" alt="A svg gear icon" />
+      <img
+        class="gear"
+        src="../static/images/icons/gear.svg"
+        alt="A svg gear icon"
+      />
     </div>
     <div class="gearDropdown">
       <div class="gearRow">
@@ -50,12 +54,21 @@
   <section class="profilePic">
     <div class="profilePicContainer">
       <form action="#">
-        <label for="image">
-          <div class="profile">
-            <div class="profileImg">Add profile picture</div>
-            <p>Change profile picture</p>
+        <div>
+          <div class="media">
+            <img
+              class="rounded-circle profileImg"
+              src="{{ image_file }}"
+              alt="user profile pic"
+            />
+            <div class="media-body">
+              <h2>
+                Name: {{ current_user.first_name }} {{ current_user.last_name }}
+              </h2>
+              <p class="text-secondary">Email: {{ current_user.email }}</p>
+            </div>
           </div>
-        </label>
+        </div>
         <input type="image" src="" alt="" />
       </form>
     </div>
@@ -82,7 +95,9 @@
           <div class="col"><input type="text" /></div>
         </div>
       </div>
-      <button type="submit">Log Out</button>
+      <button type="submit">
+        <a href="{{ url_for('signout') }}">Log Out</a>
+      </button>
     </form>
   </section>
 </div>

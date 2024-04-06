@@ -7,9 +7,9 @@ from flask_app.models import User
 class RegistrationForm(FlaskForm):
     first_name = StringField("First Name", validators=[DataRequired()])
     last_name = StringField("Last Name", validators=[DataRequired()])
-    email = StringField("Registration Email", validators=[
+    email = StringField("Email", validators=[
                         DataRequired(), Email()])
-    password = PasswordField("Registration Password", validators=[
+    password = PasswordField("Password", validators=[
                              DataRequired(), Length(min=5)])
     confirm_password = PasswordField("Confirm Password", validators=[
                                      DataRequired(), EqualTo("password")])
