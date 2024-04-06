@@ -56,11 +56,13 @@
       <form action="#">
         <div>
           <div class="media">
-            <img
+            <label for="profileImg"><img
               class="rounded-circle profileImg"
               src="{{ image_file }}"
               alt="user profile pic"
-            />
+            /></label>
+            <input type="file" name="profileImg" id="profileImg">
+            
             <div class="media-body">
               <h2>
                 Name: {{ current_user.first_name }} {{ current_user.last_name }}
