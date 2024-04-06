@@ -55,6 +55,7 @@ body::-webkit-scrollbar
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 16px;
 }
 
@@ -211,6 +212,10 @@ body::-webkit-scrollbar
     text-align: left;
     flex-direction: column;
     gap: 40px;
+}
+
+.heroText a {
+    text-decoration: none;
 }
 
 .heroImage 
