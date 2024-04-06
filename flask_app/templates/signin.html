@@ -4,7 +4,7 @@
 <section>
   <div class="container">
     <div class="mainContainer">
-      <h4>Sign in into your Lytrally account</h4>
+      <h4>Sign in to get back to jump back into your creative process!</h4>
       <button>
         <img
           src="{{ url_for('static', filename='images/google.png') }}"
@@ -21,6 +21,7 @@
       </button>
       <div class="signInContainer">
         <form action="#" id="signin_form" autocomplete="on" method="post">
+          {{ form.hidden_tag() }}
           <div class="form-group">
             {{ form.email.label(class="form-control-label") }} {% if
             form.email.errors %} {{ form.email(class="form-control
