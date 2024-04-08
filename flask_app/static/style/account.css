@@ -384,6 +384,7 @@ p {
   }
 }
 
+/* Container content styling as a result of navbar position for  Surface Duo screen query */
 @media (max-width: 540px) and (min-height: 720px) {
   .container {
     padding-top: 70px;
