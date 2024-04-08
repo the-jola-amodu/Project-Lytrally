@@ -135,6 +135,11 @@ body {
     background: #FFF;
     margin: 0;
 }
+
+.form-check > input:invalid {
+    color: red;
+}
+
 .form-check > label {
     display: inline;
     color: #000;
