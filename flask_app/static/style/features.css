@@ -63,7 +63,7 @@ header {
   height: 32px;
   flex-shrink: 0;
   border-radius: 50px;
-  background: url(../images/sampleImage.png), lightgray 50% / cover no-repeat;
+  background: lightgray 50% / cover no-repeat;
   background-repeat: no-repeat;
   background-size: contain;
   /* margin-left: auto; */

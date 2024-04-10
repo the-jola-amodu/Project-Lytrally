@@ -1,13 +1,21 @@
 from flask import render_template, url_for, flash, redirect, request
 from flask_app import app, db, bcrypt
-from flask_app.forms import RegistrationForm, LoginForm
+from flask_app.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from flask_app.models import User, Document
 from flask_login import login_user, current_user, logout_user, login_required
+import secrets
+import os
+from PIL import Image
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', page='Home')
+    if current_user.is_authenticated:
+        image_file = url_for(
+            'static', filename='profile_pics/' + current_user.image_file)
+        return render_template('index.html', page='Home', image_file=image_file)
+    else:
+        return render_template('index.html', page='Home')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -47,13 +55,51 @@ def signin():
 @app.route('/features')
 @login_required
 def features():
-    return render_template('features.html', title='Getting some work done!', page='features')
+    if current_user.is_authenticated:
+        image_file = url_for(
+            'static', filename='profile_pics/' + current_user.image_file)
+        return render_template('features.html', page='features', image_file=image_file, title='Getting some work done!')
+    else:
+        return render_template('features.html', page='features', title='Getting some work done!')
 
 
-@app.route('/account')
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, file_extention = os.path.splitext(form_picture.filename)
+    pic_filename = random_hex + file_extention
+    pic_path = os.path.join(app.root_path, 'static/profile_pics', pic_filename)
+
+    output_size = (125, 125)
+    i = Image.open(form_picture)
+    i.thumbnail(output_size)
+    i.save(pic_path)
+    return pic_filename
+
+
+@app.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
-    return render_template('account.html', title='Profile', page='account')
+    form = UpdateAccountForm()
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            current_user.image_file = picture_file
+        current_user.first_name = form.first_name.data
+        current_user.last_name = form.last_name.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Your account has been updated', 'success')
+        return redirect(url_for('account'))
+    elif request.method == 'GET':
+        form.first_name.data = current_user.first_name
+        form.last_name.data = current_user.last_name
+        form.email.data = current_user.email
+    image_file = url_for(
+        'static', filename='profile_pics/' + current_user.image_file)
+    return render_template('account.html', page='account', title='Account', image_file=image_file, form=form)
 
-# Creates tables in the database
-# db.create_all()
+
+@app.route("/signout")
+def signout():
+    logout_user()
+    return redirect(url_for('home'))
