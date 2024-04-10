@@ -67,77 +67,6 @@ header {
   cursor: pointer;
 }
 
-.gearDropdown {
-  width: 260px;
-  padding: 10px;
-  background-color: white;
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  font-family: "Courier New", Courier, monospace;
-  position: absolute;
-  right: 15px;
-}
-
-.gearDropdown .gearRow {
-  display: flex;
-  align-items: center;
-}
-
-.gearRow img,
-p {
-  margin-right: 10px;
-}
-
-.gearRow .notificationToggle {
-  width: 50px;
-  height: 25px;
-  background-color: var(--toggle-bg);
-  border-radius: 15px;
-  display: flex;
-  /* justify-content: flex-start; */
-  padding: 5px;
-}
-
-.notificationToggle .toggle {
-  width: 50%;
-  height: 100%;
-  border-radius: 100px;
-  /* background-color: var(--lilac-color); */
-}
-
-.toggleOn {
-  background-color: var(--lilac-color);
-}
-
-.toggleContainerOn {
-  justify-content: flex-start;
-}
-
-.toggleOff {
-  background-color: white;
-}
-
-.toggleContainerOff {
-  justify-content: flex-end;
-}
-
-.reminderDetails {
-  padding-left: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.reminderDetails span {
-  font-size: small;
-}
-
-.reminderDays .daysRow {
-  display: flex;
-  gap: 3px;
-}
-
 .profile {
   width: 100%;
   display: flex;
@@ -145,6 +74,10 @@ p {
   justify-content: center;
   /* align-items: center; */
   margin-bottom: 13px;
+}
+
+.profilePicContainer input {
+  display: none;
 }
 
 .profileImg {
@@ -173,25 +106,113 @@ p {
   color: var(--off-white-color);
 }
 
-.profile p {
-  text-align: right;
+.media-body {
+  font-size: var(--font-size-sm);
+}
+
+.media-body p {
+  /* text-align: right; */
   color: #000;
   font-family: Inter;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-right: 33px;
+  /* margin-right: 33px; */
 }
 
-.profile p:hover {
+.media-body p:hover {
   color: #8a9ac5;
+}
+
+.media-body .update {
+  color: var(--lilac-color);
+}
+
+.media-body .update:hover {
+  color: var(--active-feature-background);
+  cursor: pointer;
+}
+
+.profileDetails button {
+  width: 150px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 3px solid #000;
+  background: #8a9ac5;
+  margin-top: 41px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  /* margin-right: auto; */
+}
+
+.profileDetails button > a {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.profileDetails button:hover {
+  opacity: 0.8;
+}
+
+.profileForm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 20px;
+  padding-bottom: 20px;
+  overflow: hidden auto;
 }
 
 #profileForm {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-bottom: 30px;
+  background-color: var(--off-white-color);
+  border-radius: 25px;
+  padding-inline: calc(5% + 1vmin);
+  padding-block: calc(20px + 1vmin);
+}
+
+#profileForm h1 {
+  color: var(--black-color);
+  margin-bottom: 20px;
+}
+
+.profileForm input[type="submit"] {
+  width: 150px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 3px solid #000;
+  background: #8a9ac5;
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: auto;
+  /* margin-right: auto; */
+}
+
+.profileForm button:hover {
+  opacity: 0.8;
 }
 
 .profileContainer {
@@ -236,28 +257,6 @@ p {
   width: 100%;
   outline: none;
   border-color: var(--active-feature-background);
-}
-
-.profileDetails button {
-  width: 150px;
-  height: 60px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  border: 3px solid #000;
-  background: #8a9ac5;
-  color: #000;
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 41px;
-  margin-left: auto;
-  /* margin-right: auto; */
-}
-
-.profileDetails button:hover {
-  opacity: 0.8;
 }
 
 @media screen and (min-width: 768px) {
@@ -384,8 +383,71 @@ p {
   }
 }
 
+/* Container content styling as a result of navbar position for  Surface Duo screen query */
 @media (max-width: 540px) and (min-height: 720px) {
   .container {
     padding-top: 70px;
+  }
+}
+
+
+/* The styles below apply to other pages that inherit from the layout page */
+/* profileForm content styling as a result of navbar position for Normal phone screen */
+@media screen and (max-height: 700px) {
+  .profileForm {
+    /* padding-top: calc(300px + 1vmin); */
+    padding-top: 150px; /* Added 130px due to the navbar position */
+  }
+}
+
+@media (min-height: 740px) and (max-height: 800px) {
+  .profileForm {
+    padding-top: calc(
+      120px + 1vmin
+    ); /* Added 130px due to the navbar position */
+  }
+}
+
+/* profileForm content styling as a result of navbar position for  Longer Phone screens */
+@media (min-height: 800px) and (max-height: 1200px) {
+  .profileForm {
+    padding-top: 60px; /* Added 130px due to the navbar position */
+  }
+}
+
+/* profileForm content styling as a result of navbar position for  laptop and bigger screen query */
+@media (min-width: 1024px) and (min-height: 600px) {
+  .profileForm {
+    padding-top: calc(
+      250px + 1vmin
+    ); /* Added 130px due to the navbar position */
+  }
+}
+
+/* profileForm content styling as a result of navbar position for  ipad screen query */
+@media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
+  .profileForm {
+    padding-top: 20px; /* Added 130px due to the navbar position */
+  }
+}
+
+/* profileForm content styling as a result of navbar position for  Next Hub screen query */
+@media (width: 1024px) and (height: 600px) {
+  .profileForm {
+    padding-top: 270px; /* Added 130px due to the navbar position */
+  }
+}
+
+/* profileForm content styling as a result of navbar position for  Surface Duo screen query */
+@media (width: 540px) and (height: 720px) {
+  .profileForm {
+    padding-top: 130px;
+  }
+}
+
+/* profileForm content styling as a result of navbar position for  Surface Duo screen query */
+@media (width: 280px) and (height: 653px) {
+  .profileForm {
+    padding-top: 200px;
   }
 }

@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../static/style/account.css" />
 {% endblock head %}{% block body %}
 <div class="container">
-  <header>
+  <!-- <header>
     <div class="header">
       <img
         id="backArrow"
@@ -50,31 +50,33 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> -->
   <section class="profilePic">
     <div class="profilePicContainer">
       <form action="#">
         <div>
-          <div class="media">
-            <img
-              class="rounded-circle profileImg"
-              src="{{ image_file }}"
-              alt="user profile pic"
-            />
-            <div class="media-body">
-              <h2>
-                Name: {{ current_user.first_name }} {{ current_user.last_name }}
-              </h2>
-              <p class="text-secondary">Email: {{ current_user.email }}</p>
+          <label for="profileImg">
+            <div class="media">
+              <img
+                class="rounded-circle profileImg"
+                src="{{ image_file }}"
+                alt="user profile pic"
+              />
             </div>
-          </div>
+          </label>
+          <input type="file" name="profileImg" id="profileImg" />
         </div>
-        <input type="image" src="" alt="" />
       </form>
     </div>
   </section>
   <section class="profileDetails">
-    <form id="profileForm" action="#" autocomplete="on" method="post" enctype="multipart/form-data">
+    <div class="media-body">
+      <h2>Name: {{ current_user.first_name }} {{ current_user.last_name }}</h2>
+      <p class="text-secondary">Email: {{ current_user.email }}</p>
+      <span class="update">Update Profile</span>
+    </div>
+<div class="profileForm">    
+<form id="profileForm" action="#" autocomplete="on" method="post" enctype="multipart/form-data">
       {{ form.hidden_tag() }}
             <fieldset>
               <legend>
@@ -131,13 +133,15 @@
               </div>
             </fieldset>
           </form>
+          </div>
         </div>
-      </div>
-      <button type="submit">
-        <a href="{{ url_for('signout') }}">Log Out</a>
-      </button>
-    </form>
+        <input type="submit" value="Update" />
+      </form>
+    </div>
   </section>
+  <button type="submit">
+    <a href="{{ url_for('signout') }}">Log Out</a>
+  </button>
 </div>
 
 <script src="../static/scripts/script.js"></script>

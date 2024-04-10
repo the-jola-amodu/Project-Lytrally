@@ -63,7 +63,7 @@ body::-webkit-scrollbar
     background-color: var(--lilac-color);
 }
 
-.navBar h1 > a
+.navBar h1 > a, h1
 {
     color: var(--white-color);
     font-family: var(--inter-font);
@@ -97,24 +97,34 @@ body::-webkit-scrollbar
 
 .navDisplay
 {
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    width: 130px;
+    height: 0;
+    background: var(--white-color);
+    color: var(--black-color);
+    overflow: hidden;
+}
+
+.navDisplay ul {
+    list-style-type: none;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
     text-align: center;
     padding-block: 0;
-    position: absolute;
-    right: 0;
-    z-index: 3;
-    width: 130px;
-    height: 0;
     flex-shrink: 0;
-    background: var(--white-color);
-    color: var(--black-color);
-    overflow: hidden;
 }
 
-.navDisplay > a
+.navDisplay > ul > li
+{
+    width: 100%;
+}
+
+.navDisplay > ul > li a
 {
     color: var(--black-color);
     font-family: var(--inter-font);
@@ -124,20 +134,22 @@ body::-webkit-scrollbar
     line-height: normal;
 }
 
-.navDisplay > a:hover
+.navDisplay > ul >li img {
+    width: 24px;
+    /* margin-inline: auto; */
+}
+
+.navDisplay > ul > li:hover
 {
     color: var(--lilac-color);
     text-decoration: none;
     cursor: pointer;
-}
-
-.navDisplay .navA:hover
-{
     animation: wobble 3s ease-in-out;
     -webkit-animation: wobble 3s ease-in-out;
     border-radius: 10px;
     box-shadow: 2px 2px 2px var(--lilac-color);
 }
+
 
 @keyframes wobble
 {
@@ -176,6 +188,77 @@ body::-webkit-scrollbar
         -ms-transform: scale(1);
         -o-transform: scale(1);
     }
+}
+
+.gearDropdown {
+  width: 260px;
+  padding: 10px;
+  background-color: white;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Courier New", Courier, monospace;
+  position: absolute;
+  right: 15px;
+}
+
+.gearDropdown .gearRow {
+  display: flex;
+  align-items: center;
+}
+
+.gearRow img,
+p {
+  margin-right: 10px;
+}
+
+.gearRow .notificationToggle {
+  width: 50px;
+  height: 25px;
+  background-color: var(--toggle-bg);
+  border-radius: 15px;
+  display: flex;
+  /* justify-content: flex-start; */
+  padding: 5px;
+}
+
+.notificationToggle .toggle {
+  width: 50%;
+  height: 100%;
+  border-radius: 100px;
+  /* background-color: var(--lilac-color); */
+}
+
+.toggleOn {
+  background-color: var(--lilac-color);
+}
+
+.toggleContainerOn {
+  justify-content: flex-start;
+}
+
+.toggleOff {
+  background-color: white;
+}
+
+.toggleContainerOff {
+  justify-content: flex-end;
+}
+
+.reminderDetails {
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reminderDetails span {
+  font-size: small;
+}
+
+.reminderDays .daysRow {
+  display: flex;
+  gap: 3px;
 }
 
 .heroPage
@@ -315,23 +398,25 @@ a:active
         z-index: 1;
         /* padding-inline: 125px; */
         padding-block: 16px;
+        gap: 20px;
     }
+
     
     .s-screen 
     {
         display: none;
     }
     
-    .l-screen h1 > a 
+    .l-screen h1 > a , h1
     {
         color: var(--white-color);
-        width: 106px;
+        /* width: 106px; */
         font-family: var(--inter-font);
         font-size: 24px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        margin-right: 109px;
+        /* margin-right: 50px; */
     }
     
     .l-screen a 
@@ -349,16 +434,21 @@ a:active
         color: var(--link-hover-color);
         text-decoration: none;
     }
+
+    .navlinks {
+        flex-grow: 2;
+    }
     
-    .navlinks 
+    .navlinks > ul
     {
-        width: 100%;
+        /* width: 100%; */
         display: flex;
         justify-content: space-between;
         align-items: center;
+        list-style-type: none;
     }
     
-    .navlinks button 
+    .navlinks > ul > li button 
     {
         display: inline-flex;
         padding: 10px 20px;
@@ -370,14 +460,14 @@ a:active
         border: none;
     }
     
-    .navlinks button:hover 
+    .navlinks > ul > li button:hover 
     {
         opacity: 0.8;
         color: var(--lilac-color);
         background-color: var(--link-hover-color);
     }
     
-    .navlinks button:hover > a 
+    .navlinks > ul > li button:hover > a 
     {
         color: var(--lilac-color);
     }
@@ -450,13 +540,14 @@ a:active
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 60px;
         padding: 16px;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         z-index: 3;
-        padding-inline: 125px;
+        padding-inline: 80px;
         padding-block: 16px;
     }
 
@@ -469,42 +560,60 @@ a:active
 /* The styles below apply to other pages that inherit from the layout page */
 /* Container content styling as a result of navbar position for Normal phone screen */
 @media screen and (max-height: 700px) {
-    .container {
-        /* padding-top: calc(300px + 1vmin); */
-        padding-top: 300px;
-    }
+  .container {
+    /* padding-top: calc(300px + 1vmin); */
+    padding-top: 430px; /* Added 130px due to the navbar position */
+  }
 }
 
 @media (min-height: 740px) and (max-height: 800px) {
-    .container {
-        padding-top: calc(250px + 1vmin);
-    }
+  .container {
+    padding-top: calc(
+      380px + 1vmin
+    ); /* Added 130px due to the navbar position */
+  }
 }
 
 /* Container content styling as a result of navbar position for  Longer Phone screens */
 @media (min-height: 800px) and (max-height: 1200px) {
-    .container {
-        padding-top: 90px;
-    }
+  .container {
+    padding-top: 220px; /* Added 130px due to the navbar position */
+  }
 }
 
 /* Container content styling as a result of navbar position for  laptop and bigger screen query */
 @media (min-width: 1024px) and (min-height: 600px) {
-    .container {
-        padding-top: calc(300px + 1vmin);
-    }
+  .container {
+    padding-top: calc(
+      430px + 1vmin
+    ); /* Added 130px due to the navbar position */
+  }
 }
 
 /* Container content styling as a result of navbar position for  ipad screen query */
 @media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
-    .container {
-        padding-top: 100px;
-    }
+  .container {
+    padding-top: 40px; /* Added 130px due to the navbar position */
+  }
 }
 
 /* Container content styling as a result of navbar position for  Next Hub screen query */
 @media (width: 1024px) and (height: 600px) {
-    .container {
-        padding-top: 400px;
-    } 
+  .container {
+    padding-top: 530px; /* Added 130px due to the navbar position */
+  }
+}
+
+/* Container content styling as a result of navbar position for  Surface Duo screen query */
+@media (width: 540px) and (height: 720px) {
+  .container {
+    padding-top: 370px;
+  }
+}
+
+/* Container content styling as a result of navbar position for  Surface Duo screen query */
+@media (width: 280px) and (height: 653px) {
+  .container {
+    padding-top: 500px;
+  }
 }

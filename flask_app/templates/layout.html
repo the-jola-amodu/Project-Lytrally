@@ -43,34 +43,92 @@
     <nav>
       <div class="s-screen navBar-bg">
         <div class="navBar">
+          {% if page == "account" %}
+          <h1>My Account</h1>
+          {% else %}
           <h1><a href="/">Lytrally</a></h1>
+          {% endif %}
           <i id="openNav" class="fa-solid fa-bars navBarChange"></i>
         </div>
         <div class="navDisplay">
-          <a class="navA" href="/">Home</a>
-          <a class="navA" href="#">Service</a>
-          <a class="navA" href="#">Contact Us</a>
-          <a class="navA" href="#">About</a>
-          <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
-          {% if page == "signin" %}
-          <a id="signUp" class="navA" href="/signup">Sign Up</a>
-          {% else %}
-          <a id="signIn" class="navA" href="/signin">Sign In</a>
-          {% endif %}
+          <ul>
+            <li><a class="navA" href="/">Home</a></li>
+            <li><a class="navA" href="#">Service</a></li>
+            <li><a class="navA" href="#">Contact Us</a></li>
+            <li><a class="navA" href="#">About</a></li>
+            <!-- <li><a class="navA" href="{{ url_for('signup') }}">Sign Up</a> --></li>
+            {% if page == "signin" %}
+            <li><a id="signUp" class="navA" href="/signup">Sign Up</a></li>
+            {% elif page == "account" %}
+            <li><img
+              class="gear navA"
+              src="../static/images/icons/gear.svg"
+              alt="A svg gear icon"
+            /></li>
+            {% else %}
+            <li><a id="signIn" class="navA" href="/signin">Sign In</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="gearDropdown">
+      <div class="gearRow">
+        <img
+          src="../static/images/icons/notification.svg"
+          alt="A svg icon of a bell, a notification icon"
+        />
+        <p>Notification</p>
+        <div class="notificationToggle toogleContainerOn">
+          <div class="toggle toggleOn"></div>
         </div>
       </div>
+      <div class="gearRow">
+        <img
+          src="../static/images/icons/Reminder.svg"
+          alt="A svg icon of a hand, a reminder icon"
+        />
+        <p>Reminder</p>
+      </div>
+      <div class="reminderDetails">
+        <span>Default</span>
+        <div class="reminderDays">
+          <div class="daysRow">
+            <div class="daysSet"><p>Set Reminder</p></div>
+            <div class="days">
+              <p>1 day</p>
+              <p>1 week</p>
+              <p>2 weeks</p>
+              <p>1 month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
       <div class="l-screen navBar-bg">
+        {% if page == "account" %}
+        <h1>My Account</h1>
+        {% else %}
         <h1><a href="/">Lytrally</a></h1>
+        {% endif %}
         <div class="navlinks">
-          <a href="/">Home</a>
-          <a href="#">Service</a>
-          <a href="#">Contact Us</a>
-          <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
-          {% if page == "signin" %}
-          <button><a href="/signup">Sign Up</a></button>
-          {% else %}
-          <button><a href="/signin">Sign In</a></button>
-          {% endif %}
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+            {% if page == "signin" %}
+            <li><button><a href="/signup">Sign Up</a></button></li>
+            {% elif page == "account" %}
+            <li><img
+            class="gear"
+            src="../static/images/icons/gear.svg"
+            alt="A svg gear icon"
+            /></li>
+            {% else %}
+            <li><button><a href="/signin">Sign In</a></button></li>
+            {% endif %}
+        </ul>
+          
         </div>
       </div>
     </nav>
@@ -82,15 +140,15 @@
           <i id="openNav" class="fa-solid fa-bars"></i>
         </div>
         <div class="navDisplay">
-          <a class="navA" href="#">Home</a>
-          <a class="navA" href="#">Service</a>
-          <a class="navA" href="#">Contact Us</a>
-          <a class="navA" href="#">About</a>
-          <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+          <li><a class="navA" href="#">Home</a></li>
+          <li><a class="navA" href="#">Service</a></li>
+          <li><a class="navA" href="#">Contact Us</a></li>
+          <li><a class="navA" href="#">About</a></li>
+          <!-- <li><a class="navA" href="{{ url_for('signup') }}">Sign Up</a> --></li>
           {% if page == "signin" %}
-          <a id="signUp" class="navA" href="/signup">Sign Up</a>
+          <li><a id="signUp" class="navA" href="/signup">Sign Up</a></li>
           {% else %}
-          <a id="signIn" class="navA" href="/signin">Sign In</a>
+          <li><a id="signIn" class="navA" href="/signin">Sign In</a></li>
           {% endif %}
         </div>
       </div>
