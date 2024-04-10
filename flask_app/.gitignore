@@ -1,0 +1,3 @@
+instance/
+flask_app/static/profile_pics/*
+!flask_app/static/profile_pics/default.jpg
