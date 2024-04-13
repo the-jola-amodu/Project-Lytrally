@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -6,25 +6,35 @@
 }
 
 :root {
-  --font-size-sm: 16px;
-  --font-size-m: 20px;
-  --font-size-l: 24px;
-  --font-size-xl: 26px;
-  --font-size-xxl: 30px;
-  --font-title: 40px;
-  --inter-font: inter;
-  --off-white-color: #f3f6fc;
-  --lilac-color: #8a9ac5;
-  --black-color: #000;
-  --dull-black: #252222;
-  --roboto-font: Roboto Slab;
-  --Inria-font: Inria Serif;
-  --button-background-color: #6a7db1;
-  --grey-color: #8b8585;
-  --link-hover-color: #ffd700;
-  --active-feature-background: #8a9ac5;
-  --less-black: #1e1e1e;
-  --dropdown-bg: #dbd7d7;
+  /* Font sizes */
+    --font-size-sm: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 24px;
+    --font-size-xl: 26px;
+    --font-size-xxl: 30px;
+    --font-title: 40px;
+
+    /* Font Family */
+    --inter-font: inter;
+    --roboto-font: Roboto Slab;
+    --Inria-font: Inria Serif;
+    
+    /* Colors */
+    --off-white-color: #f3f6fc;
+    --lilac-color: #8A9AC5;
+    --black-color: #000;
+    --dull-black: #252222;
+    --button-background-color: #6a7db1;
+    --grey-color: #8b8585;
+    --link-hover-color: #FFD700;
+    --active-feature-background: #8a9ac5;
+    --less-black: #1e1e1e;
+    --dropdown-bg: #dbd7d7;
+    --nav-link-hover: rgb(136, 61, 211);
+
+    /* Motion */
+    --transition-duration: .3s;
+    --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
 body {
@@ -65,14 +75,18 @@ header {
   border-radius: 50px;
   background: lightgray 50% / cover no-repeat;
   background-repeat: no-repeat;
-  background-size: contain;
   /* margin-left: auto; */
   /* margin-top: 24px; */
+}
+
+.profilePic img {
+  width: 100%;
 }
 
 .profilePic:hover,
 .logoHeader img {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 /* The styles below are for the list of the features */
@@ -132,7 +146,7 @@ header {
   border-radius: 15px;
 }
 
-.listDisplay li {
+.listDisplay .feature {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -152,29 +166,29 @@ header {
 .currentFeatureDisplay {
   background-color: var(--active-feature-background);
   color: var(--off-white-color) !important;
-  font-weight: bold !important;
+  font-weight: 800 !important;
 }
 
-.listDisplay li:first-child {
+.listDisplay .feature:first-child {
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
 
-.listDisplay li:last-child {
+.listDisplay .feature:last-child {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-.listDisplay li:hover {
+.listDisplay .feature:hover {
   color: var(--off-white-color);
   background-color: var(--button-background-color);
 }
 
-.listDisplay li:first-child:hover {
+.listDisplay .feature:first-child:hover {
   color: var(--off-white-color);
 }
 
-.listDisplay li:active {
+.listDisplay .feature:active {
   color: var(--off-white-color);
   background-color: var(--button-background-color);
 }
@@ -274,39 +288,75 @@ header {
 }
 
 /* Ghostwitting Feature tools  styling */
-
-.ghostWrittingtools ul {
+.ghostWrittingtools .toolsList {
   width: 100%;
   display: flex;
-  padding-inline: 10px;
-  justify-content: space-between;
-  align-items: stretch;
+
+  padding-inline: 5px;
   gap: 10px;
   overflow-x: auto;
+  list-style-type: none;
 }
 
-.ghostWrittingtools li {
+.toolsList .tool {
+  min-width: 80px;
   display: flex;
-  width: auto;
-  /* height: 53px; */
+  align-items: stretch;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.tool .toolContent {
+  width: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex-shrink: 0;
+  position: relative;
+  margin: 0;
 }
 
-.ghostWrittingtools li > p {
+.tool .toolContent > img {
+  width: 15px;
+  height: auto;
+}
+
+.tool .toolContent > p {
   color: #000;
   text-align: center;
   font-family: Rosarivo;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
+  word-break: keep-all;
   /* line-height: 110%; 13.2px */
+  margin: 0;
+  margin-bottom: .2rem;
 }
 
-.ghostWritting li > p:hover {
-  color: var(--active-feature-background);
+.active-tool {
+  border-bottom: 2px solid var(--nav-link-hover);
+}
+
+.tool .toolContent::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: .2rem;
+  width: 0;
+  background-color: var(--off-white-color);
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+.tool:hover {
+  cursor: pointer;
+}
+
+.tool:hover .toolContent::before {
+  width: 100%;
+  background-color: var(--nav-link-hover);
 }
 
 /* Ghostwritting Workspace styling */
@@ -854,7 +904,7 @@ td {
     overflow: auto;
   }
 
-  .listDisplay ul {
+  .listDisplay .list {
     display: flex;
     flex-direction: row;
     background-color: var(--off-white-color);
@@ -865,32 +915,34 @@ td {
     overflow-x: auto;
   }
 
-  .listDisplay ul::-webkit-scrollbar {
+  .listDisplay .list::-webkit-scrollbar {
     scrollbar-width: thin;
   }
 
-  .listDisplay li:first-child {
+  .listDisplay .feature:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
 
-  .listDisplay li:last-child {
+  .listDisplay .feature:last-child {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  .listDisplay li {
+  .listDisplay .feature {
     /* width: 100%; */
     /* height: 70px; */
     height: auto;
+    position: relative;
+    display: block;
   }
 
-  .listDisplay li:hover {
+  .listDisplay .feature:hover {
     color: var(--off-white-color);
     background-color: var(--button-background-color);
   }
 
-  .listDisplay li:first-child:hover {
+  .listDisplay .feature:first-child:hover {
     color: var(--off-white-color);
   }
 
@@ -903,7 +955,7 @@ td {
     margin-top: 20px;
   }
 
-  .ghostWrittingtools ul {
+  .ghostWrittingtools .toolsList {
     width: 100%;
     justify-content: space-between;
     padding-right: 20px;
@@ -1069,18 +1121,18 @@ td {
 }
 
 @media screen and (min-width: 1024px) {
-  .listDisplay li {
+  .listDisplay .feature {
     height: 70px;
   }
 
   .featuresList {
-    padding-inline: 100px;
+    padding-inline: 50px;
     margin: 0;
   }
 
   /* Ghostwritting workspace styling */
   .ghostWrittingFeature {
-    padding-inline: 100px;
+    padding-inline: 70px;
   }
 
   .ghostWritting {
@@ -1099,7 +1151,7 @@ td {
   }
 
   .ghostWritting .workSpace {
-    padding-inline: 50px;
+    padding-inline: 20px;
   }
 
   /* Readbility Feature styling */
