@@ -1,4 +1,4 @@
-* 
+*, *::after, *::before 
 {
     padding: 0;
     margin: 0;
@@ -8,15 +8,35 @@
 
 :root 
 {
+    /* Font sizes */
+    --font-size-sm: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 24px;
+    --font-size-xl: 26px;
+    --font-size-xxl: 30px;
+    --font-title: 40px;
+
+    /* Font Family */
     --inter-font: inter;
-    --white-color: #F3F6FC;
-    --lilac-color: #8A9AC5;
-    --black-color: #000;
     --roboto-font: Roboto Slab;
     --Inria-font: Inria Serif;
+    
+    /* Colors */
+    --off-white-color: #f3f6fc;
+    --lilac-color: #8A9AC5;
+    --black-color: #000;
+    --dull-black: #252222;
     --button-background-color: #6a7db1;
     --grey-color: #8b8585;
     --link-hover-color: #FFD700;
+    --active-feature-background: #8a9ac5;
+    --less-black: #1e1e1e;
+    --dropdown-bg: #dbd7d7;
+    --nav-link-hover: rgb(136, 61, 211);
+
+    /* Motion */
+    --transition-duration: .3s;
+    --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
 body 
@@ -65,7 +85,7 @@ body::-webkit-scrollbar
 
 .navBar h1 > a, h1
 {
-    color: var(--white-color);
+    color: var(--off-white-color);
     font-family: var(--inter-font);
     font-size: 24px;
     font-style: normal;
@@ -79,11 +99,11 @@ body::-webkit-scrollbar
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    color: var(--white-color);
+    color: var(--off-white-color);
 }
 
 .navBarChange {
-    color: var(--white-color) !important;
+    color: var(--off-white-color) !important;
 }
 
 .navBarChange:hover {
@@ -102,7 +122,7 @@ body::-webkit-scrollbar
     z-index: 3;
     width: 130px;
     height: 0;
-    background: var(--white-color);
+    background: var(--off-white-color);
     color: var(--black-color);
     overflow: hidden;
 }
@@ -150,6 +170,9 @@ body::-webkit-scrollbar
     box-shadow: 2px 2px 2px var(--lilac-color);
 }
 
+.navDisplay > ul > li:hover img {
+    cursor: pointer;
+}
 
 @keyframes wobble
 {
@@ -193,13 +216,14 @@ body::-webkit-scrollbar
 .gearDropdown {
   width: 260px;
   padding: 10px;
-  background-color: white;
+  background-color: var(--off-white-color);
   display: none;
   flex-direction: column;
   gap: 5px;
   font-family: "Courier New", Courier, monospace;
   position: absolute;
   right: 15px;
+  border-radius: 15px;
 }
 
 .gearDropdown .gearRow {
@@ -308,7 +332,7 @@ p {
 
 .heroText .mainText 
 {
-    color: var(--white-color);
+    color: var(--off-white-color);
     font-family: var(--roboto-font);
     font-size: 48px;
     font-style: normal;
@@ -318,7 +342,7 @@ p {
 
 .heroText .subText 
 {
-    color: var(--white-color);
+    color: var(--off-white-color);
     font-family: var(--roboto-font);
     font-size: 18px;
     font-style: normal;
@@ -337,7 +361,7 @@ p {
     border-radius: 32px;
     background: var(--lilac-color);
     border: none;
-    color: var(--white-color);
+    color: var(--off-white-color);
     font-family: var(--roboto-font);
     font-size: 16px;
     font-style: normal;
@@ -353,12 +377,17 @@ p {
 
 .heroText button > a
 {
-    color: var(--white-color);
+    color: var(--off-white-color);
 }
 
 a:active 
 {
     color: var(--lilac-color);
+}
+
+.container {
+    width: 100%;
+    padding: 0;
 }
 
 @media screen and (max-height: 1500px)
@@ -397,7 +426,7 @@ a:active
         right: 0;
         z-index: 1;
         /* padding-inline: 125px; */
-        padding-block: 16px;
+        /* padding-block: 16px; */
         gap: 20px;
     }
 
@@ -409,7 +438,7 @@ a:active
     
     .l-screen h1 > a , h1
     {
-        color: var(--white-color);
+        color: var(--off-white-color);
         /* width: 106px; */
         font-family: var(--inter-font);
         font-size: 24px;
@@ -421,7 +450,7 @@ a:active
     
     .l-screen a 
     {
-        color: var(--white-color);
+        color: var(--off-white-color);
         font-family: var(--inter-font);
         font-size: 18px;
         font-style: normal;
@@ -431,24 +460,24 @@ a:active
     
     .l-screen a:hover 
     {
-        color: var(--link-hover-color);
         text-decoration: none;
     }
 
-    .navlinks {
+    .navbar-menu {
         flex-grow: 2;
     }
     
-    .navlinks > ul
+    .nav
     {
-        /* width: 100%; */
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         list-style-type: none;
+        margin-block: auto;
     }
     
-    .navlinks > ul > li button 
+    .nav .nav-item button 
     {
         display: inline-flex;
         padding: 10px 20px;
@@ -460,16 +489,47 @@ a:active
         border: none;
     }
     
-    .navlinks > ul > li button:hover 
+    .nav .nav-item button:hover 
     {
         opacity: 0.8;
         color: var(--lilac-color);
         background-color: var(--link-hover-color);
+        cursor: pointer;
+    }
+
+    .nav .nav-item:hover {
+        cursor: pointer;
     }
     
-    .navlinks > ul > li button:hover > a 
+    .nav .nav-item button:hover .nav-link
     {
         color: var(--lilac-color);
+    }
+
+    .nav .nav-link {
+        display: block;
+        position: relative;
+    }
+
+    .nav .nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-white);
+        width: 0;
+        height: 0.2rem;
+        transition: var(--transition-duration) var(--transition-cubic-bezier);
+    }
+
+    .nav > .nav-item:hover > .nav-link::before {
+        background-color: var(--nav-link-hover);
+        width: 100%;
+    }
+
+    .gearDropdown {
+        width: 300px;
+        top: 80px;
     }
 
     .heroImage
@@ -502,7 +562,7 @@ a:active
     
     .heroText .mainText 
     {
-        color: var(--white-color);
+        color: var(--off-white-color);
         font-family: var(--roboto-font);
         font-size: 54px;
         font-style: normal;
@@ -512,7 +572,7 @@ a:active
     
     .heroText .subText 
     {
-        color: var(--white-color);
+        color: var(--off-white-color);
         font-family: var(--roboto-font);
         font-size: 18px;
         font-style: normal;
@@ -541,7 +601,6 @@ a:active
         justify-content: space-between;
         align-items: center;
         gap: 60px;
-        padding: 16px;
         position: absolute;
         top: 0;
         left: 0;
@@ -553,7 +612,7 @@ a:active
 
     .l-screen h1 > a 
     {
-        margin-right: 209px;
+        margin-right: 150px;
     }
 }
 
