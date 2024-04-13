@@ -385,11 +385,6 @@ a:active
     color: var(--lilac-color);
 }
 
-.container {
-    width: 100%;
-    padding: 0;
-}
-
 @media screen and (max-height: 1500px)
 {
     .heroPage
@@ -597,14 +592,8 @@ a:active
     .l-screen 
     {
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         gap: 60px;
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
         z-index: 3;
         padding-inline: 80px;
         padding-block: 16px;
@@ -617,62 +606,62 @@ a:active
 }
 
 /* The styles below apply to other pages that inherit from the layout page */
-/* Container content styling as a result of navbar position for Normal phone screen */
+/* main-container content styling as a result of navbar position for Normal phone screen */
 @media screen and (max-height: 700px) {
-  .container {
+  .main-container {
     /* padding-top: calc(300px + 1vmin); */
     padding-top: 430px; /* Added 130px due to the navbar position */
   }
 }
 
 @media (min-height: 740px) and (max-height: 800px) {
-  .container {
+  .main-container {
     padding-top: calc(
       380px + 1vmin
     ); /* Added 130px due to the navbar position */
   }
 }
 
-/* Container content styling as a result of navbar position for  Longer Phone screens */
+/* main-container content styling as a result of navbar position for  Longer Phone screens */
 @media (min-height: 800px) and (max-height: 1200px) {
-  .container {
+  .main-container {
     padding-top: 220px; /* Added 130px due to the navbar position */
   }
 }
 
-/* Container content styling as a result of navbar position for  laptop and bigger screen query */
+/* main-container content styling as a result of navbar position for  laptop and bigger screen query */
 @media (min-width: 1024px) and (min-height: 600px) {
-  .container {
+  .main-container {
     padding-top: calc(
       430px + 1vmin
     ); /* Added 130px due to the navbar position */
   }
 }
 
-/* Container content styling as a result of navbar position for  ipad screen query */
+/* main-container content styling as a result of navbar position for  ipad screen query */
 @media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
-  .container {
+  .main-container {
     padding-top: 40px; /* Added 130px due to the navbar position */
   }
 }
 
-/* Container content styling as a result of navbar position for  Next Hub screen query */
+/* main-container content styling as a result of navbar position for  Next Hub screen query */
 @media (width: 1024px) and (height: 600px) {
-  .container {
+  .main-container {
     padding-top: 530px; /* Added 130px due to the navbar position */
   }
 }
 
-/* Container content styling as a result of navbar position for  Surface Duo screen query */
+/* main-container content styling as a result of navbar position for  Surface Duo screen query */
 @media (width: 540px) and (height: 720px) {
-  .container {
+  .main-container {
     padding-top: 370px;
   }
 }
 
-/* Container content styling as a result of navbar position for  Surface Duo screen query */
+/* main-container content styling as a result of navbar position for  Surface Duo screen query */
 @media (width: 280px) and (height: 653px) {
-  .container {
+  .main-container {
     padding-top: 500px;
   }
 }

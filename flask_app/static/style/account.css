@@ -32,7 +32,7 @@ body {
   background: var(--off-white-color);
 }
 
-.container {
+.main-container {
   /* padding-top: 0 !important; */
   height: 100vh;
   overflow: hidden;
@@ -372,51 +372,51 @@ header {
   }
 }
 
-/* Container content styling as a result of navbar position for Normal phone screen */
+/* main-container content styling as a result of navbar position for Normal phone screen */
 @media screen and (max-height: 700px) {
-  .container {
+  .main-container {
     /* padding-top: calc(300px + 1vmin); */
     padding-top: 70px !important;
   }
 }
 
 @media (min-height: 740px) and (max-height: 800px) {
-  .container {
+  .main-container {
     padding-top: calc(70px + 1vmin) !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  Longer Phone screens */
+/* main-container content styling as a result of navbar position for  Longer Phone screens */
 @media (min-height: 800px) and (max-height: 1200px) {
-  .container {
+  .main-container {
     padding-top: 80px !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  laptop and bigger screen query */
+/* main-container content styling as a result of navbar position for  laptop and bigger screen query */
 @media (min-width: 1024px) and (min-height: 600px) {
-  .container {
+  .main-container {
     padding-top: calc(70px + 1vmin) !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  ipad screen query */
+/* main-container content styling as a result of navbar position for  ipad screen query */
 @media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
-  .container {
+  .main-container {
     padding-top: 100px !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  Next Hub screen query */
+/* main-container content styling as a result of navbar position for  Next Hub screen query */
 @media (width: 1024px) and (height: 600px) {
-  .container {
+  .main-container {
     padding-top: 80px !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  Surface Duo screen query */
+/* main-container content styling as a result of navbar position for  Surface Duo screen query */
 @media (max-width: 540px) and (min-height: 720px) {
-  .container {
+  .main-container {
     padding-top: 70px;
   }
 }
