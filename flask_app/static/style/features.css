@@ -388,7 +388,10 @@ header {
 }
 
 .userInput .upload {
-  width: 140px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: 2px solid var(--black-color);
   border-radius: 5px;
   padding: 3px 5px;
@@ -397,15 +400,25 @@ header {
 .userInput .upload:hover {
   background-color: var(--active-feature-background);
   color: var(--off-white-color);
+  cursor: pointer;
+}
+
+.upload form {
+  width: 100%;
 }
 
 .upload label {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
-  gap: 5px;
+  margin-block: auto;
+  font-size: 55%;
+}
+
+.upload label > p {
+  margin-block: auto;
 }
 
 .upload input {
@@ -413,8 +426,9 @@ header {
 }
 
 .textInput {
+  width: 100%;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .textInput form {
@@ -972,7 +986,11 @@ td {
   }
 
   .upload label {
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
+  }
+
+  .upload label > img {
+    width: 20px;
   }
 
   .textInput form {
