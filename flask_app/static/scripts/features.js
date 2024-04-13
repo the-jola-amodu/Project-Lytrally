@@ -152,6 +152,20 @@ textAreaBorder.addEventListener("click", () => {
   textAreaBorder.style.borderColor = "#8a9ac5";
 });
 
+// This code adds and removes class from a tool when it is clicked
+let gwtool = document.querySelectorAll(".tool");
+gwtool.forEach((tool) => {
+  tool.addEventListener("click", () => {
+    if (tool.classList.contains("active-tool")) {
+      console.log(true);
+      tool.classList.remove("active-tool")
+    } else {
+      console.log(false);
+      tool.classList.add("active-tool")
+    }
+  });
+});
+
 // This code display the users prompt
 let prompt = document.getElementById("ideaPrompt");
 let promptDisplay = document.querySelector(".messageDisplay");
