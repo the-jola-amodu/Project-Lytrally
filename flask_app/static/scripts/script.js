@@ -58,6 +58,7 @@ navLinks.forEach((link) => {
   });
 });
 
+// Handles the gear icon event for small screens
 // This code toggles the geardropdown
 let gear = document.querySelector(".gear")
 let gearDropdown = document.querySelector(".gearDropdown");
@@ -85,6 +86,37 @@ toggle.addEventListener("click", () => {
     toogleContainer.classList.remove("toggleContainerOff");
     toggle.classList.add("toggleOn");
     toogleContainer.classList.add("toggleContainerOn");
+  }
+});
+
+// Handles the gear icon event for large screens
+// This code toggles the geardropdown
+let lsGear = document.querySelector(".lsGear")
+let lsGearDropdown = document.querySelector(".lsGearDropdown");
+lsGear.addEventListener("click", () => {
+    if (lsGearDropdown.style.display === "none")
+    {
+        lsGearDropdown.style.display = "flex";
+    }
+    else {
+        lsGearDropdown.style.display = "none";
+    }
+})
+
+// This code toggles the notification on and off
+let lsToggle = document.querySelector(".lsToggle");
+let lsToogleContainer = document.querySelector(".lsNotificationToggle");
+lsToggle.addEventListener("click", () => {
+  if (lsToggle.classList.contains("toggleOn")) {
+    lsToggle.classList.remove("toggleOn");
+    lsToogleContainer.classList.remove("toggleContainerOn");
+    lsToggle.classList.add("toggleOff");
+    lsToogleContainer.classList.add("toggleContainerOff")
+  } else {
+    lsToggle.classList.remove("toggleOff");
+    lsToogleContainer.classList.remove("toggleContainerOff");
+    lsToggle.classList.add("toggleOn");
+    lsToogleContainer.classList.add("toggleContainerOn");
   }
 });
 
