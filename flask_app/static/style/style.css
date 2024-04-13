@@ -76,14 +76,14 @@ body::-webkit-scrollbar
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    padding: 8px 16px;
 }
 
 .navBar-bg {
     background-color: var(--lilac-color);
 }
 
-.navBar h1 > a, h1
+.navBar h1 > a, h1, i
 {
     color: var(--off-white-color);
     font-family: var(--inter-font);
@@ -91,15 +91,7 @@ body::-webkit-scrollbar
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-}
-
-.navBar i
-{
-    font-size: 24px;
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    color: var(--off-white-color);
+    margin-block: auto;
 }
 
 .navBarChange {
