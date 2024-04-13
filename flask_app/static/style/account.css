@@ -39,7 +39,6 @@ body {
   overflow-y: auto;
 }
 
-.header,
 .profileDetails {
   padding-inline: 36px;
 }
@@ -48,15 +47,15 @@ header {
   margin-bottom: 29px;
 }
 
-.header {
+/* .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-top: 20px; */
+  margin-top: 20px;
   color: #000;
   font-family: Inter;
-  /* font-size: 24px; */
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -65,7 +64,7 @@ header {
 
 .header > img:hover {
   cursor: pointer;
-}
+} */
 
 .profile {
   width: 100%;
@@ -81,29 +80,34 @@ header {
 }
 
 .profileImg {
-  width: 125px;
-  height: 125px;
+  /* width: 125px; */
+  width: 100%;
   flex-shrink: 0;
-  background-color: #fff;
-  border: 1px solid var(--lilac-color);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #000;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0;
   margin-bottom: 33px;
 }
 
-.profileImg:hover {
-  background-color: #8a9ac5;
-  color: var(--off-white-color);
+.profileImg label {
+  width: 50%;
+  height: 100%;
+  margin-inline: auto;
+  border-radius: 1000px;
+}
+
+.profileImg label:hover {
+  cursor: pointer;
+}
+
+.profileImg  img {
+  width: 100%;
+  height: auto;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .media-body {
@@ -144,6 +148,7 @@ header {
   margin-top: 41px;
   margin-left: auto;
   display: flex;
+  justify-content: center;
   align-items: center;
   /* margin-right: auto; */
 }
@@ -155,10 +160,16 @@ header {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-decoration:  none;
+}
+
+.profileDetails button:hover a {
+  color: var(--off-white-color);
 }
 
 .profileDetails button:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  background-color: var(--active-feature-background);
 }
 
 .profileForm {
@@ -193,6 +204,22 @@ header {
   margin-bottom: 20px;
 }
 
+.closeFormContainer {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.closeFormContainer i {
+  font-weight: 600;
+  font-size: var(--font-size-m);
+}
+
+.closeFormContainer i:hover {
+  color: var(--active-feature-background);
+  cursor: pointer;
+}
+
 .profileForm input[type="submit"] {
   width: 150px;
   height: 60px;
@@ -211,10 +238,6 @@ header {
   /* margin-right: auto; */
 }
 
-.profileForm button:hover {
-  opacity: 0.8;
-}
-
 .profileContainer {
   display: flex;
   flex-direction: column;
@@ -226,6 +249,10 @@ header {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+.profileContainer .row:focus-within {
+  border-left: 4px solid var(--lilac-color);
 }
 
 .col label {
@@ -261,14 +288,12 @@ header {
 
 @media screen and (min-width: 768px) {
   .profileDetails {
-    padding-inline: 95px;
+    padding-inline: 50px;
   }
 
-  .profileImg {
+  .profileImg label{
     width: 300px;
     height: 300px;
-    flex-shrink: 0;
-    font-size: 32px;
     border-radius: 200px;
     margin-bottom: 33px;
   }
@@ -277,13 +302,13 @@ header {
     font-size: 32px;
   }
 
-  .header {
+  /* .header {
     font-size: var(--font-size-xxl);
   }
 
   .header img {
     width: 40px;
-  }
+  } */
 
   .gearDropdown {
     font-size: var(--font-size-m);
@@ -304,17 +329,18 @@ header {
     font-size: var(--font-size-l);
     padding-block: 30px;
   }
+
+  #profileForm {
+    padding-inline: calc(2% + 1vmin);
+  }
 }
 
 @media (min-width: 1024px) {
   .profileContainer {
-    gap: 70px;
+    width: 570px;
+    gap: 50px;
     margin-top: 20px;
-    padding-inline: 40px;
-  }
-
-  .profilePicContainer {
-    padding-inline: 60px;
+    padding-inline: 0;
   }
 
   .profileContainer .row {
@@ -322,7 +348,8 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
+    margin: 0;
   }
 
   .row div:first-child {
@@ -331,6 +358,10 @@ header {
 
   .row div:last-child {
     flex-grow: 2;
+  }
+
+  .col label {
+    margin: 0;
   }
 
   .profileDetails button {
@@ -391,7 +422,6 @@ header {
 }
 
 
-/* The styles below apply to other pages that inherit from the layout page */
 /* profileForm content styling as a result of navbar position for Normal phone screen */
 @media screen and (max-height: 700px) {
   .profileForm {
