@@ -6,26 +6,35 @@
 }
 
 :root {
+  /* Font sizes */
   --font-size-sm: 16px;
   --font-size-m: 20px;
   --font-size-l: 24px;
   --font-size-xl: 26px;
   --font-size-xxl: 30px;
   --font-title: 40px;
+
+  /* Font Family */
   --inter-font: inter;
+  --roboto-font: Roboto Slab;
+  --Inria-font: Inria Serif;
+
+  /* Colors */
   --off-white-color: #f3f6fc;
   --lilac-color: #8a9ac5;
   --black-color: #000;
   --dull-black: #252222;
-  --roboto-font: Roboto Slab;
-  --Inria-font: Inria Serif;
   --button-background-color: #6a7db1;
   --grey-color: #8b8585;
   --link-hover-color: #ffd700;
   --active-feature-background: #8a9ac5;
   --less-black: #1e1e1e;
   --dropdown-bg: #dbd7d7;
-  --toggle-bg: #d9d9d9;
+  --nav-link-hover: rgb(136, 61, 211);
+
+  /* Motion */
+  --transition-duration: 0.3s;
+  --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
 body {
@@ -66,15 +75,6 @@ header {
   cursor: pointer;
 } */
 
-.profile {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
-  margin-bottom: 13px;
-}
-
 .profilePicContainer input {
   display: none;
 }
@@ -102,12 +102,13 @@ header {
   cursor: pointer;
 }
 
-.profileImg  img {
+.profileImg img {
   width: 100%;
   height: auto;
   border: none;
   padding: 0;
   margin: 0;
+  border-radius: 1000px;
 }
 
 .media-body {
@@ -144,32 +145,33 @@ header {
   flex-shrink: 0;
   border-radius: 30px;
   border: 3px solid #000;
-  background: #8a9ac5;
+  background-color: #8a9ac5;
   margin-top: 41px;
   margin-left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-right: auto; */
+  transition: all var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+.profileDetails button:hover {
+  background-color: var(--off-white-color);
+  border-color: var(--active-feature-background);
 }
 
 .profileDetails button > a {
-  color: #000;
+  color: var(--off-white-color);
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-decoration:  none;
+  text-decoration: none;
+  transition: all var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .profileDetails button:hover a {
-  color: var(--off-white-color);
-}
-
-.profileDetails button:hover {
-  opacity: 0.9;
-  background-color: var(--active-feature-background);
+  color: var(--active-feature-background);
 }
 
 .profileForm {
@@ -213,6 +215,7 @@ header {
 .closeFormContainer i {
   font-weight: 600;
   font-size: var(--font-size-m);
+  color: var(--black-color);
 }
 
 .closeFormContainer i:hover {
@@ -227,7 +230,7 @@ header {
   border-radius: 30px;
   border: 3px solid #000;
   background: #8a9ac5;
-  color: #000;
+  color: var(--off-white-color);
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -236,6 +239,13 @@ header {
   margin-top: 30px;
   margin-left: auto;
   /* margin-right: auto; */
+  transition: all var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+.profileForm input[type="submit"]:hover {
+  background-color: var(--off-white-color);
+  color: var(--active-feature-background);
+  border-color: var(--active-feature-background);
 }
 
 .profileContainer {
@@ -249,6 +259,7 @@ header {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 5px;
+  padding-left: 5px;
 }
 
 .profileContainer .row:focus-within {
@@ -291,7 +302,7 @@ header {
     padding-inline: 50px;
   }
 
-  .profileImg label{
+  .profileImg label {
     width: 300px;
     height: 300px;
     border-radius: 200px;
@@ -309,16 +320,6 @@ header {
   .header img {
     width: 40px;
   } */
-
-  .gearDropdown {
-    font-size: var(--font-size-m);
-    width: 320px;
-  }
-
-  .gearRow .notificationToggle {
-    width: 60px;
-    height: 30px;
-  }
 
   .profileDetails label {
     font-size: var(--font-size-l);
@@ -353,7 +354,8 @@ header {
   }
 
   .row div:first-child {
-    width: 300px;
+    width: calc(160px + 2vw);
+    margin: 0;
   }
 
   .row div:last-child {
@@ -420,7 +422,6 @@ header {
     padding-top: 70px;
   }
 }
-
 
 /* profileForm content styling as a result of navbar position for Normal phone screen */
 @media screen and (max-height: 700px) {
