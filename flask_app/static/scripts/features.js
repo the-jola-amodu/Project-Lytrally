@@ -14,11 +14,12 @@ profilePic.addEventListener("click", () => {
   window.location.href = "/account";
 });
 
+
 // This code displays the features list
 let featuresDisplay = document.getElementById("featuresDisplay");
 let lists = document.querySelector(".listDisplay");
 let closeDisplay = document.getElementById("header");
-let featureLink = document.querySelectorAll("feature");
+let featureSection = document.querySelector(".featuresSection");
 featuresDisplay.addEventListener("click", () => {
   if (lists.style.height === "auto") {
     lists.style.height = 0;
@@ -34,6 +35,16 @@ lists.addEventListener("click", () => {
   gclanguages.style.display = "none";
   ralanguages.style.display = "none";
 });
+featureSection.addEventListener("click", () => {
+  if (lists.style.height === "auto") {
+    lists.style.height = 0;
+  }
+});
+closeDisplay.addEventListener("click", () => {
+  if (lists.style.height === "auto") {
+    lists.style.height = 0;
+  }
+});
 
 // This code closes the features dropdown when click outside the feature section
 let closeFeatures = () => {
@@ -48,17 +59,17 @@ let visibleFeature = document.getElementById("visibleFeature");
 let featuresLinks = document.querySelectorAll(".feature");
 // Adds the currentFeature class to the first item on the page loading
 window.addEventListener("load", () => {
-  featuresLinks[0].classList.add("currentFeatureDisplay");
+  featuresLinks[0].classList.add("activeToggle");
 });
 // Adds the currentFeature class to the clicked feature and removes it from others
 featuresLinks.forEach((feature) => {
   feature.addEventListener("click", () => {
     featuresLinks.forEach((feature) => {
-      if (feature.classList.contains("currentFeatureDisplay")) {
-        feature.classList.remove("currentFeatureDisplay");
+      if (feature.classList.contains("activeToggle")) {
+        feature.classList.remove("activeToggle");
       }
     });
-    feature.classList.add("currentFeatureDisplay");
+    feature.classList.add("activeToggle");
   });
 });
 
@@ -73,7 +84,6 @@ featuresLinks.forEach((link) => {
 });
 
 // This code handles the language dropdown for the ghostwritting section
-
 let languageDisplay = document.getElementById("gwLanguageDisplay");
 let languages = document.getElementById("gwLanguages");
 let langs = document.querySelectorAll(".gwLang");
@@ -145,6 +155,30 @@ ralangs.forEach((lang) => {
   });
 });
 
+// This code handles the language dropdown for the Summary and Parapharasing section
+let srlanguageDisplay = document.getElementById("srLanguageDisplay");
+let srlanguages = document.getElementById("srLanguages");
+let srlangs = document.querySelectorAll(".raLang");
+let srlangDisplay = document.getElementById("srLangDisplay");
+
+srlanguageDisplay.addEventListener("click", () => {
+  if (srlanguages.style.display === "none") {
+    srlanguages.style.display = "flex";
+    if (screenWidth < 720) {
+      lists.style.height = 0;
+    }
+  } else {
+    srlanguages.style.display = "none";
+  }
+});
+
+srlangs.forEach((lang) => {
+  lang.addEventListener("click", () => {
+    srlangDisplay.innerHTML = lang.innerHTML;
+    srlanguages.style.display = "none";
+  });
+});
+
 // This code changes the bordercolor for the ghostwritting textarea
 let textArea = document.querySelector(".ghostWritingInput");
 let textAreaBorder = document.querySelector(".textInputForm");
@@ -158,10 +192,10 @@ gwtool.forEach((tool) => {
   tool.addEventListener("click", () => {
     if (tool.classList.contains("active-tool")) {
       console.log(true);
-      tool.classList.remove("active-tool")
+      tool.classList.remove("active-tool");
     } else {
       console.log(false);
-      tool.classList.add("active-tool")
+      tool.classList.add("active-tool");
     }
   });
 });
@@ -174,7 +208,7 @@ prompt.addEventListener("keyDown", () => {
   promptDisplay.style.innerHTML = prompt.value;
 });
 
-// This code toggles the summarize and paraphrase forms
+// This code toggles and style the summarize and paraphrase forms
 let paraphraseToggle = document.querySelector(".paraphraseToogle");
 let summarizeToggle = document.querySelector(".summaryToggle");
 let paraphraseForm = document.getElementById("paraphraseForm");
@@ -183,11 +217,19 @@ let summaryForm = document.getElementById("summarizeForm");
 paraphraseToggle.addEventListener("click", () => {
   summaryForm.style.display = "none";
   paraphraseForm.style.display = "flex";
+  if (summarizeToggle.classList.contains("activeToggle")) {
+    summarizeToggle.classList.remove("activeToggle");
+  }
+  paraphraseToggle.classList.add("activeToggle");
 });
 
 summarizeToggle.addEventListener("click", () => {
   paraphraseForm.style.display = "none";
   summaryForm.style.display = "flex";
+  if (paraphraseToggle.classList.contains("activeToggle")) {
+    paraphraseToggle.classList.remove("activeToggle");
+  }
+  summarizeToggle.classList.add("activeToggle");
 });
 
 // This code changes the features
