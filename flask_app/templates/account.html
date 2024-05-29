@@ -1,7 +1,7 @@
 {% extends "layout.html" %} {% block head %}
 <link rel="stylesheet" href="../static/style/account.css" />
 {% endblock head %}{% block body %}
-<div class="container">
+<div class="main-container">
   <!-- <header>
     <div class="header">
       <img
@@ -54,15 +54,13 @@
   <section class="profilePic">
     <div class="profilePicContainer">
       <form action="#">
-        <div>
-          <label for="profileImg">
-            <div class="media">
-              <img
-                class="rounded-circle profileImg"
-                src="{{ image_file }}"
-                alt="user profile pic"
-              />
-            </div>
+        <div class="profileImg">
+          <label for="profileImg"
+            ><img
+              class="rounded-circle profileImg"
+              src="{{ image_file }}"
+              alt="user profile pic"
+            />
           </label>
           <input type="file" name="profileImg" id="profileImg" />
         </div>
@@ -143,7 +141,5 @@
     <a href="{{ url_for('signout') }}">Log Out</a>
   </button>
 </div>
-
-<script src="../static/scripts/script.js"></script>
 <script src="../static/scripts/account.js"></script>
 {% endblock body %}

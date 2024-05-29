@@ -34,7 +34,7 @@ body {
     overflow-y: auto;
 }
 
-.container {
+.main-container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -48,7 +48,7 @@ body {
     overflow: auto;
 }
 
-.container .signUpForm {
+.main-container .signUpForm {
     width: auto;
     height: auto;
     background-color: var(--white-color);
@@ -75,7 +75,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.container label {
+.main-container label {
     display: block;
     margin-left: 28px;
     margin-bottom: 10px;
@@ -87,7 +87,7 @@ body {
     font-weight: 400;
     line-height: 110%; /* 26.4px */
 }
-.container input {
+.main-container input {
     display: block;
     margin-bottom: 30px;
     padding-inline: 16px;
@@ -100,7 +100,7 @@ body {
     flex-shrink: 0;
     transition: width 2s ease-in-out;
 }
-.container input:focus {
+.main-container input:focus {
     width: 100%;
     outline: none;
 }
@@ -189,7 +189,7 @@ span > a{
     background-color: rebeccapurple !important;
 }
 
-.container .signin {
+.main-container .signin {
     display: block;
     max-width: 100px;
     text-align: right;
@@ -201,17 +201,17 @@ span > a{
     font-weight: 500;
     line-height: normal;
 }
-.container a:hover {
+.main-container a:hover {
     color: var(--lilac-color);
 }
 
 
 /* Tablet Screen */
 @media screen and (min-width: 768px) {
-    .container label {
+    .main-container label {
         font-size: var(--font-size-l);
     }
-    .container input {
+    .main-container input {
         font-size: var(--font-size-l);
     }
     span {
@@ -224,15 +224,15 @@ span > a{
 
 /* Laptop Screen */
 @media screen and (min-width: 1024px) {
-    .container .signUpForm {
+    .main-container .signUpForm {
         width: 550px;
         padding-inline: calc(2% + 1vmin);
     }
 
-    .container label {
+    .main-container label {
         font-size: var(--font-size-xl);
     }
-    .container input {
+    .main-container input {
         font-size: var(--font-size-xl);
     }
     span {
@@ -242,10 +242,10 @@ span > a{
 
 /* Large screen */
 @media screen and (min-width: 1444px) {
-    .container label {
+    .main-container label {
         font-size: var(--font-size-xxl);
     }
-    .container input {
+    .main-container input {
         font-size: var(--font-size-xxl);
     }
     span {

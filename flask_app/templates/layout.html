@@ -48,7 +48,17 @@
           {% else %}
           <h1><a href="/">Lytrally</a></h1>
           {% endif %}
-          <i id="openNav" class="fa-solid fa-bars navBarChange"></i>
+          <!-- <i id="openNav" class="fa-solid fa-bars navBarChange"></i> -->
+          <div class="hamburgerContainer">
+            <input
+              class="menu-btn"
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+            /><label class="menu-btn-label" for="hamburger"
+              ><span class="hamburger"></span
+            ></label>
+          </div>
         </div>
         <div class="navDisplay">
           <ul>
@@ -56,53 +66,56 @@
             <li><a class="navA" href="#">Service</a></li>
             <li><a class="navA" href="#">Contact Us</a></li>
             <li><a class="navA" href="#">About</a></li>
-            <!-- <li><a class="navA" href="{{ url_for('signup') }}">Sign Up</a> --></li>
+            <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
             {% if page == "signin" %}
             <li><a id="signUp" class="navA" href="/signup">Sign Up</a></li>
             {% elif page == "account" %}
-            <li><img
-              class="gear navA"
-              src="../static/images/icons/gear.svg"
-              alt="A svg gear icon"
-            /></li>
+            <li>
+              <!-- <img
+                class="gear navA"
+                src="../static/images/icons/gear.svg"
+                alt="A svg gear icon"
+              /> -->
+              <i class="fa-solid fa-gear gear navA"></i>
+            </li>
             {% else %}
             <li><a id="signIn" class="navA" href="/signin">Sign In</a></li>
             {% endif %}
           </ul>
         </div>
         <div class="gearDropdown">
-      <div class="gearRow">
-        <img
-          src="../static/images/icons/notification.svg"
-          alt="A svg icon of a bell, a notification icon"
-        />
-        <p>Notification</p>
-        <div class="notificationToggle toogleContainerOn">
-          <div class="toggle toggleOn"></div>
-        </div>
-      </div>
-      <div class="gearRow">
-        <img
-          src="../static/images/icons/Reminder.svg"
-          alt="A svg icon of a hand, a reminder icon"
-        />
-        <p>Reminder</p>
-      </div>
-      <div class="reminderDetails">
-        <span>Default</span>
-        <div class="reminderDays">
-          <div class="daysRow">
-            <div class="daysSet"><p>Set Reminder</p></div>
-            <div class="days">
-              <p>1 day</p>
-              <p>1 week</p>
-              <p>2 weeks</p>
-              <p>1 month</p>
+          <div class="gearRow">
+            <img
+              src="../static/images/icons/notification.svg"
+              alt="A svg icon of a bell, a notification icon"
+            />
+            <p>Notification</p>
+            <div class="notificationToggle toogleContainerOn">
+              <div class="toggle toggleOn"></div>
+            </div>
+          </div>
+          <div class="gearRow">
+            <img
+              src="../static/images/icons/Reminder.svg"
+              alt="A svg icon of a hand, a reminder icon"
+            />
+            <p>Reminder</p>
+          </div>
+          <div class="reminderDetails">
+            <span>Default</span>
+            <div class="reminderDays">
+              <div class="daysRow">
+                <div class="daysSet"><p>Set Reminder</p></div>
+                <div class="days">
+                  <p>1 day</p>
+                  <p>1 week</p>
+                  <p>2 weeks</p>
+                  <p>1 month</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
       </div>
       <div class="l-screen navBar-bg">
         {% if page == "account" %}
@@ -110,25 +123,69 @@
         {% else %}
         <h1><a href="/">Lytrally</a></h1>
         {% endif %}
-        <div class="navlinks">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
+        <div class="navbar-menu">
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            <!-- <button><a class="nav-link" href="../templates/signup.html">Sign Up</a></button> -->
             {% if page == "signin" %}
-            <li><button><a href="/signup">Sign Up</a></button></li>
-            {% elif page == "account" %}
-            <li><img
-            class="gear"
-            src="../static/images/icons/gear.svg"
-            alt="A svg gear icon"
-            /></li>
+            <li class="nav-item">
+              <button><a class="nav-link" href="/signup">Sign Up</a></button>
+            </li>
+            {% elif page == "account" or page == "features" %}
+            <li class="nav-item">
+              <!-- <img
+                class="gear lsGear"
+                src="../static/images/icons/gear.svg"
+                alt="A svg gear icon"
+              /> -->
+              <i class="fa-solid fa-gear gear lsGear"></i>
+            </li>
             {% else %}
-            <li><button><a href="/signin">Sign In</a></button></li>
+            <li class="nav-item">
+              <button><a class="nav-link" href="/signin">Sign In</a></button>
+            </li>
             {% endif %}
-        </ul>
-          
+          </ul>
+        </div>
+        <div class="gearDropdown lsGearDropdown">
+          <div class="gearRow">
+            <!-- <img
+              src="../static/images/icons/notification.svg"
+              alt="A svg icon of a bell, a notification icon"
+            /> -->
+            <i class="fa-solid fa-bell"></i>
+            <p>Notification</p>
+            <div
+              class="notificationToggle lsNotificationToggle toogleContainerOn"
+            >
+              <div class="toggle lsToggle toggleOn"></div>
+            </div>
+          </div>
+          <div class="gearRow">
+            <img
+              src="../static/images/icons/Reminder.svg"
+              alt="A svg icon of a hand, a reminder icon"
+            />
+            <p>Reminder</p>
+          </div>
+          <div class="reminderDetails">
+            <span>Default</span>
+            <div class="reminderDays">
+              <div class="daysRow">
+                <div class="daysSet"><p>Set Reminder</p></div>
+                <div class="days">
+                  <p>1 day</p>
+                  <p>1 week</p>
+                  <p>2 weeks</p>
+                  <p>1 month</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -137,37 +194,49 @@
       <div class="s-screen">
         <div class="navBar">
           <h1><a href="/">Lytrally</a></h1>
-          <i id="openNav" class="fa-solid fa-bars"></i>
+          <!-- <i id="openNav" class="fa-solid fa-bars"></i> -->
+          <div class="hamburgerContainer">
+            <input
+              class="menu-btn"
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+            /><label class="menu-btn-label" for="hamburger"
+              ><span class="hamburger"></span
+            ></label>
+          </div>
         </div>
         <div class="navDisplay">
-          <li><a class="navA" href="#">Home</a></li>
-          <li><a class="navA" href="#">Service</a></li>
-          <li><a class="navA" href="#">Contact Us</a></li>
-          <li><a class="navA" href="#">About</a></li>
-          <!-- <li><a class="navA" href="{{ url_for('signup') }}">Sign Up</a> --></li>
-          {% if page == "signin" %}
-          <li><a id="signUp" class="navA" href="/signup">Sign Up</a></li>
-          {% else %}
-          <li><a id="signIn" class="navA" href="/signin">Sign In</a></li>
-          {% endif %}
+          <ul>
+            <li><a class="navA" href="#">Home</a></li>
+            <li><a class="navA" href="#">Service</a></li>
+            <li><a class="navA" href="#">Contact Us</a></li>
+            <li><a class="navA" href="#">About</a></li>
+            <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
+            <li><a id="signIn" class="navA" href="/signin">Sign In</a></li>
+          </ul>
         </div>
       </div>
       <div class="l-screen">
         <h1><a href="/">Lytrally</a></h1>
-        <div class="navlinks">
-          <a href="/">Home</a>
-          <a href="#">Service</a>
-          <a href="#">Contact Us</a>
-          <!-- <button><a href="../templates/signup.html">Sign Up</a></button> -->
-          {% if page == "signin" %}
-          <button><a href="/signup">Sign Up</a></button>
-          {% else %}
-          <button><a href="/signin">Sign In</a></button>
-          {% endif %}
+        <div class="navbar-menu">
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            <!-- <button><a class="nav-link" href="../templates/signup.html">Sign Up</a></button> -->
+            <li class="nav-item">
+              <button><a class="nav-link" href="/signin">Sign In</a></button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
     {% endif %}
+    <!-- The script below includes script for the navbar -->
+    <script src="../static/scripts/script.js"></script>
     <!-- Between the code-blocks below, all unique code (for the body block) for each webpage will be inserted -->
     {% block body %}{% endblock body %}
 
@@ -188,8 +257,5 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-
-    <!-- The script below includes script for the navbar -->
-    <script src="../static/scripts/script.js"></script>
   </body>
 </html>

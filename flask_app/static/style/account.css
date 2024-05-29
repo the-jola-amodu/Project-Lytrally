@@ -6,40 +6,48 @@
 }
 
 :root {
+  /* Font sizes */
   --font-size-sm: 16px;
   --font-size-m: 20px;
   --font-size-l: 24px;
   --font-size-xl: 26px;
   --font-size-xxl: 30px;
   --font-title: 40px;
+
+  /* Font Family */
   --inter-font: inter;
+  --roboto-font: Roboto Slab;
+  --Inria-font: Inria Serif;
+
+  /* Colors */
   --off-white-color: #f3f6fc;
   --lilac-color: #8a9ac5;
   --black-color: #000;
   --dull-black: #252222;
-  --roboto-font: Roboto Slab;
-  --Inria-font: Inria Serif;
   --button-background-color: #6a7db1;
   --grey-color: #8b8585;
   --link-hover-color: #ffd700;
   --active-feature-background: #8a9ac5;
   --less-black: #1e1e1e;
   --dropdown-bg: #dbd7d7;
-  --toggle-bg: #d9d9d9;
+  --nav-link-hover: rgb(136, 61, 211);
+
+  /* Motion */
+  --transition-duration: 0.3s;
+  --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
 body {
   background: var(--off-white-color);
 }
 
-.container {
+.main-container {
   /* padding-top: 0 !important; */
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
 }
 
-.header,
 .profileDetails {
   padding-inline: 36px;
 }
@@ -48,15 +56,15 @@ header {
   margin-bottom: 29px;
 }
 
-.header {
+/* .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-top: 20px; */
+  margin-top: 20px;
   color: #000;
   font-family: Inter;
-  /* font-size: 24px; */
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -65,45 +73,42 @@ header {
 
 .header > img:hover {
   cursor: pointer;
-}
-
-.profile {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
-  margin-bottom: 13px;
-}
+} */
 
 .profilePicContainer input {
   display: none;
 }
 
 .profileImg {
-  width: 125px;
-  height: 125px;
+  /* width: 125px; */
+  width: 100%;
   flex-shrink: 0;
-  background-color: #fff;
-  border: 1px solid var(--lilac-color);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #000;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0;
   margin-bottom: 33px;
 }
 
-.profileImg:hover {
-  background-color: #8a9ac5;
-  color: var(--off-white-color);
+.profileImg label {
+  width: 50%;
+  height: 100%;
+  margin-inline: auto;
+  border-radius: 1000px;
+}
+
+.profileImg label:hover {
+  cursor: pointer;
+}
+
+.profileImg img {
+  width: 100%;
+  height: auto;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 1000px;
 }
 
 .media-body {
@@ -140,25 +145,33 @@ header {
   flex-shrink: 0;
   border-radius: 30px;
   border: 3px solid #000;
-  background: #8a9ac5;
+  background-color: #8a9ac5;
   margin-top: 41px;
   margin-left: auto;
   display: flex;
+  justify-content: center;
   align-items: center;
-  /* margin-right: auto; */
+  transition: all var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+.profileDetails button:hover {
+  background-color: var(--off-white-color);
+  border-color: var(--active-feature-background);
 }
 
 .profileDetails button > a {
-  color: #000;
+  color: var(--off-white-color);
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-decoration: none;
+  transition: all var(--transition-duration) var(--transition-cubic-bezier);
 }
 
-.profileDetails button:hover {
-  opacity: 0.8;
+.profileDetails button:hover a {
+  color: var(--active-feature-background);
 }
 
 .profileForm {
@@ -193,6 +206,23 @@ header {
   margin-bottom: 20px;
 }
 
+.closeFormContainer {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.closeFormContainer i {
+  font-weight: 600;
+  font-size: var(--font-size-m);
+  color: var(--black-color);
+}
+
+.closeFormContainer i:hover {
+  color: var(--active-feature-background);
+  cursor: pointer;
+}
+
 .profileForm input[type="submit"] {
   width: 150px;
   height: 60px;
@@ -200,7 +230,7 @@ header {
   border-radius: 30px;
   border: 3px solid #000;
   background: #8a9ac5;
-  color: #000;
+  color: var(--off-white-color);
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -209,10 +239,13 @@ header {
   margin-top: 30px;
   margin-left: auto;
   /* margin-right: auto; */
+  transition: all var(--transition-duration) var(--transition-cubic-bezier);
 }
 
-.profileForm button:hover {
-  opacity: 0.8;
+.profileForm input[type="submit"]:hover {
+  background-color: var(--off-white-color);
+  color: var(--active-feature-background);
+  border-color: var(--active-feature-background);
 }
 
 .profileContainer {
@@ -226,6 +259,11 @@ header {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 5px;
+  padding-left: 5px;
+}
+
+.profileContainer .row:focus-within {
+  border-left: 4px solid var(--lilac-color);
 }
 
 .col label {
@@ -261,14 +299,12 @@ header {
 
 @media screen and (min-width: 768px) {
   .profileDetails {
-    padding-inline: 95px;
+    padding-inline: 50px;
   }
 
-  .profileImg {
+  .profileImg label {
     width: 300px;
     height: 300px;
-    flex-shrink: 0;
-    font-size: 32px;
     border-radius: 200px;
     margin-bottom: 33px;
   }
@@ -277,23 +313,13 @@ header {
     font-size: 32px;
   }
 
-  .header {
+  /* .header {
     font-size: var(--font-size-xxl);
   }
 
   .header img {
     width: 40px;
-  }
-
-  .gearDropdown {
-    font-size: var(--font-size-m);
-    width: 320px;
-  }
-
-  .gearRow .notificationToggle {
-    width: 60px;
-    height: 30px;
-  }
+  } */
 
   .profileDetails label {
     font-size: var(--font-size-l);
@@ -304,17 +330,18 @@ header {
     font-size: var(--font-size-l);
     padding-block: 30px;
   }
+
+  #profileForm {
+    padding-inline: calc(2% + 1vmin);
+  }
 }
 
 @media (min-width: 1024px) {
   .profileContainer {
-    gap: 70px;
+    width: 570px;
+    gap: 50px;
     margin-top: 20px;
-    padding-inline: 40px;
-  }
-
-  .profilePicContainer {
-    padding-inline: 60px;
+    padding-inline: 0;
   }
 
   .profileContainer .row {
@@ -322,15 +349,21 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
+    margin: 0;
   }
 
   .row div:first-child {
-    width: 300px;
+    width: calc(160px + 2vw);
+    margin: 0;
   }
 
   .row div:last-child {
     flex-grow: 2;
+  }
+
+  .col label {
+    margin: 0;
   }
 
   .profileDetails button {
@@ -341,57 +374,55 @@ header {
   }
 }
 
-/* Container content styling as a result of navbar position for Normal phone screen */
+/* main-container content styling as a result of navbar position for Normal phone screen */
 @media screen and (max-height: 700px) {
-  .container {
+  .main-container {
     /* padding-top: calc(300px + 1vmin); */
     padding-top: 70px !important;
   }
 }
 
 @media (min-height: 740px) and (max-height: 800px) {
-  .container {
+  .main-container {
     padding-top: calc(70px + 1vmin) !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  Longer Phone screens */
+/* main-container content styling as a result of navbar position for  Longer Phone screens */
 @media (min-height: 800px) and (max-height: 1200px) {
-  .container {
+  .main-container {
     padding-top: 80px !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  laptop and bigger screen query */
+/* main-container content styling as a result of navbar position for  laptop and bigger screen query */
 @media (min-width: 1024px) and (min-height: 600px) {
-  .container {
+  .main-container {
     padding-top: calc(70px + 1vmin) !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  ipad screen query */
+/* main-container content styling as a result of navbar position for  ipad screen query */
 @media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
-  .container {
+  .main-container {
     padding-top: 100px !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  Next Hub screen query */
+/* main-container content styling as a result of navbar position for  Next Hub screen query */
 @media (width: 1024px) and (height: 600px) {
-  .container {
+  .main-container {
     padding-top: 80px !important;
   }
 }
 
-/* Container content styling as a result of navbar position for  Surface Duo screen query */
+/* main-container content styling as a result of navbar position for  Surface Duo screen query */
 @media (max-width: 540px) and (min-height: 720px) {
-  .container {
+  .main-container {
     padding-top: 70px;
   }
 }
 
-
-/* The styles below apply to other pages that inherit from the layout page */
 /* profileForm content styling as a result of navbar position for Normal phone screen */
 @media screen and (max-height: 700px) {
   .profileForm {

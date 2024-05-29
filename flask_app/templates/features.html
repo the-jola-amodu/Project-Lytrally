@@ -1,10 +1,10 @@
 {% extends "layout.html" %} {% block head %}
 <link rel="stylesheet" href="../static/style/features.css" />
 {% endblock head %}{% block body %}
-<div class="container">
+<div class="main-container">
   <header id="header" onclick="closeFeatures()">
     <div class="logoHeader">
-      <img src="../static/images/icons/bell.svg" alt="" />
+      <!-- <img src="../static/images/icons/bell.svg" alt="" /> -->
 
       <div class="profilePic">
         <img src="{{ image_file }}" alt="user profile pic" />
@@ -19,7 +19,7 @@
           <img src="../static/images/frame.svg" alt="" />
         </div>
         <div class="listDisplay">
-          <ul>
+          <ul class="list">
             <li id="ghostWriting" class="feature" href="#">
               Ghostwriting A.I.
             </li>
@@ -44,7 +44,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section class="featuresSection">
     <div class="features">
       <div class="ghostWrittingFeature featureSection">
         <div class="ghostWritting">
@@ -61,59 +61,78 @@
               </div>
             </div>
             <div class="ghostWrittingtools">
-              <ul>
-                <li href="#">
-                  <img
-                    src="../static/images/icons/italic.svg"
-                    alt="Italic Icon"
-                  />
-                  <p>Italic</p>
+              <ul class="toolsList">
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/italic.svg"
+                      alt="Italic Icon"
+                    />
+                    <p>Italic</p>
+                  </div>
                 </li>
-                <li href="#">
-                  <img
-                    src="../static/images/icons/fontStyle.svg"
-                    alt="Font Style Icon"
-                  />
-                  <p>Font Style</p>
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/fontStyle.svg"
+                      alt="Font Style Icon"
+                    />
+                    <p>Font Style</p>
+                  </div>
                 </li>
-                <li href="#">
-                  <img
-                    src="../static/images/icons/fontColor.svg"
-                    alt="Font Color Icon"
-                  />
-                  <p>Font Color</p>
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/fontColor.svg"
+                      alt="Font Color Icon"
+                    />
+                    <p>Font Color</p>
+                  </div>
                 </li>
-                <li href="#">
-                  <img
-                    src="../static/images/icons/fontSize.svg"
-                    alt="Font Size Icon"
-                  />
-                  <p>Font Size</p>
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/fontSize.svg"
+                      alt="Font Size Icon"
+                    />
+                    <p>Font Size</p>
+                  </div>
                 </li>
-                <li href="#">
-                  <img src="../static/images/icons/bold.svg" alt="Bold Icon" />
-                  <p>Bold</p>
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/bold.svg"
+                      alt="Bold Icon"
+                    />
+                    <p>Bold</p>
+                  </div>
                 </li>
-                <li href="#">
-                  <img
-                    src="../static/images/icons/underline.svg"
-                    alt="Underline Icon"
-                  />
-                  <p>Underline</p>
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/underline.svg"
+                      alt="Underline Icon"
+                    />
+                    <p>Underline</p>
+                  </div>
                 </li>
-                <li href="#">
-                  <img
-                    src="../static/images/icons/highlight.svg"
-                    alt="Highlight Color Icon"
-                  />
-                  <p>Highlight Color</p>
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/highlight.svg"
+                      alt="Highlight Color Icon"
+                    />
+                    <p>Highlight Color</p>
+                  </div>
                 </li>
-                <li href="#">
-                  <img
-                    src="../static/images/icons/orientation.svg"
-                    alt="Orientation Icon"
-                  />
-                  <p>Orientation</p>
+                <li class="tool">
+                  <div class="toolContent">
+                    <img
+                      src="../static/images/icons/orientation.svg"
+                      alt="Orientation Icon"
+                    />
+                    <p>Orientation</p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -122,11 +141,12 @@
             <div class="userInput">
               <div class="upload">
                 <form action="">
-                  <label for="upload">
-                    <img src="../static/images/icons/upload.svg" alt="" />
+                  <label for="fileUpload">
+                    <!-- <img src="../static/images/icons/upload.svg" alt="" /> -->
+                    <i class="fa-solid fa-upload"></i>
                     <p>Upload Your Articles</p>
                   </label>
-                  <input type="file" />
+                  <input type="file" name="fileUpload" id="fileUpload" />
                 </form>
               </div>
               <div class="textInput">
@@ -322,7 +342,7 @@
           <div class="language">
             <div id="raLanguageDisplay" class="languageDisplay">
               <p id="raLangDisplay" class="langDisplay">English</p>
-              <img rac="../static/images/icons/downArrow.svg" alt="" />
+              <img src="../static/images/icons/downArrow.svg" alt="" />
             </div>
             <div id="raLanguages" class="languages">
               <p class="lang raLang">English</p>
@@ -332,16 +352,18 @@
           </div>
           <div class="reaserchAnalysis">
             <form action="">
-              <label for="reasearchAnalysisFeature"
-                ><img
+              <label for="reasearchAnalysisFeature">
+                <!-- <img
                   src="../static/images/icons/upload.svg"
                   alt="A svg upload icon"
-                />Click here to upload document</label
+                /> -->
+                <i class="fa-solid fa-upload"></i>
+                Click here to upload document</label
               >
               <input
                 type="file"
                 name="reasearchAnalysisFeature"
-                id="ReasearchAnalysis"
+                id="reasearchAnalysisFeature"
               />
             </form>
           </div>
@@ -364,10 +386,16 @@
             <div class="paraphraseToogle">Paraphrasing</div>
             <div class="summaryToggle">Summarizing</div>
             <div class="psUpload">
-              <img
-                src="../static/images/icons/upload.svg"
-                alt="A svg upload icon"
-              />
+              <form action="">
+                <label for="uploadFile">
+                  <!-- <img
+                    src="../static/images/icons/upload.svg"
+                    alt="A svg upload icon"
+                /> -->
+                  <i class="fa-solid fa-upload"></i>
+                </label>
+                <input type="file" name="uploadFile" id="uploadFile" />
+              </form>
             </div>
           </div>
         </div>
@@ -397,16 +425,20 @@
           <div class="srOutputContainer">
             <div class="srOutput"></div>
             <div class="srOutputTools">
-              <span
-                ><img
+              <span>
+                <!-- <img
                   src="../static/images/icons/download.svg"
                   alt="A svg download icon"
-              /></span>
-              <span
-                ><img
+              /> -->
+                <i class="fa fa-download" aria-hidden="true"></i>
+              </span>
+              <span>
+                <!-- <img
                   src="../static/images/icons/copy.svg"
                   alt="A svg copy icon"
-              /></span>
+              /> -->
+                <i class="fa-solid fa-copy"></i>
+              </span>
             </div>
           </div>
         </div>
@@ -439,5 +471,4 @@
   </section>
 </div>
 <script src="../static/scripts/features.js"></script>
-<script src="../static/scripts/script.js"></script>
 {% endblock body %}
