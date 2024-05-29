@@ -55,12 +55,9 @@ def signin():
 @app.route('/features')
 @login_required
 def features():
-    if current_user.is_authenticated:
-        image_file = url_for(
-            'static', filename='profile_pics/' + current_user.image_file)
-        return render_template('features.html', page='features', image_file=image_file, title='Getting some work done!')
-    else:
-        return render_template('features.html', page='features', title='Getting some work done!')
+    image_file = url_for(
+        'static', filename='profile_pics/' + current_user.image_file)
+    return render_template('features.html', page='features', image_file=image_file)
 
 
 def save_picture(form_picture):
