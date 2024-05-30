@@ -4,6 +4,7 @@ from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_app.models import User
+from wtforms.widgets import TextArea
 
 
 class RegistrationForm(FlaskForm):
@@ -50,3 +51,7 @@ class UpdateAccountForm(FlaskForm):
             if user:
                 raise ValidationError(
                     'That email has been taken. Please choose a different email')
+
+
+class DocumentForm(FlaskForm):
+    content = StringField(widget=TextArea())
