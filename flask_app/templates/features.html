@@ -2,27 +2,68 @@
 <link rel="stylesheet" href="../static/style/features.css" />
 {% endblock head %}{% block body %}
 <div class="main-container">
-  <header id="header" onclick="closeFeatures()">
-    <div class="logoHeader">
-      <!-- <img src="../static/images/icons/bell.svg" alt="" /> -->
-
-      <div class="profilePic">
-        <img src="{{ image_file }}" alt="user profile pic" />
+  <nav>
+    <div class="s-screen">
+      <div class="navBar">
+        <a href="/">
+          <img src="../static/images/lytrally-logo.jpeg" alt="Lytrally" />
+        </a>
+        <!-- <i id="openNav" class="fa-solid fa-bars"></i> -->
+        <div class="hamburgerContainer">
+          <input
+            class="menu-btn"
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+          /><label class="menu-btn-label" for="hamburger"
+            ><span class="hamburger"></span
+          ></label>
+        </div>
+      </div>
+      <div class="navDisplay">
+        <ul>
+          <li><a class="navA" href="#">File</a></li>
+          <li><a class="navA" href="#">Edit</a></li>
+          <li><a class="navA" href="#">Tools Us</a></li>
+          <li><a class="navA" href="#">Help</a></li>
+        </ul>
+      </div>
+      <div class="logoHeader">
+        <div class="profilePic">
+          <a href="/account"
+            ><img src="{{ image_file }}" alt="user profile pic"
+          /></a>
+        </div>
       </div>
     </div>
-  </header>
+    <div class="l-screen">
+      <a href="/"
+        ><img src="../static/images/lytrally-logo.jpeg" alt="Lytrally"
+      /></a>
+      <div class="navbar-menu">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="/">File</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Edit</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tools</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+        </ul>
+      </div>
+      <div class="logoHeader">
+        <div class="profilePic">
+          <a href="/account"
+            ><img src="{{ image_file }}" alt="user profile pic"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </nav>
   <section>
     <div class="featuresContainer">
       <div class="featuresList">
-        <div id="featuresDisplay" class="currentFeature">
-          <p id="visibleFeature">Ghostwriting A.I.</p>
-          <img src="../static/images/frame.svg" alt="" />
-        </div>
         <div class="listDisplay">
           <ul class="list">
-            <li id="ghostWriting" class="feature" href="#">
-              Ghostwriting A.I.
-            </li>
             <li id="readabilityStats" class="feature" href="#">
               Readability Statistics
             </li>
@@ -46,10 +87,10 @@
   </section>
   <section class="featuresSection">
     <div class="features">
-      <div class="ghostWrittingFeature featureSection">
-        <div class="ghostWritting">
-          <div class="ghostWrittingToolsContainer">
-            <div class="ghostWrittingtools">
+      <div class="defaultWrittingFeature featureSection">
+        <div class="defaultWritting">
+          <div class="defaultWrittingToolsContainer">
+            <div class="defaultWrittingtools">
               <ul class="toolsList">
                 <li class="tool">
                   <div class="toolContent">
@@ -127,31 +168,12 @@
             </div>
           </div>
           <div class="workSpace">
-            <div class="userInput">
-              <div class="upload">
-                <form action="">
-                  <label for="fileUpload">
-                    <!-- <img src="../static/images/icons/upload.svg" alt="" /> -->
-                    <i class="fa-solid fa-upload"></i>
-                    <p>Upload Your Articles</p>
-                  </label>
-                  <input type="file" name="fileUpload" id="fileUpload" />
-                </form>
+            <form action="#" autocomplete="on" method="post">
+              {{ form.hidden_tag() }}
+              <div>
+                {{ form.content(class="form-control", rows="30", cols="80") }}
               </div>
-              <div class="textInput">
-                <form action="" class="textInputForm">
-                  <textarea
-                    name="ghostWriting"
-                    id="ghostWritingInput"
-                    class="ghostWritingInput"
-                    cols="30"
-                    rows="1"
-                    placeholder="Transmit message"
-                  ></textarea>
-                </form>
-              </div>
-            </div>
-            <div class="userOutput"></div>
+            </form>
           </div>
         </div>
       </div>

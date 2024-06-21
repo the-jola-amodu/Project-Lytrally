@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="../static/style/solid.min.css" />
   </head>
   <body>
-    {% if page != "Home" %}
+    {% if page != "features" %} {% if page != "Home" %}
     <nav>
       <div class="s-screen navBar-bg">
         <div class="navBar">
@@ -67,10 +67,10 @@
             {% elif page == "account" %}
             <li>
               <!-- <img
-                class="gear navA"
-                src="../static/images/icons/gear.svg"
-                alt="A svg gear icon"
-              /> -->
+                  class="gear navA"
+                  src="../static/images/icons/gear.svg"
+                  alt="A svg gear icon"
+                /> -->
               <i class="fa-solid fa-gear gear navA"></i>
             </li>
             {% else %}
@@ -133,10 +133,10 @@
             {% elif page == "account" or page == "features" %}
             <li class="nav-item">
               <!-- <img
-                class="gear lsGear"
-                src="../static/images/icons/gear.svg"
-                alt="A svg gear icon"
-              /> -->
+                  class="gear lsGear"
+                  src="../static/images/icons/gear.svg"
+                  alt="A svg gear icon"
+                /> -->
               <i class="fa-solid fa-gear gear lsGear"></i>
             </li>
             {% else %}
@@ -149,9 +149,9 @@
         <div class="gearDropdown lsGearDropdown">
           <div class="gearRow">
             <!-- <img
-              src="../static/images/icons/notification.svg"
-              alt="A svg icon of a bell, a notification icon"
-            /> -->
+                src="../static/images/icons/notification.svg"
+                alt="A svg icon of a bell, a notification icon"
+              /> -->
             <i class="fa-solid fa-bell"></i>
             <p>Notification</p>
             <div
@@ -229,7 +229,7 @@
         </div>
       </div>
     </nav>
-    {% endif %}
+    {% endif %} {% endif %}
     <!-- The script below includes script for the navbar -->
     <script src="../static/scripts/script.js"></script>
     <!-- Between the code-blocks below, all unique code (for the body block) for each webpage will be inserted -->

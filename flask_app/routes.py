@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
 from flask_app import app, db, bcrypt
-from flask_app.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from flask_app.forms import RegistrationForm, LoginForm, UpdateAccountForm, DocumentForm
 from flask_app.models import User, Document
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
@@ -55,9 +55,10 @@ def signin():
 @app.route('/features')
 @login_required
 def features():
+    form = DocumentForm()
     image_file = url_for(
         'static', filename='profile_pics/' + current_user.image_file)
-    return render_template('features.html', page='features', image_file=image_file)
+    return render_template('features.html', form=form, page='features', image_file=image_file)
 
 
 def save_picture(form_picture):

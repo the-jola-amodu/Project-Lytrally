@@ -197,24 +197,24 @@ header {
   /* background-color: white; */
 }
 
-/* The styles below are for the Ghostwriting feature */
-.ghostWrittingFeature {
+/* The styles below are for the defaultwriting feature */
+.defaultWrittingFeature {
   /* display: none; */
   margin-bottom: 20px;
 }
-.ghostWritting {
+.defaultWritting {
   width: 100%;
   overflow: hidden;
   /* overflow-x: scroll; */
   background-color: white;
 }
 
-.ghostWritting::-webkit-scrollbar {
+.defaultWritting::-webkit-scrollbar {
   width: 1px;
   color: var(--button-background-color);
 }
 
-.ghostWrittingToolsContainer {
+.defaultWrittingToolsContainer {
   width: 100%;
   margin-top: 0px;
   margin-left: auto;
@@ -222,77 +222,8 @@ header {
   overflow: hidden;
 }
 
-/* Ghostwritting feature language styling */
-
-.language {
-  width: 100px;
-  height: auto;
-  position: relative;
-  z-index: 1;
-}
-
-.language p {
-  color: var(--black-color);
-  font-family: var(--roboto-font);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 110%; /* 15.4px */
-}
-
-.languageDisplay {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 12px;
-  gap: 8px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.languageDisplay p {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.languageDisplay img {
-  margin-block: auto;
-}
-
-.languageDisplay:hover {
-  cursor: pointer;
-}
-
-.languages {
-  width: 100px;
-  background-color: var(--dropdown-bg-color);
-  display: flex;
-  flex-direction: column;
-  padding: 14px 12px 8px 12px;
-  gap: 4px;
-  /* justify-content: center; */
-  align-items: center;
-  border-radius: 10px;
-  display: none;
-  position: fixed;
-}
-
-.languages p {
-  padding-block: 5px;
-}
-
-.languages p:hover {
-  color: var(--active-feature-background);
-  width: 100%;
-  text-align: center;
-  border-bottom: solid #6a7db1;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Ghostwitting Feature tools  styling */
-.ghostWrittingtools .toolsList {
+/* defaultwitting Feature tools  styling */
+.defaultWrittingtools .toolsList {
   width: 100%;
   display: flex;
 
@@ -363,11 +294,12 @@ header {
   background-color: var(--nav-link-hover);
 }
 
-/* Ghostwritting Workspace styling */
+/* defaultwritting Workspace styling */
 
-.ghostWritting .workSpace {
+.defaultWritting .workSpace {
   width: 100%;
   display: flex;
+  justify-content: center;
   margin-block: 20px;
 }
 
@@ -375,6 +307,7 @@ header {
   width: 100%;
   height: 412px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
   overflow: auto;
@@ -1043,12 +976,12 @@ td {
     display: inline;
   }
 
-  /* Ghostwritting workspace styling */
-  .ghostWrittingToolsContainer {
+  /* defaultwritting workspace styling */
+  .defaultWrittingToolsContainer {
     margin-top: 20px;
   }
 
-  .ghostWrittingtools .toolsList {
+  .defaultWrittingtools .toolsList {
     width: 100%;
     justify-content: space-between;
     padding-right: 20px;
@@ -1246,27 +1179,27 @@ td {
     margin: 0;
   }
 
-  /* Ghostwritting workspace styling */
-  .ghostWrittingFeature {
+  /* defaultwritting workspace styling */
+  .defaultWrittingFeature {
     padding-inline: 70px;
   }
 
-  .ghostWritting {
+  .defaultWritting {
     padding-inline: 0;
     background-color: white;
   }
 
-  .ghostWrittingToolsContainer {
+  .defaultWrittingToolsContainer {
     display: flex;
     width: 100%;
   }
-  .ghostWrittingtools {
+  .defaultWrittingtools {
     justify-content: center;
     padding-right: 0;
     flex-grow: 2;
   }
 
-  .ghostWritting .workSpace {
+  .defaultWritting .workSpace {
     padding-inline: 20px;
   }
 
@@ -1353,11 +1286,11 @@ td {
     padding-inline: 151px;
   }
 
-  .ghostWritting {
+  .defaultWritting {
     padding-inline: 200px;
   }
 
-  .ghostWritting .workSpace {
+  .defaultWritting .workSpace {
     padding-inline: 50px;
   }
 }
