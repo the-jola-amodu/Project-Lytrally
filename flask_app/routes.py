@@ -8,6 +8,19 @@ import os
 from PIL import Image
 
 
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, file_extention = os.path.splitext(form_picture.filename)
+    pic_filename = random_hex + file_extention
+    pic_path = os.path.join(app.root_path, 'static/profile_pics', pic_filename)
+
+    output_size = (125, 125)
+    i = Image.open(form_picture)
+    i.thumbnail(output_size)
+    i.save(pic_path)
+    return pic_filename
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if current_user.is_authenticated:
@@ -63,23 +76,13 @@ def features():
     return render_template('features.html', form=form, page='features', image_file=image_file)
 
 
-def save_picture(form_picture):
-    random_hex = secrets.token_hex(8)
-    _, file_extention = os.path.splitext(form_picture.filename)
-    pic_filename = random_hex + file_extention
-    pic_path = os.path.join(app.root_path, 'static/profile_pics', pic_filename)
-
-    output_size = (125, 125)
-    i = Image.open(form_picture)
-    i.thumbnail(output_size)
-    i.save(pic_path)
-    return pic_filename
-
-
 @app.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
     form = UpdateAccountForm()
+    user_id = current_user.id
+    user = User.query.get_or_404(user_id)
+    documents = user.documents.all()
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
@@ -96,7 +99,8 @@ def account():
         form.email.data = current_user.email
     image_file = url_for(
         'static', filename='profile_pics/' + current_user.image_file)
-    return render_template('account.html', page='account', title='Account', image_file=image_file, form=form)
+    return render_template('account.html', page='account', title='Account', image_file=image_file, form=form,
+                           documents=documents)
 
 
 @app.route("/signout")

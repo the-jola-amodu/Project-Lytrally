@@ -73,6 +73,19 @@
       <p class="text-secondary">Email: {{ current_user.email }}</p>
       <span class="update">Update Profile</span>
     </div>
+    <div>
+      <h2>My Documents</h2>
+      {% if documents|length > 0 %}
+      <div>
+        <p>You have created any document.</p>
+      </div>
+      {% else %}
+      <div>
+        <p>You have not created any document.</p>
+      </div>            
+      {% endif %}
+      <button><a href="/features"></a>Create new document +</button>
+    </div>
 <div class="profileForm">    
 <form id="profileForm" action="#" autocomplete="on" method="post" enctype="multipart/form-data">
       {{ form.hidden_tag() }}
