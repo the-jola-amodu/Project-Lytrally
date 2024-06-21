@@ -39,4 +39,4 @@ class Document(db.Model):
     content = db.Column(db.Text)
 
     def __repr__(self):
-        return f"Post('{self.title}', '{self.date_created}')"
+        return f"Document('{self.title}', '{self.date_created}')"

@@ -52,10 +52,12 @@ def signin():
     return render_template('signin.html', form=form, title='Login', page='signin')
 
 
-@app.route('/features')
+@app.route('/features', methods=['GET', 'POST'])
 @login_required
 def features():
     form = DocumentForm()
+    if request.method == 'GET':
+        form.title.data = "New_Untitled_Document"
     image_file = url_for(
         'static', filename='profile_pics/' + current_user.image_file)
     return render_template('features.html', form=form, page='features', image_file=image_file)

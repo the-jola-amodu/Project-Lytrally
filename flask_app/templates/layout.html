@@ -39,9 +39,14 @@
       <div class="s-screen navBar-bg">
         <div class="navBar">
           {% if page == "account" %}
-          <h1>My Account</h1>
+          <h1><img src="../static/images/lytrally-logo.jpeg" alt="" /></h1>
           {% else %}
-          <h1><a href="/">Lytrally</a></h1>
+          <h1>
+            <a href="/"
+              ><img src="../static/images/lytrally-logo.jpeg" alt="" />
+              Lytrally</a
+            >
+          </h1>
           {% endif %}
           <!-- <i id="openNav" class="fa-solid fa-bars navBarChange"></i> -->
           <div class="hamburgerContainer">
@@ -114,9 +119,13 @@
       </div>
       <div class="l-screen navBar-bg">
         {% if page == "account" %}
-        <h1>My Account</h1>
+        <h1><img src="../static/images/lytrally-logo.jpeg" alt="" /></h1>
         {% else %}
-        <h1><a href="/">Lytrally</a></h1>
+        <h1>
+          <a href="/"
+            ><img src="../static/images/lytrally-logo.jpeg" alt="" />Lytrally</a
+          >
+        </h1>
         {% endif %}
         <div class="navbar-menu">
           <ul class="nav">
@@ -130,7 +139,7 @@
             <li class="nav-item">
               <button><a class="nav-link" href="/signup">Sign Up</a></button>
             </li>
-            {% elif page == "account" or page == "features" %}
+            {% elif page == "account" %}
             <li class="nav-item">
               <!-- <img
                   class="gear lsGear"
@@ -188,7 +197,14 @@
     <nav>
       <div class="s-screen">
         <div class="navBar">
-          <h1><a href="/">Lytrally</a></h1>
+          <h1>
+            <a href="/"
+              ><img
+                src="../static/images/lytrally-logo.jpeg"
+                alt=""
+              />Lytrally</a
+            >
+          </h1>
           <!-- <i id="openNav" class="fa-solid fa-bars"></i> -->
           <div class="hamburgerContainer">
             <input
@@ -213,7 +229,11 @@
         </div>
       </div>
       <div class="l-screen">
-        <h1><a href="/">Lytrally</a></h1>
+        <h1>
+          <a href="/"
+            ><img src="../static/images/lytrally-logo.jpeg" alt="" />Lytrally</a
+          >
+        </h1>
         <div class="navbar-menu">
           <ul class="nav">
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>

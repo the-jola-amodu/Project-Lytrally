@@ -80,7 +80,7 @@ body::-webkit-scrollbar
 }
 
 .navBar-bg {
-    background-color: var(--lilac-color);
+    background-color: #8dbdff;
 }
 
 .navBar h1 > a, h1, i

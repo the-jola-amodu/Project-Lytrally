@@ -89,6 +89,12 @@
     <div class="features">
       <div class="defaultWrittingFeature featureSection">
         <div class="defaultWritting">
+          <div class="workSpace">
+            <form action="#" autocomplete="on" method="post">
+              {{ form.hidden_tag() }}
+              <div>{{ form.title(class="form-control") }}</div>
+            </form>
+          </div>
           <div class="defaultWrittingToolsContainer">
             <div class="defaultWrittingtools">
               <ul class="toolsList">

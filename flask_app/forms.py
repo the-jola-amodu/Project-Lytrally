@@ -54,4 +54,5 @@ class UpdateAccountForm(FlaskForm):
 
 
 class DocumentForm(FlaskForm):
+    title = StringField(validators=[DataRequired()])
     content = StringField(widget=TextArea())

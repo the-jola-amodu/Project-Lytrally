@@ -49,6 +49,7 @@ body {
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
+  background-color: #F3F6FC;
 }
 
 /* The styles below are for the header containing user image and notification icon */
