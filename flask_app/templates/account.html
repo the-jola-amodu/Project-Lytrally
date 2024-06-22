@@ -77,15 +77,21 @@
       <h2>My Documents</h2>
       {% if documents|length > 0 %}
       <div>
-        <p>You have created any document.</p>
+        {% for document in documents %}
+                    <li>
+                        <a href="{{ url_for('document', document_id=document.id) }}">{{ document.title }}</a>
+                        (Created on {{ document.date_created.strftime('%Y-%m-%d') }})
+                    </li>
+                {% endfor %}
       </div>
       {% else %}
       <div>
         <p>You have not created any document.</p>
       </div>            
       {% endif %}
-      <button><a href="/features"></a>Create new document +</button>
-    </div>
+      <form action="{{ url_for('new_document', user_id=current_user.id) }}" method="post">
+        <button type="submit" class="btn btn-primary">Create New Document</button>
+    </form>
 <div class="profileForm">    
 <form id="profileForm" action="#" autocomplete="on" method="post" enctype="multipart/form-data">
       {{ form.hidden_tag() }}

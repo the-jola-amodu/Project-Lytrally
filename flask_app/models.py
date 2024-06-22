@@ -33,7 +33,8 @@ class User(db.Model, UserMixin):
 
 class Document(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False, primary_key=True)
+    title = db.Column(db.String(100), nullable=False,
+                      default="New_Blank_Document")
     date_created = db.Column(
         db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text)

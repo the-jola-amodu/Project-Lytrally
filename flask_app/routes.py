@@ -34,7 +34,7 @@ def index():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if current_user.is_authenticated:
-        return redirect(url_for('features'))
+        return redirect(url_for('account'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data)
@@ -50,7 +50,7 @@ def signup():
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if current_user.is_authenticated:
-        return redirect(url_for('features'))
+        return redirect(url_for('account'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
@@ -65,15 +65,26 @@ def signin():
     return render_template('signin.html', form=form, title='Login', page='signin')
 
 
-@app.route('/features', methods=['GET', 'POST'])
+@app.route('/document/new/<int:user_id>', methods=['GET', 'POST'])
 @login_required
-def features():
+def new_document(user_id):
+    document = Document()
+    document.users.append(current_user)
+    db.session.add(document)
+    db.session.commit()
+    return redirect(url_for('document', document_id=document.id))
+
+
+@app.route('/document/<int:document_id>', methods=['GET', 'POST'])
+@login_required
+def document(document_id):
+    document = Document.query.get_or_404(document_id)
     form = DocumentForm()
-    if request.method == 'GET':
-        form.title.data = "New_Untitled_Document"
+    form.title.data = document.title
+    form.content.data = document.content
     image_file = url_for(
         'static', filename='profile_pics/' + current_user.image_file)
-    return render_template('features.html', form=form, page='features', image_file=image_file)
+    return render_template('features.html', form=form, page='features', image_file=image_file, document=document)
 
 
 @app.route('/account', methods=['GET', 'POST'])
