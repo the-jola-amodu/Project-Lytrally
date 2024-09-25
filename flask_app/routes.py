@@ -102,4 +102,4 @@ def account():
 @app.route("/signout")
 def signout():
     logout_user()
-    return redirect(url_for('home'))
+    return redirect(url_for('index'))
