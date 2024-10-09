@@ -5,6 +5,7 @@ from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_app.models import User
 from wtforms.widgets import TextArea
+from flask_ckeditor import CKEditorField
 
 
 class RegistrationForm(FlaskForm):
@@ -55,4 +56,4 @@ class UpdateAccountForm(FlaskForm):
 
 class DocumentForm(FlaskForm):
     title = StringField(validators=[DataRequired()])
-    content = StringField(widget=TextArea())
+    content = CKEditorField('Content')

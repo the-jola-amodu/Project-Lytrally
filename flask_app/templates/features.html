@@ -29,64 +29,39 @@
           <li><a class="navA" href="#">Share</a></li>
         </ul>
       </div>
-      <div class="logoHeader">
         <div class="profilePic">
           <a href="/account"
-            ><img src="{{ image_file }}" alt="user profile pic"
+            ><img
+              class="profilePic"
+              src="{{ image_file }}"
+              alt="user profile pic"
           /></a>
         </div>
-      </div>
     </div>
     <div class="l-screen">
-      <a href="/"
-        ><img src="../static/images/lytrally-logo.jpeg" alt="Lytrally"
-      /></a>
-      <div class="navbar-menu">
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link" href="/">File</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Edit</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tools</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Share</a></li>
+      <a href="/">
+        <img
+          class="logoHeader"
+          src="../static/images/lytrally-logo.jpeg"
+          alt="Lytrally"
+        />
+      </a>
+      <div class="menu-bar">
+        <ul class="menu">
+          <li class="menu-bar-item"><a class="" href="/">File</a></li>
+          <li class="menu-bar-item"><a class="" href="#">Edit</a></li>
+          <li class="menu-bar-item"><a class="" href="#">Tools</a></li>
+          <li class="menu-bar-item"><a class="" href="#">Help</a></li>
+          <li class="menu-bar-item"><a class="" href="#">Share</a></li>
         </ul>
       </div>
-      <div class="logoHeader">
         <div class="profilePic">
           <a href="/account"
-            ><img src="{{ image_file }}" alt="user profile pic"
+            ><img class="profilePic" src="{{ image_file }}" alt="user profile pic"
           /></a>
         </div>
-      </div>
     </div>
   </nav>
-  <section>
-    <div class="featuresContainer">
-      <div class="featuresList">
-        <div class="listDisplay">
-          <ul class="list">
-            <li id="readabilityStats" class="feature" href="#">
-              Readability Statistics
-            </li>
-            <li id="generateContent" class="feature" href="#">
-              Generate Content Ideas
-            </li>
-            <li id="keywordAnalysis" class="feature" href="#">
-              Keyword Analysis
-            </li>
-            <li id="reasearch_analysis" class="feature" href="#">
-              Research and analysis
-            </li>
-            <li id="summarization_paraphrasing" class="feature" href="#">
-              Summarization and Paraphrasing
-            </li>
-            <li id="collaboration" class="feature" href="#">Collaboration</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
   <section class="featuresSection">
     <div class="features">
       <div class="defaultWrittingFeature featureSection">
@@ -97,361 +72,18 @@
               <div>{{ form.title(class="form-control") }}</div>
             </form>
           </div>
-          <div class="defaultWrittingToolsContainer">
-            <div class="defaultWrittingtools">
-              <ul class="toolsList">
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/italic.svg"
-                      alt="Italic Icon"
-                    />
-                    <p>Italic</p>
-                  </div>
-                </li>
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/fontStyle.svg"
-                      alt="Font Style Icon"
-                    />
-                    <p>Font Style</p>
-                  </div>
-                </li>
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/fontColor.svg"
-                      alt="Font Color Icon"
-                    />
-                    <p>Font Color</p>
-                  </div>
-                </li>
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/fontSize.svg"
-                      alt="Font Size Icon"
-                    />
-                    <p>Font Size</p>
-                  </div>
-                </li>
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/bold.svg"
-                      alt="Bold Icon"
-                    />
-                    <p>Bold</p>
-                  </div>
-                </li>
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/underline.svg"
-                      alt="Underline Icon"
-                    />
-                    <p>Underline</p>
-                  </div>
-                </li>
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/highlight.svg"
-                      alt="Highlight Color Icon"
-                    />
-                    <p>Highlight Color</p>
-                  </div>
-                </li>
-                <li class="tool">
-                  <div class="toolContent">
-                    <img
-                      src="../static/images/icons/orientation.svg"
-                      alt="Orientation Icon"
-                    />
-                    <p>Orientation</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div class="workSpace">
             <form action="#" autocomplete="on" method="post">
               {{ form.hidden_tag() }}
               <div>
-                {{ form.content(class="form-control", rows="30", cols="80") }}
+                {{ form.content(class="form-control")|safe }}
               </div>
             </form>
+             {{ ckeditor.load() }}
+             {{ ckeditor.config(name='content', width=800, height=1000) }}
           </div>
         </div>
       </div>
-      <div class="readabilityStatsFeature featureSection">
-        <div class="statsContainer">
-          <div class="stats">
-            <div class="correctionStats">
-              <div class="row">
-                <div class="col col-heading">Corrections</div>
-                <div class="col col-hr"><hr /></div>
-              </div>
-              <div class="row">
-                <div class="col">Grammar</div>
-                <div class="col eye-col">
-                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">Spelling</div>
-                <div class="col eye-col">
-                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">Puntuations</div>
-                <div class="col eye-col">
-                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">Repititions</div>
-                <div class="col eye-col">
-                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">Word Count</div>
-                <div class="col eye-col">
-                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
-                </div>
-              </div>
-            </div>
-            <div class="readability">
-              <div class="row">
-                <div class="col col-heading">Readability</div>
-                <div class="col col-hr"><hr /></div>
-              </div>
-              <div class="row">
-                <div class="col">Flesch-Kincaid grade level</div>
-                <div class="col eye-col">
-                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">Flesh Reading Ease</div>
-                <div class="col eye-col">
-                  <img src="../static/images/icons/eye.svg" alt="An eye icon" />
-                </div>
-              </div>
-            </div>
-            <div class="keywordAnalysis">
-              <div class="row">
-                <div class="col col-heading">Keyword Analysis</div>
-                <div class="col col-hr"><hr /></div>
-              </div>
-              <div class="row keywordRow">
-                <div class="col">
-                  <div class="keywords">
-                    <form action="">
-                      <textarea
-                        name="keywords"
-                        id="keywords"
-                        cols="30"
-                        rows="1"
-                        placeholder="Enter Keywords"
-                      ></textarea>
-                      <button type="submit">Search</button>
-                    </form>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="keywordLanguages">
-                    <p>Laguages</p>
-                    <img
-                      src="../static/images/icons/downArrow.svg"
-                      alt="Down Arrow svg icon"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="keywordTable">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Keyword</th>
-                      <th>
-                        <span class="tableSearch"
-                          >Searches
-                          <img
-                            src="../static/images/icons/downArrow.svg"
-                            alt="Down Arrow svg icon"
-                        /></span>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="generateContentFeature featureSection">
-        <div class="generateContent">
-          <p>Type the content you want to distinguish or make unique</p>
-          <div class="prompt">
-            <div class="messageDisplay"></div>
-            <div class="ideaPrompt">
-              <form action="">
-                <input
-                  type="text"
-                  name="ideaPrompt"
-                  id="ideaPrompt"
-                  placeholder="Send message to create content"
-                />
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="keywordAnalysisFeature featureSection"></div>
-      <div class="reasearchAnalysisFeature featureSection">
-        <h1>Interact with any document</h1>
-        <p>
-          Join the millions of students, researchers, and professionals who are
-          using AI to comprehend research and provide rapid answers to queries.
-        </p>
-        <div class="reasearchAnalysisContainer">
-          <div class="reaserchAnalysis">
-            <form action="">
-              <label for="reasearchAnalysisFeature">
-                <!-- <img
-                  src="../static/images/icons/upload.svg"
-                  alt="A svg upload icon"
-                /> -->
-                <i class="fa-solid fa-upload"></i>
-                Click here to upload document</label
-              >
-              <input
-                type="file"
-                name="reasearchAnalysisFeature"
-                id="reasearchAnalysisFeature"
-              />
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="summarizationParaphrasingFeature featureSection">
-        <div class="lang_summary_paraphrase_toggle">
-          <div class="paraphrase_summary_toggle">
-            <div class="paraphraseToogle">Paraphrasing</div>
-            <div class="summaryToggle">Summarizing</div>
-            <div class="psUpload">
-              <form action="">
-                <label for="uploadFile">
-                  <!-- <img
-                    src="../static/images/icons/upload.svg"
-                    alt="A svg upload icon"
-                /> -->
-                  <i class="fa-solid fa-upload"></i>
-                </label>
-                <input type="file" name="uploadFile" id="uploadFile" />
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="summaryParaphraseContainer">
-          <div class="srUserInput">
-            <form action="" id="paraphraseForm">
-              <textarea
-                name="Paraphrase"
-                id="Paraphrase"
-                cols="30"
-                rows="3"
-                placeholder="Type or paste the test and click on Paraphrase"
-              ></textarea>
-              <input type="submit" value="Paraphrase" />
-            </form>
-            <form action="" id="summarizeForm">
-              <textarea
-                name="Summarize"
-                id="Summarize"
-                cols="30"
-                rows="3"
-                placeholder="Type or paste the test and click on Summarize"
-              ></textarea>
-              <input type="submit" value="Summarize" />
-            </form>
-          </div>
-          <div class="srOutputContainer">
-            <div class="srOutput"></div>
-            <div class="srOutputTools">
-              <span>
-                <!-- <img
-                  src="../static/images/icons/download.svg"
-                  alt="A svg download icon"
-              /> -->
-                <i class="fa fa-download" aria-hidden="true"></i>
-              </span>
-              <span>
-                <!-- <img
-                  src="../static/images/icons/copy.svg"
-                  alt="A svg copy icon"
-              /> -->
-                <i class="fa-solid fa-copy"></i>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="collaborationFeature featureSection">
-        <div>
-          <div class="share">
-            <div class="invite">
-              <form action="">
-                <input
-                  type="email"
-                  name="invite"
-                  id="invite"
-                  placeholder="Type Email"
-                />
-                <input type="submit" value="Invite" />
-              </form>
-            </div>
-            <div class="shareOptions">
-              <ul>
-                <li>Copy Link</li>
-                <li>Invite via Email</li>
-                <li>Publish</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
