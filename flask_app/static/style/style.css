@@ -26,7 +26,7 @@
     --lilac-color: #8A9AC5;
     --black-color: #000;
     --dull-black: #252222;
-    --button-background-color: #6a7db1;
+    --button-background-color: rgb(106, 125, 177);
     --grey-color: #8b8585;
     --link-hover-color: #FFD700;
     --active-feature-background: #8a9ac5;
@@ -546,7 +546,8 @@ a:active
     {
         opacity: 0.8;
         color: var(--lilac-color);
-        background-color: var(--link-hover-color);
+        /* background-color: var(--link-hover-color); */
+        background-color: rgba(106, 125, 177, 0.8);
         cursor: pointer;
     }
 
@@ -556,7 +557,8 @@ a:active
     
     .nav .nav-item button:hover .nav-link
     {
-        color: var(--lilac-color);
+        /* color: var(--lilac-color); */
+        color: #f3f6fc;
     }
 
     .nav .nav-link {
