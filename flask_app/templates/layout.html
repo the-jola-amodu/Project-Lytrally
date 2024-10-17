@@ -38,16 +38,16 @@
     <nav>
       <div class="s-screen navBar-bg">
         <div class="navBar">
-          {% if page == "account" %}
-          <h1><img src="../static/images/lytrally-logo.jpeg" alt="" /></h1>
-          {% else %}
+          <!-- {% if page == "account" %}
+          <h1 class="logo"><img src="../static/images/lytrally-logo.jpeg" alt="" /></h1>
+          {% else %} -->
           <h1>
-            <a href="/"
+            <a href="/" class="logo"
               ><img src="../static/images/lytrally-logo.jpeg" alt="" />
               Lytrally</a
             >
           </h1>
-          {% endif %}
+          <!-- {% endif %} -->
           <!-- <i id="openNav" class="fa-solid fa-bars navBarChange"></i> -->
           <div class="hamburgerContainer">
             <input
@@ -119,20 +119,20 @@
       </div>
       <div class="l-screen navBar-bg">
         {% if page == "account" %}
-        <h1><img src="../static/images/lytrally-logo.jpeg" alt="" /></h1>
+        <h1 class="logo"><img src="../static/images/lytrally-logo.jpeg" alt="" /></h1>
         {% else %}
         <h1>
-          <a href="/"
+          <a href="/" class="logo"
             ><img src="../static/images/lytrally-logo.jpeg" alt="" />Lytrally</a
           >
         </h1>
         {% endif %}
         <div class="navbar-menu">
           <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+            <li class="nav-item"><a class="nav-link color-effect" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link color-effect" href="#">Service</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
+              <a class="nav-link color-effect" href="#">Contact Us</a>
             </li>
             <!-- <button><a class="nav-link" href="../templates/signup.html">Sign Up</a></button> -->
             {% if page == "signin" %}
@@ -198,7 +198,7 @@
       <div class="s-screen">
         <div class="navBar">
           <h1>
-            <a href="/"
+            <a href="/" class="logo"
               ><img
                 src="../static/images/lytrally-logo.jpeg"
                 alt=""
@@ -230,8 +230,8 @@
       </div>
       <div class="l-screen">
         <h1>
-          <a href="/"
-            ><img src="../static/images/lytrally-logo.jpeg" alt="" />Lytrally</a
+          <a href="/" class="logo"
+            ><img src="../static/images/lytrally-logo.jpeg" alt=""/>Lytrally</a
           >
         </h1>
         <div class="navbar-menu">
