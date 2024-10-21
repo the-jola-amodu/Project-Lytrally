@@ -3,63 +3,78 @@
 {% endblock head %}{% block body %}
 <div class="main-container">
   <nav>
-    <div class="s-screen">
+    <div class="s-screen navBar-bg">
       <div class="navBar">
-        <a href="/">
+        <a href="/" class="logo">
           <img src="../static/images/lytrally-logo.jpeg" alt="Lytrally" />
+          <h1>Lytrally</h1>
         </a>
         <!-- <i id="openNav" class="fa-solid fa-bars"></i> -->
         <div class="hamburgerContainer">
-          <input
-            class="menu-btn"
-            type="checkbox"
-            name="hamburger"
-            id="hamburger"
-          /><label class="menu-btn-label" for="hamburger"
-            ><span class="hamburger"></span
-          ></label>
+          <div class="profilePic">
+            <a href="/account"
+              ><img class="profilePic" src="{{ image_file }}" alt=""
+            /></a>
+          </div>
+          <div>
+            <input
+              class="features_menu_toggle"
+              type="checkbox"
+              name="hamburger"
+              id="hamburger"
+            /><label class="menu-btn-label" for="hamburger"
+              ><span class="hamburger"></span
+            ></label>
+          </div>
         </div>
       </div>
-      <div class="navDisplay">
+      <div class="featuresDisplay">
         <ul>
-          <li><a class="navA" href="#">File</a></li>
-          <li><a class="navA" href="#">Edit</a></li>
-          <li><a class="navA" href="#">Tools Us</a></li>
-          <li><a class="navA" href="#">Help</a></li>
-          <li><a class="navA" href="#">Share</a></li>
+          <li>File</li>
+          <li>Edit</li>
+          <li class="toolsToggle">Tools</li>
+          <div class="tools">
+            <ul>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+            </ul>
+          </div>
+          <li>Help</li>
+          <li>Share</li>
         </ul>
       </div>
-        <div class="profilePic">
-          <a href="/account"
-            ><img
-              class="profilePic"
-              src="{{ image_file }}"
-              alt="user profile pic"
-          /></a>
-        </div>
     </div>
-    <div class="l-screen">
-      <a href="/">
-        <img
-          class="logoHeader"
-          src="../static/images/lytrally-logo.jpeg"
-          alt="Lytrally"
-        />
+    <div class="l-screen navBar-bg">
+      <a href="/" class="logo">
+        <img src="../static/images/lytrally-logo.jpeg" alt="Lytrally" />
+        <h1>Lytrally</h1>
       </a>
-      <div class="menu-bar">
-        <ul class="menu">
-          <li class="menu-bar-item"><a class="" href="/">File</a></li>
-          <li class="menu-bar-item"><a class="" href="#">Edit</a></li>
-          <li class="menu-bar-item"><a class="" href="#">Tools</a></li>
-          <li class="menu-bar-item"><a class="" href="#">Help</a></li>
-          <li class="menu-bar-item"><a class="" href="#">Share</a></li>
+      <div class="navbar-menu">
+        <ul class="nav">
+          <li class="nav-item"><span class="nav-link">File</span></li>
+          <li class="nav-item"><span class="nav-link">Edit</span></li>
+          <li class="nav-item" id="toolsToggle"><span class="nav-link">Tools</span></li>
+          <div class="tools" id="tools">
+            <ul>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+              <li>Ghostwritting</li>
+            </ul>
+          </div>
+          <li class="nav-item"><span class="nav-link">Help</span></li>
+          <li class="nav-item"><span class="nav-link">Share</span></li>
         </ul>
       </div>
-        <div class="profilePic">
-          <a href="/account"
-            ><img class="profilePic" src="{{ image_file }}" alt="user profile pic"
-          /></a>
-        </div>
+      <div class="profilePic">
+        <a href="/account"
+          ><img class="profilePic" src="{{ image_file }}" alt=""
+        /></a>
+      </div>
     </div>
   </nav>
   <section class="featuresSection">
@@ -75,15 +90,12 @@
           <div class="workSpace">
             <form action="#" autocomplete="on" method="post">
               {{ form.hidden_tag() }}
-              <div>
-                {{ form.content(class="form-control")|safe }}
-              </div>
+              <div>{{ form.content(class="form-control")|safe }}</div>
             </form>
-             {{ ckeditor.load() }}
-             {{ ckeditor.config(name='content', width=800, height=1000) }}
+            {{ ckeditor.load() }} {{ ckeditor.config(name='content', width=800,
+            height=1000) }}
           </div>
         </div>
-      </div>
       </div>
     </div>
   </section>

@@ -63,7 +63,7 @@
         <div class="navDisplay">
           <ul>
             <li><a class="navA" href="/">Home</a></li>
-            <li><a class="navA" href="#">Service</a></li>
+            <li><a class="navA" href="/features">Service</a></li>
             <li><a class="navA" href="#">Contact Us</a></li>
             <li><a class="navA" href="#">About</a></li>
             <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
@@ -130,7 +130,7 @@
         <div class="navbar-menu">
           <ul class="nav">
             <li class="nav-item"><a class="nav-link color-effect" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link color-effect" href="#">Service</a></li>
+            <li class="nav-item"><a class="nav-link color-effect" href="/features">Service</a></li>
             <li class="nav-item">
               <a class="nav-link color-effect" href="#">Contact Us</a>
             </li>
@@ -193,7 +193,7 @@
         </div>
       </div>
     </nav>
-    {% else %}
+    {% elif page != "features" %}
     <nav>
       <div class="s-screen">
         <div class="navBar">
@@ -220,7 +220,7 @@
         <div class="navDisplay">
           <ul>
             <li><a class="navA" href="#">Home</a></li>
-            <li><a class="navA" href="#">Service</a></li>
+            <li><a class="navA" href="/features">Service</a></li>
             <li><a class="navA" href="#">Contact Us</a></li>
             <li><a class="navA" href="#">About</a></li>
             <!-- <a class="navA" href="{{ url_for('signup') }}">Sign Up</a> -->
@@ -237,7 +237,7 @@
         <div class="navbar-menu">
           <ul class="nav">
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+            <li class="nav-item"><a class="nav-link" href="/features">Service</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
