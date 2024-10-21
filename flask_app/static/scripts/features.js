@@ -1,5 +1,3 @@
-
-
 // This code redirect page to account page
 let profilePic = document.querySelector(".profilePic");
 profilePic.addEventListener("click", () => {
@@ -12,7 +10,7 @@ const featuresNavDisplay = document.querySelector(".featuresDisplay");
 const toolsToggle = document.querySelector(".toolsToggle");
 const toolsToggle_l = document.getElementById("toolsToggle");
 const tools = document.querySelector(".tools");
-const tools_l = document.getElementById("tools")
+const tools_l = document.getElementById("tools");
 featuresHamburger.addEventListener("click", () => {
   if (featuresHamburger.checked) {
     console.log("featuresHamburger checked");
@@ -20,7 +18,7 @@ featuresHamburger.addEventListener("click", () => {
   } else {
     console.log("featuresHamburger unchecked");
     featuresNavDisplay.classList.remove("show");
-    tools.classList.remove("show")
+    tools.classList.remove("show");
   }
 });
 
@@ -40,71 +38,58 @@ toolsToggle_l.addEventListener("click", () => {
   }
 });
 
-// This code displays the features list
-let featuresDisplay = document.getElementById("featuresDisplay");
-let lists = document.querySelector(".listDisplay");
-let closeDisplay = document.getElementById("header");
-let featureSection = document.querySelector(".featuresSection");
-featuresDisplay.addEventListener("click", () => {
-  if (lists.style.height === "auto") {
-    lists.style.height = 0;
-  } else {
-    lists.style.height = "auto";
-    languages.style.display = "none";
-    gclanguages.style.display = "none";
-    ralanguages.style.display = "none";
-  }
-});
-lists.addEventListener("click", () => {
-  languages.style.display = "none";
-  gclanguages.style.display = "none";
-  ralanguages.style.display = "none";
-});
-featureSection.addEventListener("click", () => {
-  if (lists.style.height === "auto") {
-    lists.style.height = 0;
-  }
-});
-closeDisplay.addEventListener("click", () => {
-  if (lists.style.height === "auto") {
-    lists.style.height = 0;
-  }
-});
+// Script to handle nav link action on clicking
+const share = document.querySelectorAll(".share")
+const features = document.querySelectorAll(".featureSection");
 
-// This code closes the features dropdown when click outside the feature section
-let closeFeatures = () => {
-  if (screenWidth < 720) {
-    lists.style.height = 0;
-  }
-};
-
-// This code closes the features dropdown on clicking a feature
-// It changes the visible part of the display list and also changes the features section based on the selected feature
-let visibleFeature = document.getElementById("visibleFeature");
-let featuresLinks = document.querySelectorAll(".feature");
-// Adds the currentFeature class to the first item on the page loading
-window.addEventListener("load", () => {
-  featuresLinks[0].classList.add("activeToggle");
-});
-// Adds the currentFeature class to the clicked feature and removes it from others
-featuresLinks.forEach((feature) => {
-  feature.addEventListener("click", () => {
-    featuresLinks.forEach((feature) => {
-      if (feature.classList.contains("activeToggle")) {
-        feature.classList.remove("activeToggle");
-      }
+share.forEach((share) => {
+  share.addEventListener("click", () => {
+    console.log("click")
+    features.forEach((feature) => {
+      feature.classList.remove("show");
     });
-    feature.classList.add("activeToggle");
+    features[7].classList.add("show");
+    featuresNavDisplay.classList.remove("show");
+  });
+})
+
+// Scripts for features change
+const features_l = document.querySelectorAll(".feature_l");
+const features_s = document.querySelectorAll(".feature");
+
+window.addEventListener("DOMContentLoaded", () => {
+  features[0].classList.add("show");
+});
+
+features_s.forEach((feature, index) => {
+  feature.addEventListener("click", () => {
+    features.forEach((feature) => {
+      feature.classList.remove("show");
+    });
+    features_s.forEach((feature) => {
+      feature.classList.remove("currentFeature");
+    });
+    feature.classList.add("currentFeature");
+    features[index].classList.add("show");
+    featuresNavDisplay.classList.remove("show");
+    tools.classList.remove("show");
+    featuresHamburger.checked = false;
   });
 });
 
-// Changes the content of the current feature display
-featuresLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (screenWidth < 720) {
-      visibleFeature.innerHTML = link.innerHTML;
-      lists.style.height = 0;
-    }
+features_l.forEach((feature_l, index) => {
+  feature_l.addEventListener("click", () => {
+    features.forEach((feature) => {
+      feature.classList.remove("show");
+    });
+    features_l.forEach((feature) => {
+      feature.classList.remove("currentFeature");
+    });
+    feature_l.classList.add("currentFeature");
+    features[index].classList.add("show");
+    featuresNavDisplay.classList.remove("show");
+    tools.classList.remove("show");
+    tools_l.classList.remove("show")
   });
 });
 
