@@ -1,12 +1,4 @@
-// Gets screen height and width
-const screenWidth =
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
-  document.body.clientWidth;
-const screenHeight =
-  window.innerHeight ||
-  document.documentElement.clientHeight ||
-  document.body.clientHeight;
+
 
 // This code redirect page to account page
 let profilePic = document.querySelector(".profilePic");
@@ -14,6 +6,39 @@ profilePic.addEventListener("click", () => {
   window.location.href = "/account";
 });
 
+// Handles features list dropdown and featuresHamburger actions
+const featuresHamburger = document.querySelector(".features_menu_toggle");
+const featuresNavDisplay = document.querySelector(".featuresDisplay");
+const toolsToggle = document.querySelector(".toolsToggle");
+const toolsToggle_l = document.getElementById("toolsToggle");
+const tools = document.querySelector(".tools");
+const tools_l = document.getElementById("tools")
+featuresHamburger.addEventListener("click", () => {
+  if (featuresHamburger.checked) {
+    console.log("featuresHamburger checked");
+    featuresNavDisplay.classList.add("show");
+  } else {
+    console.log("featuresHamburger unchecked");
+    featuresNavDisplay.classList.remove("show");
+    tools.classList.remove("show")
+  }
+});
+
+toolsToggle.addEventListener("click", () => {
+  if (tools.classList.contains("show")) {
+    tools.classList.remove("show");
+  } else {
+    tools.classList.add("show");
+  }
+});
+
+toolsToggle_l.addEventListener("click", () => {
+  if (tools_l.classList.contains("show")) {
+    tools_l.classList.remove("show");
+  } else {
+    tools_l.classList.add("show");
+  }
+});
 
 // This code displays the features list
 let featuresDisplay = document.getElementById("featuresDisplay");

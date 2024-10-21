@@ -30,8 +30,8 @@ overlay.style.background = "rgba(0,0,0,0.5)";
 hamburger.addEventListener("click", () => {
   if (hamburger.checked) {
     console.log("Hamburger checked");
-    navDisplay.style.height = "400px";
-    navDisplay.style.paddingBlock = "32px";
+    navDisplay.style.height = "300px";
+    navDisplay.style.paddingBlock = "18px";
     overlay.style.display = "block";
     navDisplay.style.borderRadius = "10px";
     navDisplay.style.display = "flex";
