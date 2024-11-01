@@ -45,7 +45,6 @@ body {
 }
 
 .main-container {
-  /* padding-top: 0 !important; */
   height: 100vh;
   overflow: hidden;
   overflow-y: auto;
@@ -63,10 +62,15 @@ header {
   height: 5vh;
   background-color: #8dbefd;
   display: flex;
+  justify-content: left !important;
 }
 
 .l-screen a {
   color: #000 !important;
+}
+
+.s-screen {
+  display: none;
 }
 
 .logoHeader {
@@ -81,15 +85,18 @@ header {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  border-radius: 50px;
   background: lightgray 50% / cover no-repeat;
   background-repeat: no-repeat;
+  border-radius: 50px;
+  position: relative;
+  left: 42rem;
   /* margin-left: auto; */
-  /* margin-top: 24px; */
+  margin-top: 4px;
 }
 
 .profilePic img {
   width: 100%;
+  border-radius: 50px;
 }
 
 .profilePic:hover,
@@ -571,53 +578,5 @@ header {
 
   .defaultWritting .workSpace {
     padding-inline: 50px;
-  }
-}
-
-/* main-container content styling as a result of navbar position for Normal phone screen */
-@media screen and (max-height: 700px) {
-  .main-container {
-    /* padding-top: calc(300px + 1vmin); */
-    padding-top: 70px !important;
-  }
-}
-
-@media (min-height: 740px) and (max-height: 800px) {
-  .main-container {
-    padding-top: calc(70px + 1vmin) !important;
-  }
-}
-
-/* main-container content styling as a result of navbar position for  Longer Phone screens */
-@media (min-height: 800px) and (max-height: 1200px) {
-  .main-container {
-    padding-top: 80px !important;
-  }
-}
-
-/* main-container content styling as a result of navbar position for  laptop and bigger screen query */
-@media (min-width: 1024px) and (min-height: 600px) {
-  .main-container {
-    padding-top: calc(70px + 1vmin) !important;
-  }
-}
-
-/* main-container content styling as a result of navbar position for  ipad screen query */
-@media (min-width: 800px) and (max-height: 1400px) and (max-width: 1024px) {
-  .main-container {
-    padding-top: 100px !important;
-  }
-}
-
-/* main-container content styling as a result of navbar position for  Next Hub screen query */
-@media (width: 1024px) and (height: 600px) {
-  .main-container {
-    padding-top: 70px !important;
-  }
-}
-
-@media (max-width: 540px) and (min-height: 720px) {
-  .main-container {
-    padding-top: 70px;
   }
 }
