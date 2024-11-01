@@ -5,51 +5,21 @@
   text-decoration: none;
 }
 
-:root {
-  /* Font sizes */
-  --font-size-sm: 16px;
-  --font-size-m: 20px;
-  --font-size-l: 24px;
-  --font-size-xl: 26px;
-  --font-size-xxl: 30px;
-  --font-title: 40px;
-
-  /* Font Family */
-  --inter-font: inter;
-  --roboto-font: Roboto Slab;
-  --Inria-font: Inria Serif;
-
-  /* Colors */
-  --off-white-color: #f3f6fc;
-  --lilac-color: #8a9ac5;
-  --black-color: #000;
-  --dull-black: #252222;
-  --button-background-color: #6a7db1;
-  --grey-color: #8b8585;
-  --link-hover-color: #ffd700;
-  --active-feature-background: #8a9ac5;
-  --less-black: #1e1e1e;
-  --dropdown-bg: #dbd7d7;
-  --nav-link-hover: rgb(136, 61, 211);
-
-  /* Motion */
-  --transition-duration: 0.3s;
-  --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
-}
-
 body {
-  background: var(--off-white-color);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden !important;
 }
 
 .main-container {
   /* padding-top: 0 !important; */
   height: 100vh;
-  overflow: hidden;
-  overflow-y: auto;
+  overflow: auto;
+  padding-bottom: 5rem;
 }
 
-.profileDetails {
-  padding-inline: 36px;
+.main-container section {
+  padding-inline: 20px;
 }
 
 header {
@@ -88,12 +58,13 @@ header {
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin-bottom: 33px;
+  padding-top: 1rem;
+  margin-bottom: 20px;
 }
 
 .profileImg label {
-  width: 50%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   margin-inline: auto;
   border-radius: 1000px;
 }
@@ -104,7 +75,7 @@ header {
 
 .profileImg img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border: none;
   padding: 0;
   margin: 0;
@@ -113,6 +84,8 @@ header {
 
 .media-body {
   font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin-bottom: .5rem;
 }
 
 .media-body p {
@@ -122,16 +95,15 @@ header {
   /* font-size: 20px; */
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
   /* margin-right: 33px; */
 }
 
 .media-body p:hover {
-  color: #8a9ac5;
+  color: var(--secondary-color);
 }
 
 .media-body .update {
-  color: var(--lilac-color);
+  color: var(--secondary-color);
 }
 
 .media-body .update:hover {
@@ -139,39 +111,45 @@ header {
   cursor: pointer;
 }
 
-.profileDetails button {
-  width: 150px;
-  height: 60px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  border: 3px solid #000;
-  background-color: #8a9ac5;
-  margin-top: 41px;
-  margin-left: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.createDoc {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.createDoc button {
+  padding: 16px 24px;
+  border-radius: 32px;
+  border-radius: 40px;
+  /* border: 3px solid #000; */
+  border: none;
+  background-color: var(--btn-primary);
+  color: var(--off-white-color);
+  /* float: right; */
   transition: all var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .profileDetails button:hover {
-  background-color: var(--off-white-color);
+  background-color: var(--secondary-color);
   border-color: var(--active-feature-background);
 }
 
-.profileDetails button > a {
-  color: var(--off-white-color);
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-decoration: none;
-  transition: all var(--transition-duration) var(--transition-cubic-bezier);
+.logout button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid var(--btn-primary);
+  padding: 16px 24px;
+  border-radius: 32px;
 }
 
-.profileDetails button:hover a {
-  color: var(--active-feature-background);
+.logout button a {
+  color: var(--btn-primary);
+}
+
+.logout button:hover {
+  background-color: var(--secondary-color);
+}
+
+.logout button:hover a {
+  color: var(--off-white-color);
 }
 
 .profileForm {
@@ -188,6 +166,7 @@ header {
   padding-inline: 20px;
   padding-bottom: 20px;
   overflow: hidden auto;
+  z-index: 2;
 }
 
 #profileForm {
@@ -196,14 +175,21 @@ header {
   flex-direction: column;
   margin-bottom: 30px;
   background-color: var(--off-white-color);
-  border-radius: 25px;
-  padding-inline: calc(5% + 1vmin);
-  padding-block: calc(20px + 1vmin);
+  border-radius: 5px;
+  /* padding-inline: calc(5% + 1vmin);
+  padding-block: calc(20px + 1vmin); */
+  padding: 20px;
 }
 
 #profileForm h1 {
   color: var(--black-color);
   margin-bottom: 20px;
+}
+
+.profileForm fieldset {
+  padding-block: .5rem;
+  font-size: var(--font-size-m);
+  border: none;
 }
 
 .closeFormContainer {
@@ -219,33 +205,55 @@ header {
 }
 
 .closeFormContainer i:hover {
-  color: var(--active-feature-background);
+  color: var(--secondary-color);
   cursor: pointer;
 }
 
+.form-group {
+  width: 100%;
+  padding-inline: 0.5rem;
+}
+
+.profileForm label {
+  width: 100%;
+  display: block;
+  margin-block: 0.5rem;
+}
+
+.profileForm input {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin-bottom: .4rem;
+  transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.form-group input:hover {
+  border: 2px solid var(--secondary-color) !important;
+}
+
 .profileForm input[type="submit"] {
-  width: 150px;
-  height: 60px;
-  flex-shrink: 0;
   border-radius: 30px;
-  border: 3px solid #000;
-  background: #8a9ac5;
+  border: 3px solid #00000000;
+  background-color: var(--btn-primary);
   color: var(--off-white-color);
   font-family: Inter;
-  font-size: 24px;
+  font-size: var(--font-size-m);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-top: 30px;
-  margin-left: auto;
+  /* margin-left: auto; */
   /* margin-right: auto; */
   transition: all var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .profileForm input[type="submit"]:hover {
   background-color: var(--off-white-color);
-  color: var(--active-feature-background);
-  border-color: var(--active-feature-background);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .profileContainer {
@@ -298,15 +306,15 @@ header {
 }
 
 @media screen and (min-width: 768px) {
-  .profileDetails {
+  .main-container section {
     padding-inline: 50px;
   }
 
   .profileImg label {
     width: 300px;
     height: 300px;
+    background-color: rebeccapurple;
     border-radius: 200px;
-    margin-bottom: 33px;
   }
 
   .profile p {
@@ -326,13 +334,13 @@ header {
   }
 
   .profileDetails input {
-    width: 80%;
+    /* width: 80%; */
     font-size: var(--font-size-l);
-    padding-block: 30px;
   }
 
   #profileForm {
-    padding-inline: calc(2% + 1vmin);
+    /* padding-inline: calc(2% + 1vmin); */
+    width: 500px;
   }
 }
 
@@ -367,10 +375,7 @@ header {
   }
 
   .profileDetails button {
-    width: auto;
-    border-radius: 15px;
-    padding: 15px 30px;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-l);
   }
 }
 

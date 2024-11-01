@@ -5,26 +5,6 @@
     text-decoration: none;
 }
 
-:root 
-{
-    --font-size-sm: 16px;
-    --font-size-m: 20px;
-    --font-size-l: 24px;
-    --font-size-xl: 26px;
-    --font-size-xxl: 30px;
-    --font-title: 40px;
-    --inter-font: inter;
-    --white-color: #F3F6FC;
-    --lilac-color: #8A9AC5;
-    --black-color: #000;
-    --dull-black: #252222;
-    --roboto-font: Roboto Slab;
-    --Inria-font: Inria Serif;
-    --button-background-color: #6a7db1;
-    --grey-color: #8b8585;
-    --link-hover-color: #FFD700;
-}
-
 body {
     width: 100%;
     background: url(../images/compressed_a_fountain_pen_on_a_blue_notepad_shot_at_a_cinematic_angle\,_blue_aesthetics-min.png), var(--lilac-color) 50% / cover no-repeat;
@@ -39,21 +19,21 @@ body {
     justify-content: center;
     align-items: center;
     padding-inline: calc(15px + 1vmax);
-    padding-top: calc(250px + 1vmax);
-    padding-bottom: 20px;
+    padding-bottom: 4rem;
     /* margin-bottom: 20px; */
     /* background: #F3F6FC; */
     overflow: auto;
 }
 
-.main-container .mainContainer {
-    width: auto;
+.mainContainer {
+    width: 100%;
     height: auto;
-    background-color: var(--white-color);
+    background-color: var(--off-white-color);
     margin-top: calc(50px + 1vmax);
-    border-radius: 25px;
-    padding-inline: calc(5% + 1vmin);
-    padding-block: calc(20px + 1vmin);
+    border-radius: 10px;
+    /* padding-inline: calc(5% + 1vmin);
+    padding-block: calc(20px + 1vmin); */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,9 +53,9 @@ body {
     display: flex;
     flex-shrink: 0;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 3px solid #000;
-    padding: 20px 36px;
+    padding: 15px;
     background: #FFF;
     color: #000;
     font-family: Inter;
@@ -87,8 +67,7 @@ body {
 }
 
 .mainContainer button:hover {
-    background-color: var(--lilac-color);
-    color: var(--white-color);
+    border-color: var(--secondary-color);
 }
 
 .mainContainer button > img {
@@ -108,33 +87,33 @@ body {
 .signInContainer label {
     display: block;
     margin-left: 28px;
-    margin-bottom: 10px;
+    margin-bottom: .5rem;
     color: var(--dull-black);
     /* text-align: center; */
     font-family: Roboto Slab;
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
     font-style: normal;
     font-weight: 400;
     line-height: 110%; /* 26.4px */
 }
 
 .signInContainer input {
+    width: 100%;
     display: block;
-    margin-bottom: 30px;
-    padding-inline: 16px;
-    border-radius: 20px;
-    border: 3px solid var(--dull-black);
+    margin-bottom: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--dull-black);
     background: var(--white-color);
-    font-size: var(--font-size-m);
-    width: 80%;
-    height: 60px;
+    font-size: var(--font-size-l);
     flex-shrink: 0;
-    transition: width 2s ease-in-out;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .signInContainer input:focus {
     width: 100%;
     outline: none;
+    border: 2px solid var(--secondary-color);
 }
 .form-check {
     display: flex;
@@ -144,14 +123,14 @@ body {
     color: var(--dull-black);
     margin: 0 !important;
     padding: 0 !important;
-    gap: 20px;
+    gap: 10px;
 }
 
 .form-check > input[type="checkbox"]{
     display: inline;
     transition: none;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background: #FFF;
     margin: 0;
 }
@@ -159,8 +138,8 @@ body {
 .form-check > input:focus {
     display: inline;
     transition: none;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 1000px;
     border: 1px solid #000;
     background: #FFF;
@@ -171,7 +150,7 @@ body {
     display: inline;
     color: #000;
     font-family: Inter;
-    font-size: 24px;
+    font-size: var(--font-size-m);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -191,7 +170,7 @@ body {
 }
 
 .forgotPassword a:hover {
-    color: var(--lilac-color);
+    color: var(--secondary-color);
 }
 
 .submitForm {
@@ -201,9 +180,9 @@ body {
     padding: 15px 10px !important;
     justify-content: center !important;
     align-items: center !important;
-    border-radius: 20px !important;
-    background: #8A9AC5 !important;
-    color: var(--white-color) !important;
+    border-radius: 10px !important;
+    background: var(--btn-primary) !important;
+    color: var(--off-white-color) !important;
     font-family: Inter !important;
     font-size: 20px !important;
     font-style: normal !important;
@@ -215,7 +194,7 @@ body {
 
 .submitForm:hover {
     opacity: 0.8 !important;
-    background-color: rebeccapurple !important;
+    background-color: var(--secondary-color) !important;
 }
 
 .noAccount {
@@ -230,52 +209,18 @@ body {
     line-height: normal;
     margin-bottom: 25px;
 }
+
 .main-container a:hover {
-    color: #8A9AC5;
+    color: var(--secondary-color);
 }
 
 .main-container button:hover {
     opacity: 0.8;
 }
 
-/* Tablet Screen */
+/* Larger Screen */
 @media screen and (min-width: 768px) {
-    .main-container label {
-        font-size: var(--font-size-l);
-    }
-    .main-container input {
-        font-size: var(--font-size-l);
-    }
-    span {
-        font-size: var(--font-size-l);
-    }
-    .submitForm {
-        font-size: var(--font-size-l) !important;
-    }
-}
-
-/* Laptop Screen */
-@media screen and (min-width: 1024px) {
-    .main-container label {
-        font-size: var(--font-size-xl);
-    }
-    .main-container input {
-        font-size: var(--font-size-xl);
-    }
-    span {
-        font-size: var(--font-size-xl);
-    }
-}
-
-/* Large screen */
-@media screen and (min-width: 1444px) {
-    .main-container label {
-        font-size: var(--font-size-xxl);
-    }
-    .main-container input {
-        font-size: var(--font-size-xxl);
-    }
-    span {
-        font-size: var(--font-size-xxl);
+    .mainContainer {
+        width: 450px;
     }
 }

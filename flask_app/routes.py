@@ -113,6 +113,13 @@ def account():
     return render_template('account.html', page='account', title='Account', image_file=image_file, form=form,
                            documents=documents)
 
+@app.route("/features", methods=['GET', 'POST'])
+def features():
+    form = DocumentForm()
+    if form.validate_on_submit():
+        pass
+    image_file = url_for('static', filename='profile_pics/')
+    return render_template("features.html", form=form, page='features')
 
 @app.route("/signout")
 def signout():
